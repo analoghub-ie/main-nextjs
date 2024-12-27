@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  robots: "noindex, nofollow",
 };
 
 export const viewport: Viewport = {
