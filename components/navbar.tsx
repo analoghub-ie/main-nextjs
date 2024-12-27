@@ -31,7 +31,7 @@ export const Navbar = () => {
                         {category.articles
                             .sort((a, b) => a.title.localeCompare(b.title))
                             .map(article => (
-                                <AutocompleteItem key={article.id}>
+                                <AutocompleteItem key={article.id} href={`/category/${category.id}/article/${article.id}`}>
                                     {article.title}
                                 </AutocompleteItem>
                             ))}

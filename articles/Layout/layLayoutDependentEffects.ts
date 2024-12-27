@@ -23,6 +23,7 @@ const article: TArticle = {
 
 <br/>  
 <img src="PASTEURLHERE/images/layout/latchup.svg" alt="Latchup1" style="display: block; margin-inline: auto; height: 20rem" />
+<p style="display: block; text-align: center">Source: [Latch-up in CMOS Technology](https://www.researchgate.net/publication/2240000_Latch-up_in_CMOS_Technology)</p>
 
 **Latch-Up triggers:**
 - Power up

@@ -16,4 +16,8 @@ export const siteConfig = {
   links: {
     youtube: "https://www.youtube.com/@AnalogHub",
   },
+
+  env: {
+    hostUrl: process.env.HOST_URL || 'http://localhost:3000',
+  }
 };

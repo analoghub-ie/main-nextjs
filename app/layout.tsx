@@ -38,9 +38,10 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
         )}
+        style={{minHeight: "100dvh"}}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex flex-col h-full">
             <Navbar />
 
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">

@@ -1,0 +1,7 @@
+.markdownWrapper {
+    max-width: 100%;
+}
+
+.markdownWrapper > pre {
+    max-width: 100%;
+}
