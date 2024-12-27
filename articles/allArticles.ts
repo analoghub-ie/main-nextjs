@@ -10,7 +10,7 @@ import bin2therm from "./verilogModels/bin2therm";
 import dec2bin from "./verilogModels/dec2bin";
 import vcoModel from "./verilogModels/VCO";
 import layLayoutDependentEffects from "./Layout/layLayoutDependentEffects";
-
+//
 export const articles: TCategory[] = [
     {
         id: 'category1',
