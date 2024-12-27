@@ -41,7 +41,9 @@ export default async function Page({params}: {
                 {title: article.title, href: `/category/${categoryId}/article/${articleId}`}
             ]}/>
 
-            <MarkdownRenderer children={content}/>
+            <MarkdownRenderer>
+                {content}
+            </MarkdownRenderer>
         </div>
     );
 }
