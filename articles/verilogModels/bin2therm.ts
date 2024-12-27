@@ -1,4 +1,4 @@
-import {TArticle} from "../types";
+import {TArticle} from "../types.ts";
 
 const article: TArticle = {
     id: 'bin2therm',

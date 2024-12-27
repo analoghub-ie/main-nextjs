@@ -1,15 +1,15 @@
-import article1 from "./category1/article1";
-import article2 from "./category2/article2";
-import LDO from "./Circuits/LDO";
-import circuitAnalysisTransferFunction from "./circuitAnalysis/transferFunctions";
-import cadenceAnalysisEMIR from "./cadenceAnalysis/analysisEMIR";
-import cadenceAnalysisDC from "./cadenceAnalysis/analysisDC";
-import {TCategory} from "./types";
-import analysisPAC from "./cadenceAnalysis/analysisPAC";
-import bin2therm from "./verilogModels/bin2therm";
-import dec2bin from "./verilogModels/dec2bin";
-import vcoModel from "./verilogModels/VCO";
-import layLayoutDependentEffects from "./Layout/layLayoutDependentEffects";
+import article1 from "./category1/article1.ts";
+import article2 from "./category2/article2.ts";
+import LDO from "./Circuits/LDO.ts";
+import circuitAnalysisTransferFunction from "./circuitAnalysis/transferFunctions.ts";
+import cadenceAnalysisEMIR from "./cadenceAnalysis/analysisEMIR.ts";
+import cadenceAnalysisDC from "./cadenceAnalysis/analysisDC.ts";
+import {TCategory} from "./types.ts";
+import analysisPAC from "./cadenceAnalysis/analysisPAC.ts";
+import bin2therm from "./verilogModels/bin2therm.ts";
+import dec2bin from "./verilogModels/dec2bin.ts";
+import vcoModel from "./verilogModels/VCO.ts";
+import layLayoutDependentEffects from "./Layout/layLayoutDependentEffects.ts";
 
 export const articles: TCategory[] = [
     {
