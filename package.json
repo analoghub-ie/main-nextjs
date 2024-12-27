@@ -21,7 +21,7 @@
 		"@nextui-org/snippet": "2.2.4",
 		"@nextui-org/switch": "2.2.3",
 		"@nextui-org/system": "2.4.3",
-		"@nextui-org/theme": "2.4.1",
+		"@nextui-org/theme": "^2.4.4",
 		"@react-aria/ssr": "3.9.7",
 		"@react-aria/visually-hidden": "3.8.18",
 		"clsx": "2.1.1",
@@ -29,6 +29,7 @@
 		"intl-messageformat": "^10.5.0",
 		"next": "15.0.4",
 		"next-themes": "^0.4.4",
+		"postcss": "^8.4.49",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
 		"react-markdown": "^9.0.1",
@@ -37,7 +38,9 @@
 		"rehype-katex": "^7.0.1",
 		"rehype-raw": "^7.0.0",
 		"remark-gfm": "^4.0.0",
-		"remark-math": "^6.0.0"
+		"remark-math": "^6.0.0",
+		"tailwind-variants": "0.1.20",
+		"tailwindcss": "^3.4.17"
 	},
 	"devDependencies": {
 		"@next/eslint-plugin-next": "15.0.4",
@@ -48,7 +51,7 @@
 		"@types/react-syntax-highlighter": "^15.5.13",
 		"@typescript-eslint/eslint-plugin": "8.11.0",
 		"@typescript-eslint/parser": "8.11.0",
-		"autoprefixer": "10.4.19",
+		"autoprefixer": "^10.4.20",
 		"eslint": "^8.57.0",
 		"eslint-config-next": "15.0.4",
 		"eslint-config-prettier": "9.1.0",
@@ -59,10 +62,7 @@
 		"eslint-plugin-react": "^7.23.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-unused-imports": "4.1.4",
-		"postcss": "8.4.49",
 		"prettier": "3.3.3",
-		"tailwind-variants": "0.1.20",
-		"tailwindcss": "3.4.16",
 		"typescript": "5.6.3"
 	}
 }
