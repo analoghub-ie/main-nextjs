@@ -19,13 +19,14 @@ export const MarkdownRenderer: FC<{children: string | undefined}> = ({ children 
             components={components}
             className={css.markdownWrapper}
 
-            children={children}
             remarkPlugins={[remarkMath, remarkGfm]}
             rehypePlugins={[
                 rehypeKatex,
                 rehypeHighlight,
                 rehypeRaw
             ]}
-        />
+        >
+            {children}
+        </ReactMarkdown>
     );
 };
