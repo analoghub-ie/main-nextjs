@@ -1,4 +1,4 @@
-import {TArticle} from "../types.ts";
+import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'circuitAnalysisTransferFunctions',
