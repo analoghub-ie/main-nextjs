@@ -4,7 +4,8 @@ const article: TArticle = {
     id: 'circuitsLDO',
     title: 'LDO',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    // lastUpdate: new Date('2022-01-01'),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 

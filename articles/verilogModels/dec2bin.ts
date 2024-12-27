@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'dec2bin',
     title: 'Decimal to Binary Encoder',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 ## Decimal-to-Binary Encoder

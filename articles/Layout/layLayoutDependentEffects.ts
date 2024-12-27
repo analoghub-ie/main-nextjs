@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'layLayoutDependentEffects',
     title: 'Layout-Dependant Effects',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 ## Layout-dependent effects (LOD, WPE, Latch-up, Electromigration)  

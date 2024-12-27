@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'vcoModel',
     title: 'Voltage-controlled oscillator (VCO) model',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 ## Voltage-controlled oscillator model (VCO)

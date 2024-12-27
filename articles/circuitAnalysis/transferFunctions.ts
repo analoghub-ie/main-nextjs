@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'circuitAnalysisTransferFunctions',
     title: 'Transfer Functions',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 # Transfer functions of RLC circuits
