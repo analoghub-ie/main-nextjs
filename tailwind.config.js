@@ -1,11 +1,14 @@
 import {nextui} from '@nextui-org/theme'
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const tailwindConfig = {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './svg/**/*.{js,ts,jsx,tsx,mdx}',
+    './articles/**/*.{js,ts,jsx,tsx,mdx}',
+    './articles/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -66,3 +69,5 @@ module.exports = {
     })
   ],
 }
+
+module.exports = tailwindConfig;
