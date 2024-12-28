@@ -15,6 +15,7 @@ export const articles: TCategory[] = [
     {
         id: 'category1',
         title: 'Category 1',
+        onlyDev: true,
         articles: [
             article1,
         ]
@@ -22,6 +23,7 @@ export const articles: TCategory[] = [
     {
         id: 'category2',
         title: 'Category 2',
+        onlyDev: true,
         articles: [
             article2,
         ]
@@ -29,7 +31,7 @@ export const articles: TCategory[] = [
 
     {
         id: 'Circuits',
-        title: 'circuits',
+        title: 'Circuits',
         articles: [
             LDO,
         ]

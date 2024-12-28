@@ -12,13 +12,22 @@ export const metadata: Metadata = {
     description: "",
 };
 
+export async function generateStaticParams() {
+    return articles.flatMap((category) =>
+        category.articles.map((article) => ({
+            categoryId: category.id,
+            articleId: article.id,
+        }))
+    );
+}
+
 export default async function Page({params}: {
     params: Promise<{ categoryId: string; articleId: string }>;
 }) {
     const { categoryId, articleId } = await params;
 
     // Find the category and article
-    const category = articles.find((category) => category.id === categoryId);
+    const category = articles.filter(e => !e.onlyDev || siteConfig.env.dev).find((category) => category.id === categoryId);
     const article = category?.articles.find((article) => article.id === articleId);
 
     if (!category) {

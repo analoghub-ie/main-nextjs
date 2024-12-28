@@ -2,11 +2,12 @@
 
 import {Card, Link, Spacer} from "@nextui-org/react";
 import {articles} from "@/articles/allArticles";
+import {siteConfig} from "@/config/site";
 
 export default function Home() {
     return (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            {articles.map((category) => (
+            {articles.filter(e => !e.onlyDev || siteConfig.env.dev).map((category) => (
                 <Card key={category.id}
                       isHoverable
                       // isPressable

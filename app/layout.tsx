@@ -50,8 +50,6 @@ export default function RootLayout({
             </main>
 
             <footer className="w-full flex flex-col items-center justify-center py-3">
-              <p>dev: {siteConfig.env.dev ? '+' : '-'}</p>
-              <p>prod: {siteConfig.env.prod ? '+' : '-'}</p>
               {/*<Link*/}
               {/*  isExternal*/}
               {/*  className="flex items-center gap-1 text-current"*/}
