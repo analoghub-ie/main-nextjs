@@ -95,7 +95,7 @@ The photoresist masks are placed to protect unused areas during N+ or P+  implan
 > - Dopants gradient makes devices within WELL unequal;  
 
 
-**WPEeffect** can be **prevented** by distancing devices away from the WELL edge (guard ring). This is usually done by placing dummy devices around the circuit devices, in which case your curcuit devices will also benefit from the equal edge effects (each device will have the same neighbours).
+**WPE effect** can be **prevented** by distancing devices away from the WELL edge (guard ring). This is usually done by placing dummy devices around the circuit devices, in which case your curcuit devices will also benefit from the equal edge effects (each device will have the same neighbours).
 
 
 <br/> <img src="http://localhost:3000/images/layout/WPE-prevention.svg" alt="WPE in layout" style="display: block; margin-inline: auto; width: min(80%, 40rem)" />
@@ -117,17 +117,15 @@ So, in summary:
 
 ### 4. Electromigration    
 #### 4.1 Failure mechanisms  
-EM is an electrical effect whereby electrons on an IC interconnect give  
-some momentum to the atoms that make up the wire. This happens through low energy collisions and subsequent scattering. As a result, the  
-interconnect deforms over time as atoms are moved along the interconnect towards the cathode. This causes pits to appear in the wire closer to the anode, and small metal bumps begin to grow along the surface of the wire closer to the cathode.  
+**Electromigration** - is an electrical effect where electrons on an IC interconnect give some momentum to the atoms that make up the wire. This happens through low energy collisions and subsequent scattering. As a result, the interconnect deforms over time as atoms are moved along the interconnect towards the cathode. This causes pits to appear in the wire closer to the anode, and small metal bumps begin to grow along the surface of the wire closer to the cathode.  
 
 <br/> <img src="http://localhost:3000/images/layout/electromigration-mechanism.svg" alt="Electromigration in layout" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Electromigration mechanism</p>
 
 
 > **Electromigration key points:**  
-- Occurs at very high current densities (usually >$10kA/cm^2$);  
-- Usually caused by the incorrect wire width for a give current density.
+> - Occurs at very high current densities (usually >$10kA/cm^2$);  
+> - Usually caused by the incorrect wire width for a give current density.
 
 
 <br/> <img src="http://localhost:3000/images/layout/electromigration.gif" alt="Electromigration in layout" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
@@ -137,7 +135,7 @@ interconnect deforms over time as atoms are moved along the interconnect towards
 #### 4.2 Types of failures 
 
  
--  **Void:** If the incoming ion flux is lesser than the outgoing ion flux, It will create a void in interconnect. A void can lead a discontinuity in the interconnect and result an open circuit.  
+- **Void:** If the incoming ion flux is lesser than the outgoing ion flux, It will create a void in interconnect. A void can lead a discontinuity in the interconnect and result an open circuit.  
 - **Hillock:** If incoming ion flux is greater than the outgoing ion flux, It will cause the accumulation of ions and create a hillock in the interconnect. A hillock can increase the width of a metal interconnect and touch the neighbouring metal interconnect which may result in a short circuit.
 
 
@@ -145,17 +143,22 @@ interconnect deforms over time as atoms are moved along the interconnect towards
 <p style="display: block; text-align: center">Hillocks and voids</p>
 
 
-#### 4.3 EM prevention  
-The following techniques could be used to prevent the EM issue:  
+#### 4.3 Electromigration prevention 
 
+ On order to prevent electromigration, designers should strictly follow the manufacturer recommendation for the wire width (because the thickness is specified by the process and cannot be changed) according to the current flowing through the wire. As a sanity check for the layout design, EM/IR analysis can be performed (i.e. using Candence Voltus tool).
 
-- Increase the metal width to reduce the current density;
-- Use metal stitching (2 or more metal in parallel, connected by vias);
-- Reduce the frequency;  
-- Lower the supply voltage;  
-- Keep the wire length short;  
-- Reduce the buffer size in clock lines;  
-- Avoid path shapes that could lead to inhomogeneous current flow.
+> **Rule of thumb:**  
+> - Calculate width by using vendor-provided formula + 10%;  
+> - Note that the EM is worse at high temperature.
+
+> **Electromigration prevention techniques:** 
+> - Increase the metal width to reduce the current density;
+> - Use metal stitching (2 or more metal in parallel, connected by vias);
+> - Reduce the frequency;  
+> - Lower the supply voltage;  
+> - Keep the wire length short;  
+> - Reduce the buffer size in clock lines;  
+> - Avoid path shapes that could lead to inhomogeneous current flow.
 
 `
 };

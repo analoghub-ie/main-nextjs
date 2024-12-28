@@ -1,5 +1,4 @@
 import article1 from "./category1/article1";
-import article2 from "./category2/article2";
 import LDO from "./Circuits/LDO";
 import circuitAnalysisTransferFunction from "./circuitAnalysis/transferFunctions";
 import cadenceAnalysisEMIR from "./cadenceAnalysis/analysisEMIR";
@@ -18,14 +17,6 @@ export const articles: TCategory[] = [
         onlyDev: true,
         articles: [
             article1,
-        ]
-    },
-    {
-        id: 'category2',
-        title: 'Category 2',
-        onlyDev: true,
-        articles: [
-            article2,
         ]
     },
 
