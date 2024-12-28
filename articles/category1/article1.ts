@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'article1',
     title: 'Article 1',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 # Header 1

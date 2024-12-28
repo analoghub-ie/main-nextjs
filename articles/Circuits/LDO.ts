@@ -4,7 +4,8 @@ const article: TArticle = {
     id: 'circuitsLDO',
     title: 'LDO',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    // lastUpdate: new Date('2022-01-01'),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 
@@ -12,7 +13,7 @@ const article: TArticle = {
 Low-dropout oscillator (LDO) is a very important circuit that helps in achieving better performance of the internal circuits irrespectably of external conditions (supply voltage variation, noise etc.). It is usually used together with bandgap reference to ensure constant output voltage.
 LDOs have a variety of topologies and oriented for use with analog or digital circuits.
 There are two main LDO topologies: NMOS and PMOS-based.
-![LDO topologies](PASTEURLHERE/images/LDO_topologies.svg)
+![LDO topologies](http://localhost:3000/images/LDO_topologies.svg)
 
 Let's compare the topologies:
 |                |PMOS\t |NMOS\t |

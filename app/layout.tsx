@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
@@ -49,7 +49,9 @@ export default function RootLayout({
               {children}
             </main>
 
-            <footer className="w-full flex items-center justify-center py-3">
+            <footer className="w-full flex flex-col items-center justify-center py-3">
+              <p>dev: {siteConfig.env.dev}</p>
+              <p>prod: {siteConfig.env.prod}</p>
               {/*<Link*/}
               {/*  isExternal*/}
               {/*  className="flex items-center gap-1 text-current"*/}

@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'cadenceAnalysisDC',
     title: 'DC analysis',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 # DC analysis

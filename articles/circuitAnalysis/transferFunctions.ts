@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'circuitAnalysisTransferFunctions',
     title: 'Transfer Functions',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 # Transfer functions of RLC circuits
@@ -22,7 +22,7 @@ Knowing that $s = j\\omega$:
 Let's derive a transfer function of a very simple circuit - voltage divider:
 
 <br/>
-<img src="PASTEURLHERE/images/voltageDivider.svg" alt="Voltage Divider" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/voltageDivider.svg" alt="Voltage Divider" style="display: block; margin-inline: auto; height: 20rem" />
 
 We can see that current $I_1$ is flowing from $V_{in}$ to ground through resistors $R_1$ and $R_2$. Using Ohm's Law we can write:
 $$
@@ -50,7 +50,7 @@ $$
 Let's have a look on one more important aspect of the resistor divider circuit. Let's add some load $R_L$:
 
 <br/>
-<img src="PASTEURLHERE/images/voltageDividerLoaded.svg" alt="Voltage Divider Loaded" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/voltageDividerLoaded.svg" alt="Voltage Divider Loaded" style="display: block; margin-inline: auto; height: 20rem" />
 
 Concept stays the same, but instead of just $R_2$ we have $R_x = R_2||R_L$.
 $$
@@ -70,11 +70,11 @@ We can think of the voltage divider's resistors as of current sources. Let's say
 
 ## 2. Low-pass filter
 <br/>
-<img src="PASTEURLHERE/images/LPF.svg" alt="Low Pass Filter" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/LPF.svg" alt="Low Pass Filter" style="display: block; margin-inline: auto; height: 20rem" />
 
 Interestingly, this circuit is very similar to our previous example. The only difference is that $R_2$ is now replaced with capacitor $C$. 
 <br/>
-<img src="PASTEURLHERE/images/voltageDividerLPF.svg" alt="Low pass filter as voltage divider" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/voltageDividerLPF.svg" alt="Low pass filter as voltage divider" style="display: block; margin-inline: auto; height: 20rem" />
 
 The impedance of the resistor is $Z_R = R$, the impedance of the capacitor is $Z_C = 1/sC$. Using voltage divider formula we can obtain:
 $$

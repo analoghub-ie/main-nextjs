@@ -4,7 +4,7 @@ const article: TArticle = {
     id: 'bin2therm',
     title: 'Binary to Thermometer Encoder model',
     description: 'Description of article 1',
-    lastUpdate: new Date(),
+    lastUpdate: new Date('2022-01-01'),
 
     content: `
 ## Binary-to Thermometer Encoder model

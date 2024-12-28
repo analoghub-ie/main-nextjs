@@ -2,6 +2,11 @@
     max-width: 100%;
 }
 
+.markdownWrapper > [id] {
+    scroll-margin-top: 80px; /* высота navbar */
+}
+
+
 .markdownWrapper > pre {
     max-width: 100%;
 }

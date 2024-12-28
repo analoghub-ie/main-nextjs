@@ -3,7 +3,14 @@ import {Breadcrumbs} from "@/components/breadcrumbs";
 import {redirect, RedirectType} from "next/navigation";
 import {MarkdownRenderer} from "@/components/markdownWrapper";
 import {siteConfig} from "@/config/site";
+import {Metadata} from "next";
+import {ScrollToHash} from "@/components/scrollToHash";
 
+
+export const metadata: Metadata = {
+    title: "",
+    description: "",
+};
 
 export default async function Page({params}: {
     params: Promise<{ categoryId: string; articleId: string }>;
@@ -33,6 +40,9 @@ export default async function Page({params}: {
         // .replaceAll('#000', 'currentColor')
     ;
 
+    metadata.title = article.title;
+    metadata.description = article.description;
+
     return (
         <div className="flex flex-col gap-4 overflow-auto">
             <Breadcrumbs elements={[
@@ -44,6 +54,8 @@ export default async function Page({params}: {
             <MarkdownRenderer>
                 {content}
             </MarkdownRenderer>
+            
+            <ScrollToHash/>
         </div>
     );
 }
