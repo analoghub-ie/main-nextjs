@@ -9,11 +9,13 @@ const article: TArticle = {
     content: `
 ## Layout-dependent effects (LOD, WPE, Latch-up, Electromigration)  
 ### Table of Contents  
-1. [Latch-up](#1.-Latch-up)  
+1. [Latch-up](#Latchup)  
 2. [Length of Diffusion (LOD)](#2.-Length-of-Diffusion-(LOD))  
 3. [Well Proximity Effect (WPE)](#3.-Well=Proximity-Effect-(WPE))  
-4. [Electromigration](#4.-Electromigration)  
+4. [Electromigration](#Electromigration)
   
+<div id="Latchup"></div>
+
 ### 1. Latchup  
 
 **Latch-up** is a short circuit/low impedance channel generated between the power and ground rails of a MOSFET circuit, causing IC being inoperable or damaged. It is caused by the formation of the BJT network with a positive feedback. 
@@ -99,7 +101,8 @@ So, in summary:
 
 <br/> <img src="http://localhost:3000/images/layout/WPE-LOD-prevention.svg" alt="WPE/LOD prevention in layout" style="display: block; margin-inline: auto; width: min(80%, 60rem)" />  
   
-  
+<div id="Electromigration"></div>
+
 ### 4. Electromigration    
 #### 4.1 Failure mechanisms  
 EM is an electrical effect whereby electrons on an IC interconnect give  
