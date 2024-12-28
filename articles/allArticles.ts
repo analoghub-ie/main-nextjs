@@ -9,6 +9,11 @@ import bin2therm from "./verilogModels/bin2therm";
 import dec2bin from "./verilogModels/dec2bin";
 import vcoModel from "./verilogModels/VCO";
 import layLayoutDependentEffects from "./Layout/layLayoutDependentEffects";
+import dec2therm from "@/articles/verilogModels/dec2therm";
+import levelShifter from "@/articles/verilogModels/levelShifter";
+import LPF from "@/articles/verilogModels/LPF";
+import nonoverlapClk from "@/articles/verilogModels/nonoverlapClk";
+
 
 export const articles: TCategory[] = [
     {
@@ -57,7 +62,7 @@ export const articles: TCategory[] = [
         id: 'verilogModels',
         title: 'Verilog-A models',
         articles: [
-            bin2therm, dec2bin, vcoModel,
+            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, nonoverlapClk,
         ]
     }
 ];

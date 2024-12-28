@@ -3,7 +3,7 @@ import {TArticle} from "../types";
 const article: TArticle = {
     id: 'bin2therm',
     title: 'Binary to Thermometer Encoder model',
-    description: 'Description of article 1',
+    description: 'Verilog-A model for Binary to Thermometer encoder',
     lastUpdate: new Date('2022-01-01'),
 
     content: `
@@ -54,6 +54,7 @@ const article: TArticle = {
 // Start_Bit = 0: Decimal 0 equals thermometer 0
 // Start_Bit = 1: Decimal 0 equals thermometer 1
 // Change binary_bits variable for your needs!
+// Author: A. Sidun
 // Source: AnalogHub.ie
 
 \`include "constants.vams"
