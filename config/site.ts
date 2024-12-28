@@ -19,7 +19,6 @@ export const siteConfig = {
 
   env: {
     hostUrl: process.env.HOST_URL || 'http://localhost:3000',
-    prod: process.env.NODE_ENV === 'production',
-    dev: process.env.NODE_ENV === 'development',
+    dev: process.env.NEXT_PUBLIC_DEV_ENV === 'true',
   }
 };

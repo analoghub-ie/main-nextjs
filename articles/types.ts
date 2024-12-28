@@ -2,6 +2,7 @@ export type TCategory = {
     id: string,
     title: string,
     articles: TArticle[]
+    onlyDev?: boolean,
 };
 
 export type TArticle = {
