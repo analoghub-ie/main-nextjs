@@ -11,6 +11,11 @@ const article: TArticle = {
 This article contains Verilog-A model for a digital Level Shifter.
 
 
+### Table of Contents  
+1. [Level-shifter without inversion (same as clk)](#ls-1)  
+2. [Level-shifter with inversion](#ls-2)  
+ 
+
 **Usage:**
 
 1. Create a new cell in Library Manager named *level_shifter* and select cell type *Verilog A*;
@@ -24,12 +29,14 @@ This article contains Verilog-A model for a digital Level Shifter.
 
 </br>
 
+<div id="ls-1"></div>
+
 > **Cell name:** level_shifter
 
 > **Model type:** Verilog-A
 
 <pre><code class="language-verilog">    
-// Digital level shifter
+// Digital level shifter (without inversion)
 // Takes differential input - connect your signal to inp, reference to inn
 // Output will be level-shifted to the "low" and "high" levels
 // Author: A. Sidun
@@ -73,6 +80,47 @@ end //analog begin
 endmodule
 </code></pre>
 
+<div id="ls-2"></div>
+
+</br>
+
+> **Cell name:** level_shifter_inv
+
+> **Model type:** Verilog-A
+
+<pre><code class="language-verilog">  
+// Level shifter with inversion (digital)
+// Author: A. Sidun
+// Source: AnalogHub.ie
+
+\`include "constants.vams"
+\`include "disciplines.vams"
+
+module level_shifter_inv (inp, inn, outn, outp, low, high);
+    input inp, inn, low, high; 
+    output outp, outn;
+    electrical inp, inn, outp, outn, low, high;
+    parameter real VDD = 5.0; // Output voltage during high state
+
+analog begin
+
+@(initial_step)
+\tV(outp) <+ V(high);
+\tV(outn) <+ V(low);
+
+ \tif ((V(inp)-V(inn)) > VDD/2) begin
+\t\tV(outp) <+ V(high);
+\t\tV(outn) <+ V(low);
+\tend 
+
+\tif ((V(inp)-V(inn)) < VDD/2) begin
+\t\tV(outp) <+ V(low);
+\t\tV(outn) <+ V(high);
+\tend 
+end
+
+endmodule
+</code></pre>
     `
 };
 

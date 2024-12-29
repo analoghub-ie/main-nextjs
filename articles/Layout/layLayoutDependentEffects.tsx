@@ -13,6 +13,7 @@ const article: TArticle = {
 2. [Length of Diffusion (LOD)](#LOD)  
 3. [Well Proximity Effect (WPE)](#WPE)  
 4. [Electromigration](#EM)
+5. [Antenna effect](#Antenna)
   
 <div id="Latchup"></div>
 
@@ -159,6 +160,28 @@ So, in summary:
 > - Keep the wire length short;  
 > - Reduce the buffer size in clock lines;  
 > - Avoid path shapes that could lead to inhomogeneous current flow.
+
+
+<div id="Antenna"></div>
+
+### 5. Antenna effect  
+
+The **Antenna Effect**, also known as **Plasma-Induced Damage**, occurs when charge accumulates on isolated nodes of an integrated circuit during fabrication, particularly during **plasma etching**. Plasma's energetic ions and radicals collect on interconnects, increasing their potential. If these interconnects are linked to a transistor gate, accumulated charges may discharge through the **thin gate oxide**, potentially causing damage or degradation. The risk depends on the **surface area of the interconnects**—larger areas can lead to higher potentials, increasing the chance of **gate oxide breakdown** and permanent device damage.
+
+<br/> <img src="http://localhost:3000/images/layout/antenna.svg" alt="Antenna effect in layout" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
+<p style="display: block; text-align: center">Antenna effect in layout</p>
+
+> Antenna Violations prevention:
+> - **Jumper**: Long interconnects are rerouted to higher metal layers (metal jumping), typically near the load. This prevents charge discharge through the gate oxide, as higher layers are fabricated later. However, it may increase routing congestion.
+> - **Reduce Via Area**: Large via areas can cause antenna violations. Using smaller vias, like converting multi-cut to double-cut or single-cut vias, reduces the cut area but may pose reliability risks such as electromigration.
+> - **Diode Insertion**: Placing a diode near the gate on a lower metal layer helps dissipate accumulated charges. The diode, connected in reverse bias (cathode to gate, anode to ground), provides a safe discharge path for static charge.
+
+<br/> <img src="http://localhost:3000/images/layout/antenna-jumper.svg" alt="Antenna effect prevention by using jumper" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
+<p style="display: block; text-align: center">Antenna effect prevention by using a jumper</p>
+
+<br/> <img src="http://localhost:3000/images/layout/antenna-diode.svg" alt="Antenna effect prevention by using diode" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
+<p style="display: block; text-align: center">Antenna effect prevention by using a diode</p>
+
 
 `
 };

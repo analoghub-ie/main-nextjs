@@ -13,6 +13,11 @@ import dec2therm from "@/articles/verilogModels/dec2therm";
 import levelShifter from "@/articles/verilogModels/levelShifter";
 import LPF from "@/articles/verilogModels/LPF";
 import nonoverlapClk from "@/articles/verilogModels/nonoverlapClk";
+import PWM from "@/articles/verilogModels/PWM";
+import comparator from "@/articles/verilogModels/comparator";
+import ADC from "@/articles/verilogModels/ADC";
+import pcbTraceCalculator from "@/articles/matlabScripts/pcbTraceCalculator";
+import layoutBasics from "@/articles/Layout/layoutBasics";
 
 
 export const articles: TCategory[] = [
@@ -53,7 +58,7 @@ export const articles: TCategory[] = [
         id: 'Layout',
         title: 'Layout',
         articles: [
-            layLayoutDependentEffects,
+            layLayoutDependentEffects, layoutBasics,
         ]
     },
 
@@ -62,7 +67,25 @@ export const articles: TCategory[] = [
         id: 'verilogModels',
         title: 'Verilog-A models',
         articles: [
-            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, nonoverlapClk,
+            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, nonoverlapClk, PWM, comparator, ADC
+        ]
+    },
+
+
+    {
+        id: 'matlabScripts',
+        title: 'MATLAB scripts',
+        articles: [
+            pcbTraceCalculator,
+        ]
+    },
+
+
+    {
+        id: 'skillScripts',
+        title: 'SKILL scripts',
+        articles: [
+
         ]
     }
 ];
