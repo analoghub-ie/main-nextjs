@@ -25,10 +25,10 @@ const article: TArticle = {
 ### 1.CMOS process
 Fabrication of the CMOS integrated circuit is a multistep process, that takes a lot of efforts to achieve good performance and yield. Manufacturing of the IC is very similar to cooking a very tall and fancy burger - it starts from the $Si-$substrate (bottom bun), adding different layers to create structures (cheese, lettuce, patty) and covering everything with a top metal and protection oxide (top bun). You can see the simplified manufacturing process on the image below.
 
-<br/> <img src="http://localhost:3000/images/layout/cross-section.png" alt="IC Cross-section" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/cross-section.png" alt="IC Cross-section" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
 <p style="display: block; text-align: center">IC Cross-section</p> 
 
-<br/> <img src="http://localhost:3000/images/layout/manufacturing.png" alt="IC manufacturing steps" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/manufacturing.png" alt="IC manufacturing steps" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
 <p style="display: block; text-align: center">IC manufacturing steps</p> 
 
 <div id="inverterCrossSection"></div>
@@ -100,10 +100,10 @@ Fabrication of the CMOS integrated circuit is a multistep process, that takes a 
 
 ### 6. Resistors
   
-<br/> <img src="http://localhost:3000/images/layout/resistor-types-1.png" alt="Resistor types" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/resistor-types-1.svg" alt="Resistor types" style="display: block; margin-inline: auto; width: min(80%, 60rem)" /> 
 <p style="display: block; text-align: center">Resistor types</p> 
 
-<br/> <img src="http://localhost:3000/images/layout/resistor-types-2.png" alt="Resistor types" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/resistor-types-2.svg" alt="Resistor types" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Resistor types</p> 
 
 <br/> <img src="http://localhost:3000/images/layout/resistor-area.png" alt="Resistor area" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
