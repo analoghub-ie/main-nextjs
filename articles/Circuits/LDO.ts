@@ -37,7 +37,7 @@ Furthermore, NMOS pass devices are typically high-power or high-voltage transist
 <br/> <img src="http://localhost:3000/images/circuits/ldo-parasitics-simple.svg" alt="LDO parasitics simplified" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">LDO parasitics simplified</p>
 
-
+To calculate the parasitic parameters of the PCB trace you can use [this MATLAB script](/category/matlabScripts/article/pcbTraceCalculator).
 <br/> <img src="http://localhost:3000/images/circuits/ldo-parasitics-full.svg" alt="LDO parasitics model" style="display: block; margin-inline: auto; width: min(80%, 80rem)" /> 
 <p style="display: block; text-align: center">LDO parasitics model</p>
 
