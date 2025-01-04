@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'ADC',
-    title: 'ADC model',
+    title: 'ADC model (any resolution)',
     description: 'Verilog-A model for an ADC',
     lastUpdate: new Date('2022-01-01'),
 

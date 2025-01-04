@@ -18,6 +18,7 @@ import comparator from "@/articles/verilogModels/comparator";
 import ADC from "@/articles/verilogModels/ADC";
 import pcbTraceCalculator from "@/articles/matlabScripts/pcbTraceCalculator";
 import layoutBasics from "@/articles/Layout/layoutBasics";
+import layoutMatching from "@/articles/Layout/layoutMatching";
 
 
 export const articles: TCategory[] = [
@@ -58,7 +59,7 @@ export const articles: TCategory[] = [
         id: 'Layout',
         title: 'Layout',
         articles: [
-            layLayoutDependentEffects, layoutBasics,
+            layLayoutDependentEffects, layoutBasics, layoutMatching,
         ]
     },
 

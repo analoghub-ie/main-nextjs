@@ -9,7 +9,60 @@ const article: TArticle = {
     content: `
 ## RLC-calculator for a PCB trace
 This article contains MATLAB script for the calculation of the parasitic parameters of the PCB trace.
+> **Script limitations:**
+> - Valid under 1GHz
+> - Skin effect is omitted
+> - Copper roughness is omitted
+> - Loss tangent is omitted
+>- Geometry limitations:
+> - W/H < 7.475 - 1.25*(T/H) -  for a microstrip
+> - W/B < 2.375 - 1.25*(T/B) - for a stripline
 
+
+First coefficient in equation - conversion from inches to m.
+
+
+H - height
+
+
+W - width
+
+
+**Microstrip Equations:**
+
+
+$$ 
+R = 10^3   \\frac{\\rho_0(1 + \\alpha (temp-25)}{T*W} [m\\Omega/m]
+$$
+
+$$ 
+C = 26.378 \\frac{  (\\epsilon_r + 1.41)}{\\ln{ \\frac{5.98H}{0.8W + T} } } [pF/m]
+$$
+
+$$ 
+L = 199.65 \\ln \\frac{ 5.98 H} {0.8W + T} [nH/m]
+$$
+
+$$ 
+Z = 87 \\frac{\\ln{\\frac{5.98 H}{0.8W+ T}} }{ \\sqrt{\\epsilon_r + 1.41}}
+$$
+
+**Stripline Equations:**
+$$ 
+R = 10^3  * \\frac{\\rho_0(1 + \\alpha (temp-25)}{TW} [m\\Omega/m]
+$$
+
+$$ 
+C = 39.37 * \\frac{ \\epsilon_r sqrt{2}}{\\ln{ \\frac{1.9 B}{0.8W + T} } } [pF/m]
+$$
+
+$$ 
+L = 199.8425 * \\ln \\frac{ 1.9 B} {0.8W + T} [nH/m]
+$$
+
+$$ 
+Z = 60 * \\frac{\\ln{\\frac{1.9 B}{0.8W+ T}} }{ \\sqrt{\\epsilon_r}}
+$$
 </br>
 
 <pre><code class="language-matlab">   
