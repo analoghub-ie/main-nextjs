@@ -2,8 +2,8 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'dec2bin',
-    title: 'Decimal to Binary Encoder',
-    description: 'Description of article 1',
+    title: 'Decimal to Binary Encoder model',
+    description: 'Verilog-A model for Decimal to Binary encoder',
     lastUpdate: new Date('2022-01-01'),
 
     content: `
@@ -26,6 +26,7 @@ This page contains Verilog-A model of the decimal to binary encoder.
 // Decimal number to binary code converter
 // LSB is [0]
 // Change binary_bits variable for your needs!
+// Author: A. Sidun
 // Source: AnalogHub.ie
 
 \`include "constants.vams"

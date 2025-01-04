@@ -10,6 +10,7 @@ import {SearchIcon} from "@/svg/search";
 import {LogoMain} from "@/svg/logo/logoMain";
 import {LogoSmall} from "@/svg/logo/logoSmall";
 import {articles} from "@/articles/allArticles";
+import {siteConfig} from "@/config/site";
 
 
 export const Navbar = () => {
@@ -22,6 +23,8 @@ export const Navbar = () => {
             startContent={<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />}
         >
             {articles
+                .filter(e => !e.onlyDev || siteConfig.env.dev)
+                .filter(e => e.articles.length)
                 .sort((a, b) => a.title.localeCompare(b.title))
                 .map(category => (
                     <AutocompleteSection

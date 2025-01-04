@@ -7,9 +7,8 @@ import {Metadata} from "next";
 import {ScrollToHash} from "@/components/scrollToHash";
 
 
-export const metadata: Metadata = {
-    title: "",
-    description: "",
+type Props = {
+    params: Promise<{ categoryId: string; articleId: string }>;
 };
 
 export async function generateStaticParams() {
@@ -21,9 +20,19 @@ export async function generateStaticParams() {
     );
 }
 
-export default async function Page({params}: {
-    params: Promise<{ categoryId: string; articleId: string }>;
-}) {
+export async function generateMetadata({ params }: Props) {
+    const { categoryId, articleId } = await params;
+
+    const category = articles.filter(e => !e.onlyDev || siteConfig.env.dev).find((category) => category.id === categoryId);
+    const article = category?.articles.find((article) => article.id === articleId);
+
+    return {
+        title: article?.title,
+        description: article?.description,
+    } satisfies Metadata
+}
+
+export default async function Page({params}: Props) {
     const { categoryId, articleId } = await params;
 
     // Find the category and article
@@ -48,9 +57,6 @@ export default async function Page({params}: {
         // .replaceAll('#000000', 'currentColor')
         // .replaceAll('#000', 'currentColor')
     ;
-
-    metadata.title = article.title;
-    metadata.description = article.description;
 
     return (
         <div className="flex flex-col gap-4 overflow-auto">

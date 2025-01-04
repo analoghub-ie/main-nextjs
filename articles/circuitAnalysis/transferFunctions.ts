@@ -22,7 +22,8 @@ Knowing that $s = j\\omega$:
 Let's derive a transfer function of a very simple circuit - voltage divider:
 
 <br/>
-<img src="http://localhost:3000/images/voltageDivider.svg" alt="Voltage Divider" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/circuitAnalysis/voltage-divider.svg" alt="Voltage Divider" style="display: block; margin-inline: auto; width: min(80%, 15rem)" /> 
+<p style="display: block; text-align: center">A simple voltage divider</p>
 
 We can see that current $I_1$ is flowing from $V_{in}$ to ground through resistors $R_1$ and $R_2$. Using Ohm's Law we can write:
 $$
@@ -50,7 +51,8 @@ $$
 Let's have a look on one more important aspect of the resistor divider circuit. Let's add some load $R_L$:
 
 <br/>
-<img src="http://localhost:3000/images/voltageDividerLoaded.svg" alt="Voltage Divider Loaded" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/circuitAnalysis/voltage-divider-loaded.svg" alt="Voltage Divider Loaded" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
+<p style="display: block; text-align: center">A simple voltage divider with resistive load</p>
 
 Concept stays the same, but instead of just $R_2$ we have $R_x = R_2||R_L$.
 $$
@@ -69,12 +71,16 @@ OFFTOP (need to think how integrate it into the text)
 We can think of the voltage divider's resistors as of current sources. Let's say we have $R_1 = R_2 = 1k\\Omega$. In this case, both current sources have the same "strength" and hereby divide the voltage exactly by half. If we will make $R_2 = 500\\Omega$, then $R_2$ will become "stronger" and hence will demand more current. At the same time, $R_1$ is 2 times "weaker" than $R_2$ and wouldn't be able to satisfy such current requirements. 
 
 ## 2. Low-pass filter
+
 <br/>
-<img src="http://localhost:3000/images/LPF.svg" alt="Low Pass Filter" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/circuitAnalysis/LPF.svg" alt="Low Pass Filter" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
+<p style="display: block; text-align: center">A low-pass filter</p>
 
 Interestingly, this circuit is very similar to our previous example. The only difference is that $R_2$ is now replaced with capacitor $C$. 
+
 <br/>
-<img src="http://localhost:3000/images/voltageDividerLPF.svg" alt="Low pass filter as voltage divider" style="display: block; margin-inline: auto; height: 20rem" />
+<img src="http://localhost:3000/images/circuitAnalysis/LPF-2.svg" alt="Low pass filter as a voltage divider" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
+<p style="display: block; text-align: center">Low pass filter as a voltage divider</p>
 
 The impedance of the resistor is $Z_R = R$, the impedance of the capacitor is $Z_C = 1/sC$. Using voltage divider formula we can obtain:
 $$

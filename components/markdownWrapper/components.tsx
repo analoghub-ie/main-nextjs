@@ -31,14 +31,15 @@ export const components = {
     // Blockquotes
     blockquote: ({ ...props }) => (
         <blockquote
-            className="border-l-4 pl-4 italic text-gray-600"
+            className="border-l-4 border-primary pl-4 italic text-primary"
             style={{
-                borderColor: "#ccc",
                 margin: "1rem 0",
+                color: "var(--nextui-colors-text)", // Основной текстовый цвет темы
             }}
             {...props}
         />
     ),
+
 
     // Images
     img: ({ ...props }: any) => <img style={{ maxWidth: "100%" }} className={'dark:invert'} {...props} />,

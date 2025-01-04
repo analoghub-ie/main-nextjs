@@ -1,257 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="49.256184mm"
-   height="19.261927mm"
-   viewBox="0 0 49.256184 19.261927"
-   version="1.1"
-   id="svg1"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-   sodipodi:docname="layout.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     showgrid="true"
-     inkscape:zoom="3.9660278"
-     inkscape:cx="666.03164"
-     inkscape:cy="98.713378"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
-    <inkscape:grid
-       id="grid1"
-       units="mm"
-       originx="-156.85693"
-       originy="-4.9129795"
-       spacingx="0.99999998"
-       spacingy="1"
-       empcolor="#0099e5"
-       empopacity="0.30196078"
-       color="#0099e5"
-       opacity="0.14901961"
-       empspacing="5"
-       dotted="false"
-       gridanglex="30"
-       gridanglez="30"
-       visible="true" />
-  </sodipodi:namedview>
-  <defs
-     id="defs1">
-    <marker
-       style="overflow:visible"
-       id="ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Concave triangle arrow"
-       markerWidth="0.60000002"
-       markerHeight="0.60000002"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.7)"
-         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         id="path31-0-34-0-7-5-1-6-6-5-7-4-1-3-1-8-8-0-3-57-8-2" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-4"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Concave triangle arrow"
-       markerWidth="0.60000002"
-       markerHeight="0.60000002"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.7)"
-         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
-         id="path31-0-34-0-7-5-1-6-6-5-7-4-1-3-1-8-8-0-3-57-8-7" />
-    </marker>
-  </defs>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-156.85693,-4.9129792)">
-    <g
-       id="text13-42-3-0"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.174041;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       aria-label="VDD"
-       transform="matrix(1.300001,0,0,1,-52.500169,0)">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.174041;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1"
-         width="9.999999"
-         height="5"
-         x="174.99998"
-         y="5" />
-    </g>
-    <g
-       id="text13-42-3-0-1"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.174041;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       aria-label="VDD"
-       transform="matrix(1.300001,0,0,1,-70.5301,7.0230244)">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.174041;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1-9"
-         width="9.999999"
-         height="5"
-         x="174.99998"
-         y="5" />
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round"
-       x="176"
-       y="8"
-       id="text13-4-2-6-0"><tspan
-         sodipodi:role="line"
-         id="tspan13-6-1-9-7"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="176"
-         y="8">Growth of voids</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round"
-       x="163.32738"
-       y="14.032839"
-       id="text13-4-2-6-0-3"><tspan
-         sodipodi:role="line"
-         id="tspan13-6-1-9-7-6"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="163.32738"
-         y="14.032839">Increase in </tspan><tspan
-         sodipodi:role="line"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="163.32738"
-         y="15.813061"
-         id="tspan2">temperature</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round"
-       x="199.44298"
-       y="14.032839"
-       id="text13-4-2-6-0-3-4"><tspan
-         sodipodi:role="line"
-         id="tspan13-6-1-9-7-6-3"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="199.44298"
-         y="14.032839">Increase in </tspan><tspan
-         sodipodi:role="line"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="199.44298"
-         y="15.813061"
-         id="tspan5">current density</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round"
-       x="181.50002"
-       y="21.030832"
-       id="text13-4-2-6-0-3-4-1"><tspan
-         sodipodi:role="line"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="181.50002"
-         y="21.030832"
-         id="tspan3">Increase in </tspan><tspan
-         sodipodi:role="line"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;baseline-shift:baseline;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198437"
-         x="181.50002"
-         y="22.811054"
-         id="tspan4">Joule heating</tspan></text>
-    <g
-       id="text13-42-3-0-1-1"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.174041;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       aria-label="VDD"
-       transform="matrix(1.300001,0,0,1,-52.50016,14.087887)">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.174041;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1-9-6"
-         width="9.999999"
-         height="5"
-         x="174.99998"
-         y="5" />
-    </g>
-    <g
-       id="text13-42-3-0-1-1-8"
-       style="font-weight:bold;font-size:1.41111px;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:none;stroke:#000000;stroke-width:0.174041;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       aria-label="VDD"
-       transform="matrix(1.300001,0,0,1,-34.500171,7.0475301)">
-      <rect
-         style="fill:none;stroke:#000000;stroke-width:0.174041;stroke-dasharray:none;stroke-opacity:1"
-         id="rect1-9-6-1"
-         width="9.999999"
-         height="5"
-         x="174.99998"
-         y="5" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 163.47006,12.023024 V 7.5"
-       id="path40"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-4)"
-       d="M 174.18907,7.5 H 163.46314"
-       id="path41" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0)"
-       d="M 199.52992,11.357852 V 7.4857218"
-       id="path40-5"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 188,7.5 h 11.52992"
-       id="path41-5" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-4)"
-       d="M 181.47006,10.648785 V 14.56093"
-       id="path40-5-2"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 192.99998,14.54753 H 181.47006"
-       id="path41-5-83" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="m 199.99999,17.064863 v 4.523024"
-       id="path40-5-3"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0)"
-       d="m 188.81283,21.587887 h 11.19382"
-       id="path41-5-8"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0)"
-       d="m 163.47006,17.648578 v 3.910898"
-       id="path40-5-4"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.198437;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       d="M 174.99998,21.546048 H 163.47006"
-       id="path41-5-0" />
+<svg width="49.256mm" height="19.262mm" version="1.1" viewBox="0 0 49.256 19.262" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <marker id="ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0" overflow="visible" markerHeight="0.60000002" markerWidth="0.60000002" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+   <path transform="scale(.7)" d="m-2-4 11 4-11 4c2-2.33 2-5.66 0-8z" fill="context-stroke" fill-rule="evenodd"/>
+  </marker>
+  <marker id="ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-4" overflow="visible" markerHeight="0.60000002" markerWidth="0.60000002" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+   <path transform="scale(.7)" d="m-2-4 11 4-11 4c2-2.33 2-5.66 0-8z" fill="context-stroke" fill-rule="evenodd"/>
+  </marker>
+ </defs>
+ <g transform="translate(-156.86 -4.913)" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="matrix(1.3 0 0 1 -52.5 0)" fill="none" stroke="#000" stroke-width=".17404" aria-label="VDD">
+   <rect x="175" y="5" width="10" height="5" fill="none" stroke="#000" stroke-width=".17404"/>
   </g>
+  <g transform="matrix(1.3 0 0 1 -70.53 7.023)" fill="none" stroke="#000" stroke-width=".17404" aria-label="VDD">
+   <rect x="175" y="5" width="10" height="5" fill="none" stroke="#000" stroke-width=".17404"/>
+  </g>
+  <text x="176" y="8" fill="none" font-family="Arial" font-size="1.4111px" font-weight="bold" stroke="#000000" stroke-width=".19844" xml:space="preserve"><tspan x="176" y="8" fill="#000000" font-family="sans-serif" font-style="italic" font-weight="normal" stroke="none" stroke-width=".19844">Growth of voids</tspan></text>
+  <text x="163.32738" y="14.032839" fill="#000000" font-family="sans-serif" font-size="1.4111px" font-style="italic" stroke-width=".19844" text-anchor="middle" xml:space="preserve"><tspan x="163.32738" y="14.032839" text-align="center">Increase in </tspan><tspan x="163.32738" y="15.813061" text-align="center">temperature</tspan></text>
+  <text x="199.44298" y="14.032839" fill="#000000" font-family="sans-serif" font-size="1.4111px" font-style="italic" stroke-width=".19844" text-anchor="middle" xml:space="preserve"><tspan x="199.44298" y="14.032839" text-align="center">Increase in </tspan><tspan x="199.44298" y="15.813061" text-align="center">current density</tspan></text>
+  <text x="181.50002" y="21.030832" fill="#000000" font-family="sans-serif" font-size="1.4111px" font-style="italic" stroke-width=".19844" text-anchor="middle" xml:space="preserve"><tspan x="181.50002" y="21.030832" text-align="center">Increase in </tspan><tspan x="181.50002" y="22.811054" text-align="center">Joule heating</tspan></text>
+  <g transform="matrix(1.3 0 0 1 -52.5 14.088)" fill="none" stroke="#000" stroke-width=".17404" aria-label="VDD">
+   <rect x="175" y="5" width="10" height="5" fill="none" stroke="#000" stroke-width=".17404"/>
+  </g>
+  <g transform="matrix(1.3 0 0 1 -34.5 7.0475)" fill="none" stroke="#000" stroke-width=".17404" aria-label="VDD">
+   <rect x="175" y="5" width="10" height="5" fill="none" stroke="#000" stroke-width=".17404"/>
+  </g>
+  <path d="m163.47 12.023v-4.523" fill="none" stroke="#000" stroke-width=".19844"/>
+  <path d="m174.19 7.5h-10.726" fill="none" marker-start="url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-4)" stroke="#000" stroke-width=".19844"/>
+  <path d="m199.53 11.358v-3.8721" fill="none" marker-start="url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0)" stroke="#000" stroke-width=".19844"/>
+  <path d="m188 7.5h11.53" fill="none" stroke="#000" stroke-width=".19844"/>
+  <path d="m181.47 10.649v3.9121" fill="none" marker-start="url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-4)" stroke="#000" stroke-width=".19844"/>
+  <path d="m193 14.548h-11.53" fill="none" stroke="#000" stroke-width=".19844"/>
+  <path d="m200 17.065v4.523" fill="none" stroke="#000" stroke-width=".19844"/>
+  <path d="m188.81 21.588h11.194" fill="none" marker-start="url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0)" stroke="#000" stroke-width=".19844"/>
+  <path d="m163.47 17.649v3.9109" fill="none" marker-start="url(#ConcaveTriangle-16-42-5-1-1-7-6-6-2-1-6-9-3-7-3-7-8-93-94-8-0)" stroke="#000" stroke-width=".19844"/>
+  <path d="m175 21.546h-11.53" fill="none" stroke="#000" stroke-width=".19844"/>
+ </g>
 </svg>
