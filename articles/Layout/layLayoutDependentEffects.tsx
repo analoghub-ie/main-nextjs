@@ -3,11 +3,10 @@ import {TArticle} from "../types";
 const article: TArticle = {
     id: 'layLayoutDependentEffects',
     title: 'Layout-Dependant Effects',
-    description: 'Description of article 1',
-    lastUpdate: new Date('2022-01-01'),
-
+    description: 'This article covers layout-dependent effects, such as LOD, WPE, Electromigration, Antenna their nature and prevention techniques',
+    lastUpdate: new Date('2025-01-04'),
     content: `
-## Layout-dependent effects (LOD, WPE, Latch-up, Electromigration)  
+## Layout-dependent effects (LOD, WPE, Latch-up, Electromigration, Antenna)  
 ### Table of Contents  
 1. [Latch-up](#Latchup)  
 2. [Length of Diffusion (LOD)](#LOD)  
@@ -28,7 +27,7 @@ const article: TArticle = {
 - ESD occurrences  
 
 <br/> 
-<img src="http://localhost:3000/images/layout/latchup.svg" alt="Latchup1" style="display: block; margin-inline: auto; width: min(80%, 60rem)" />  
+<img src="http://localhost:3000/images/layout/latchup.svg" alt="Latch-up in CMOS technology (CMOS inverter example)" style="display: block; margin-inline: auto; width: min(80%, 60rem)" />  
 <p style="display: block; text-align: center">Latch-up in CMOS technology (CMOS inverter example)</p>
 
 Let's have a look on a simple circuit example - CMOS inverter. In such a circuit we have one NMOS device formed in a p-substrate and a NMOS device formed in NWELL. Parasitic NPN device is formed by the **n-type** source terminal of NMOS, **p-type** substrate and **n-type** NWELL. Parasitic PNP is formed by the **p-type** source terminal of PMOS, **n-type** NMELL and **p-type** substrate. Of course, both NWELL and p-substrate are lightly-doped meaning that they have some substantial resistance. Equivalent circuit of a parasitics BJT network is shown on a picture above. Parasitic resistors $R_{nwell}$ and  $R_{substrate}$ can create a voltage drop during trigger event hereby allowing current flow through BJTs.  This parasitic structure forms a positive feedback, so the current will keep flowing even when trigger is removed, so the IC has to be powered off to restore normal operation.
@@ -47,7 +46,7 @@ Let's have a look on a simple circuit example - CMOS inverter. In such a circuit
 > - Guard rings add more parallel resistance to the NWELL/Substrate, thereby reducing parasitic resistors;  
 > - NWELL/substrate potentials are held around VDD/Ground, no positive feedback is formed.  
   
-<br/> <img src="http://localhost:3000/images/layout/latchup-prevention.svg" alt="Latchup Prevention" style="display: block; margin-inline: auto; width: min(80%, 55rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/latchup-prevention.svg" alt="Latch-up prevention by adding Guard Rings" style="display: block; margin-inline: auto; width: min(80%, 55rem)" /> 
 <p style="display: block; text-align: center">Latch-up prevention by adding Guard Rings</p> 
 
 <div id="LOD"></div>
@@ -57,7 +56,7 @@ Let's have a look on a simple circuit example - CMOS inverter. In such a circuit
 **Length Of Diffusion effect (LOD)** - is the manufacturing effect, which induces stress to the edges of the diffusion area during Shallow Trench Insulation (STI) formation.   
 
 
-<br/> <img src="http://localhost:3000/images/layout/LOD.svg" alt="LOD in layout" style="display: block; margin-inline: auto; width: min(80%, 40rem)" />  
+<br/> <img src="http://localhost:3000/images/layout/LOD.svg" alt="LOD effect in CMOS technology" style="display: block; margin-inline: auto; width: min(80%, 40rem)" />  
 <p style="display: block; text-align: center">LOD effect in CMOS technology</p>
 
 The key steps of the STI process involve etching a pattern of trenches in the silicon, depositing one or more dielectric materials (such as silicon dioxide) to fill the trenches, and removing the excess dielectric using a technique such as chemical-mechanical planarization. These processes incude acid and temperature impact on the wafer. STI becomes compressive when the wafer is cooled down, and this leads to the increased holes mobility and decreased electron mobility. Hence, this will improve the performance of the PMOS and degrade the performance of NMOS devices.  
