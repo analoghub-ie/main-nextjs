@@ -7,7 +7,7 @@ import {siteConfig} from "@/config/site";
 export default function Home() {
     return (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            {articles.filter(e => !e.onlyDev || siteConfig.env.dev).map((category) => (
+            {articles.filter(e => !e.onlyDev || siteConfig.env.dev).filter(e => e.articles.length).map((category) => (
                 <Card key={category.id}
                       isHoverable
                       // isPressable
