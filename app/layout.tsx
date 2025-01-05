@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   // robots: "noindex, nofollow",
+  verification:{
+    google: '1kxPJq-eEbbmU3H-LrbnIuE3Vnd0GWqky63RH_31ikU',
+  }
 };
 
 export const viewport: Viewport = {
@@ -29,31 +32,31 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
+      <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
       <body
-        className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
-        style={{minHeight: "100dvh"}}
+          className={clsx(
+              "min-h-screen bg-background font-sans antialiased",
+              fontSans.variable,
+          )}
+          style={{minHeight: "100dvh"}}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-full min-h-vh min-h-dvh">
-            <Navbar />
+      <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <div className="relative flex flex-col h-full min-h-vh min-h-dvh">
+          <Navbar />
 
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
+          <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+            {children}
+          </main>
 
-            <Footer/>
-          </div>
-        </Providers>
+          <Footer/>
+        </div>
+      </Providers>
       </body>
-    </html>
+      </html>
   );
 }
