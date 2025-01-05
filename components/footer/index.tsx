@@ -11,13 +11,13 @@ export const Footer = () => {
             <Spacer y={8} />
 
             <div className="container mx-auto text-center">
-                <div className="flex flex-col sm:flex-row justify-center gap-6">
+                <div className="flex flex-row flex-wrap justify-center gap-6">
                     <Link href="mailto:contact@analoghub.ie"
                           target="_blank"
                           className="flex items-center gap-2"
                     >
                         <AiOutlineMail size={24} className="text-text" />
-                        <span className="hidden sm:inline">contact@analoghub.ie</span>
+                        <span>contact@analoghub.ie</span>
                     </Link>
 
                     <Link href="https://www.linkedin.com/in/sidun-av/"
@@ -25,7 +25,7 @@ export const Footer = () => {
                           className="flex items-center gap-2"
                     >
                         <AiFillLinkedin size={24} className="text-text" />
-                        <span className="hidden sm:inline">Aleksandr Sidun</span>
+                        <span>Aleksandr Sidun</span>
                     </Link>
 
                     {/* Added link to /about */}
