@@ -49,11 +49,12 @@ export default async function Page({params}: Props) {
         redirect(`/category/${categoryId}`, RedirectType.replace);
     }
 
-    let content = article.content
-        .replaceAll('PASTEURLHERE', siteConfig.env.hostUrl)
-        .replaceAll('http://localhost:3000', siteConfig.env.hostUrl)
-        .replaceAll('https://dev.analoghub.ie', siteConfig.env.hostUrl)
-        .replaceAll('https://analoghub.ie', siteConfig.env.hostUrl)
+    const content = article.content
+            .replace(/<([a-zA-Z][^>]*)$/gm, '&lt;$1')
+            .replaceAll('PASTEURLHERE', siteConfig.env.hostUrl)
+            .replaceAll('http://localhost:3000', siteConfig.env.hostUrl)
+            .replaceAll('https://dev.analoghub.ie', siteConfig.env.hostUrl)
+            .replaceAll('https://analoghub.ie', siteConfig.env.hostUrl)
         // .replaceAll('#000000', 'currentColor')
         // .replaceAll('#000', 'currentColor')
     ;
@@ -69,7 +70,7 @@ export default async function Page({params}: Props) {
             <MarkdownRenderer>
                 {content}
             </MarkdownRenderer>
-            
+
             <ScrollToHash/>
         </div>
     );
