@@ -4,6 +4,7 @@ import {Code} from "@nextui-org/code";
 import {Divider} from "@nextui-org/divider";
 import {Link} from "@nextui-org/link";
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@/components/table";
+import {Image} from "@nextui-org/image";
 
 
 export const components = {
@@ -42,7 +43,9 @@ export const components = {
 
 
     // Images
-    img: ({ ...props }: any) => <img style={{ maxWidth: "100%" }} className={'dark:invert'} {...props} />,
+    img: ({ style = {}, ...props }: any) => {
+        return <Image removeWrapper style={{ maxWidth: "100%", ...style }} className={'dark:invert'} {...props} />
+    },
 
     // Code
     code: ({ node, inline, className, children, ...props }: any) => {

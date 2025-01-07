@@ -11,9 +11,15 @@ import {LogoMain} from "@/svg/logo/logoMain";
 import {LogoSmall} from "@/svg/logo/logoSmall";
 import {articles} from "@/articles/allArticles";
 import {siteConfig} from "@/config/site";
+import {useState} from "react";
 
 
 export const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const closeMenu = () => setMenuOpen(false);
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
+
     const searchInput = (
         <Autocomplete<{articleId: string, articleTitle: string, categoryId: string, categoryTitle: string}>
             aria-label="Search"
@@ -34,7 +40,10 @@ export const Navbar = () => {
                         {category.articles
                             .sort((a, b) => a.title.localeCompare(b.title))
                             .map(article => (
-                                <AutocompleteItem key={article.id} href={`/category/${category.id}/article/${article.id}`}>
+                                <AutocompleteItem key={article.id}
+                                                  href={`/category/${category.id}/article/${article.id}`}
+                                                  onPress={closeMenu}
+                                >
                                     {article.title}
                                 </AutocompleteItem>
                             ))}
@@ -45,7 +54,7 @@ export const Navbar = () => {
     );
 
     return (
-        <NextUINavbar maxWidth="xl" position="sticky">
+        <NextUINavbar maxWidth="xl" position="sticky" isMenuOpen={menuOpen} onMenuOpenChange={setMenuOpen}>
             <NavbarContent className="basis-1/5" justify="start">
                 <NavbarBrand as="li" className="gap-3 max-w-fit">
                     <NextLink className="flex justify-start items-center gap-1" href="/">
@@ -61,10 +70,13 @@ export const Navbar = () => {
 
             <NavbarContent className="basis-1/5" justify="end">
                 <ThemeSwitch />
-                <NavbarMenuToggle className={'sm:hidden'} />
+                <NavbarMenuToggle className={'sm:hidden'}
+                                  onClick={toggleMenu}
+                                  isSelected={menuOpen}
+                />
             </NavbarContent>
 
-            <NavbarMenu>
+            <NavbarMenu className={'overflow-x-hidden'}>
                 {searchInput}
             </NavbarMenu>
         </NextUINavbar>
