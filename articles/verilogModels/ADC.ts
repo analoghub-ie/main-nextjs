@@ -32,9 +32,47 @@ This article contains Verilog-A model for an Analog-to-Digital Converter (ADC).
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog">   
+<pre><code class="language-verilog">
+// N-bit Analog to Digital Converter
+// LSB is <0>
+// Change binary_bits variable for your needs!
+// Author: A. Sidun
+// Source: AnalogHub.ie
 
+\`include "constants.vams"
+\`include "disciplines.vams"
+\`define bits 12\t\t\t\t\t// define number of binary bits here
 
+module ADC (out, in, clk);
+    parameter real vmin = 0.0;\t\t\t// minimum input voltage (V)
+    parameter real vmax = 1.0 from (vmin:inf);\t// maximum input voltage (V)
+    parameter real td = 0 from [0:inf);\t\t// delay from clock edge to output (s)
+    parameter real tt = 0 from [0:inf);\t\t// transition time of output (s)
+    parameter real vdd = 5;\t\t\t// voltage level of logic 1 (V)
+    parameter real vss = 0;\t\t\t// voltage level of logic 0 (V)
+    parameter real thresh = (vdd+vss)/2;\t// logic threshold level (V)
+    parameter integer dir = +1 \t\t\t// 1 for trigger on rising edge, -1 for falling
+    localparam integer levels = 1<<\`bits;
+    input in, clk;
+    output [\`bits-1:0] out;
+    voltage in, clk;
+    voltage [\`bits-1:0] out;
+    integer result;
+    genvar i;
+
+    analog begin
+        @(cross(V(clk)-thresh, dir) or initial_step) begin
+\t    result = levels*((V(in) - vmin))/(vmax - vmin);
+\t    if (result > levels-1)
+\t        result = levels-1;
+\t    else if (result < 0)
+\t        result = 0;
+\tend
+
+\tfor (i=0; i<\`bits; i=i+1)
+\t    V(out[i]) <+ transition(result & (1 << i) ? vdd : vss, td, tt);
+\t end
+endmodule
 </code></pre>
 
     `

@@ -19,6 +19,10 @@ import ADC from "@/articles/verilogModels/ADC";
 import pcbTraceCalculator from "@/articles/matlabScripts/pcbTraceCalculator";
 import layoutBasics from "@/articles/Layout/layoutBasics";
 import layoutMatching from "@/articles/Layout/layoutMatching";
+import DAC from "@/articles/verilogModels/DAC";
+import layoutEditorSettings from "@/articles/Layout/layoutEditorSettings";
+import save2file from "@/articles/verilogModels/save2file";
+import howToRenameNets from "@/articles/cadenceTricks/howToRenameNets";
 
 
 export const articles: TCategory[] = [
@@ -59,7 +63,7 @@ export const articles: TCategory[] = [
         id: 'Layout',
         title: 'Layout',
         articles: [
-            layLayoutDependentEffects, layoutBasics, layoutMatching,
+            layLayoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings,
         ]
     },
 
@@ -68,7 +72,7 @@ export const articles: TCategory[] = [
         id: 'verilogModels',
         title: 'Verilog-A models',
         articles: [
-            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, nonoverlapClk, PWM, comparator, ADC
+            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, nonoverlapClk, PWM, comparator, ADC, DAC, save2file,
         ]
     },
 
@@ -86,6 +90,15 @@ export const articles: TCategory[] = [
         id: 'skillScripts',
         title: 'SKILL scripts',
         articles: [
+
+        ]
+    },
+
+
+    {
+        id: 'cadenceTricks',
+        title: 'Cadence Virtuoso tricks',
+        articles: [ howToRenameNets,
 
         ]
     }
