@@ -1,8 +1,8 @@
 import {TArticle} from "../types";
 
 const article: TArticle = {
-    id: 'layLayoutDependentEffects',
-    title: 'Layout-Dependant Effects',
+    id: 'layoutDependentEffects',
+    title: 'Layout-Dependent Effects',
     description: 'This article covers layout-dependent effects, such as LOD, WPE, Electromigration, Antenna their nature and prevention techniques',
     lastUpdate: new Date('2025-01-04'),
     content: `

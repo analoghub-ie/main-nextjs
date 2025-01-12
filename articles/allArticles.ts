@@ -8,7 +8,7 @@ import analysisPAC from "./cadenceAnalysis/analysisPAC";
 import bin2therm from "./verilogModels/bin2therm";
 import dec2bin from "./verilogModels/dec2bin";
 import vcoModel from "./verilogModels/VCO";
-import layLayoutDependentEffects from "./Layout/layLayoutDependentEffects";
+import layoutDependentEffects from "./Layout/layoutDependentEffects";
 import dec2therm from "@/articles/verilogModels/dec2therm";
 import levelShifter from "@/articles/verilogModels/levelShifter";
 import LPF from "@/articles/verilogModels/LPF";
@@ -23,6 +23,7 @@ import DAC from "@/articles/verilogModels/DAC";
 import layoutEditorSettings from "@/articles/Layout/layoutEditorSettings";
 import save2file from "@/articles/verilogModels/save2file";
 import howToRenameNets from "@/articles/cadenceTricks/howToRenameNets";
+import hotkeysVirtuoso from "@/articles/cadenceTricks/hotkeysVirtuoso";
 
 
 export const articles: TCategory[] = [
@@ -63,7 +64,7 @@ export const articles: TCategory[] = [
         id: 'Layout',
         title: 'Layout',
         articles: [
-            layLayoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings,
+            layoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings,
         ]
     },
 
@@ -98,7 +99,7 @@ export const articles: TCategory[] = [
     {
         id: 'cadenceTricks',
         title: 'Cadence Virtuoso tricks',
-        articles: [ howToRenameNets,
+        articles: [ howToRenameNets, hotkeysVirtuoso,
 
         ]
     }

@@ -25,7 +25,7 @@ This article contains Verilog-A model for a comparator.
 </br>
 
 
-> **Cell name:** comp
+> **Cell name:** comparator
 
 > **Model type:** Verilog-A
 
@@ -39,11 +39,8 @@ This article contains Verilog-A model for a comparator.
 
 module comparator (inp, inn, out);
     input inp, inn;
-    
     output out;
-    
-    electrical inp, inn, out;
-    
+    electrical inp, inn, out; 
     parameter real VDD = 3.3; \t\t\t// Output voltage during high state
     parameter real t_delay = 1e-9; \t\t// Propagation delay
     parameter real t_edge = 100e-12; \t\t// Rise and fall times
