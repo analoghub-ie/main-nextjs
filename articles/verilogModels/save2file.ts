@@ -13,13 +13,13 @@ This article contains Verilog-A model for saving simulation results to *.txt* fi
 
 **Usage:**
 
-1. Create a new cell in Library Manager named *save2file* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***save2file*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3. Modify *path* variable to define the path to the output text file;
-4. Perform *Check and Save*;
+3. Modify ***path*** variable to define the path to the output text file;
+4. Perform ***Check and Save***;
 5. A cell symbol will be created;
-6. Instantiate *save2file* cell into your design;
-7. Perform *Check and Save* and run the simulation.
+6. Instantiate ***save2file*** cell into your design;
+7. Perform ***Check and Save*** and run the simulation.
 
 </br>
 

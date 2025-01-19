@@ -13,14 +13,14 @@ This article contains Verilog-A model for a comparator.
 
 **Usage:**
 
-1. Create a new cell in Library Manager named *comp* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***comp*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3. Specify *VDD* variable to be the maximum output voltage of the comparator;
-4. Specify *t_edge* and *t_delay* variables to be the rising/falling time and delay of the output waveform;
-5. Perform *Check and Save*;
+3. Specify ***VDD*** variable to be the maximum output voltage of the comparator;
+4. Specify ***t_edge*** and ***t_delay*** variables to be the rising/falling time and delay of the output waveform;
+5. Perform ***Check and Save***;
 6. A cell symbol will be created;
-7. Instantiate *comp* cell into your design;
-8. Perform *Check and Save* and run the simulation.
+7. Instantiate ***comp*** cell into your design;
+8. Perform ***Check and Save*** and run the simulation.
 
 </br>
 

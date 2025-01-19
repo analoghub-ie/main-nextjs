@@ -24,6 +24,9 @@ import layoutEditorSettings from "@/articles/Layout/layoutEditorSettings";
 import save2file from "@/articles/verilogModels/save2file";
 import howToRenameNets from "@/articles/cadenceTricks/howToRenameNets";
 import hotkeysVirtuoso from "@/articles/cadenceTricks/hotkeysVirtuoso";
+import usefulMaterials from "@/articles/usefulMaterials/usefulMaterials";
+import noiseAnalysis from "@/articles/circuitAnalysis/noiseAnalysis";
+import layoutViewer from "@/articles/designPresentation/layoutViewer";
 
 
 export const articles: TCategory[] = [
@@ -48,7 +51,7 @@ export const articles: TCategory[] = [
         id: 'circuitAnalysis',
         title: 'Circuit analysis',
         articles: [
-            circuitAnalysisTransferFunction,
+            circuitAnalysisTransferFunction, noiseAnalysis,
         ]
     },
 
@@ -100,6 +103,24 @@ export const articles: TCategory[] = [
         id: 'cadenceTricks',
         title: 'Cadence Virtuoso tricks',
         articles: [ howToRenameNets, hotkeysVirtuoso,
+
+        ]
+    },
+
+
+    {
+        id: 'usefulMaterials',
+        title: 'Useful links, books and sources',
+        articles: [ usefulMaterials,
+
+        ]
+    },
+
+
+    {
+        id: 'designPresentation',
+        title: 'Design Presentation',
+        articles: [ layoutViewer,
 
         ]
     }

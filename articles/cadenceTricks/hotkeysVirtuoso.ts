@@ -20,6 +20,7 @@ const article: TArticle = {
 
 #### Creating a schematic
  - **W** - Draw a wire;
+ - **Shift + W** - Draw a wide wire (bus);
  - **L** - Label a wire;
  - **P** - Create a pin;
  - **Q** - Open instance properties;

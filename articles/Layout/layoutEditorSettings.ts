@@ -7,7 +7,7 @@ const article: TArticle = {
     lastUpdate: new Date('2025-01-04'),
     content: `
 
-## Matching in layout 
+## Layout editor settings and tricks
 
 ### Table of Contents
 1. [Introduction](#introduction)

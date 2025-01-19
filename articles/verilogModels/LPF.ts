@@ -12,14 +12,14 @@ This article contains Verilog-A model for a low-pass filter. This model supports
 
 **Usage:**
 
-1. Create a new cell in Library Manager named *level_shifter* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***LPF*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3. Specify *Cutoff_frequency* variable to be -3dB frequency;
-4. Specify *Filter_Order* variable to be 1 if you want -20dB/dec or 2 if you want -40dB/dec ;
-5. Perform *Check and Save*;
+3. Specify ***Cutoff_frequency*** variable to be -3dB frequency;
+4. Specify ***Filter_Order*** variable to be 1 if you want -20dB/dec or 2 if you want -40dB/dec ;
+5. Perform ***Check and Save***;
 6. A cell symbol will be created;
-7. Instantiate *LPF* cell into your design;
-8. Perform *Check and Save* and run the simulation.
+7. Instantiate ***LPF*** cell into your design;
+8. Perform ***Check and Save*** and run the simulation.
 
 </br>
 
