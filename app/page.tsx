@@ -1,13 +1,12 @@
 "use client";
 
 import {Card, Link, Spacer} from "@nextui-org/react";
-import {articles} from "@/articles/allArticles";
-import {siteConfig} from "@/config/site";
+import {allFilteredArticles} from "@/articles/allArticles";
 
 export default function Home() {
     return (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-            {articles.filter(e => !e.onlyDev || siteConfig.env.dev).filter(e => e.articles.length).map((category) => (
+            {allFilteredArticles.map((category) => (
                 <Card key={category.id}
                       isHoverable
                       // isPressable

@@ -2,7 +2,8 @@ export type TCategory = {
     id: string,
     title: string,
     articles: TArticle[]
-    onlyDev?: boolean,
+
+    hideInProd?: boolean,
 };
 
 export type TArticle = {
@@ -11,4 +12,6 @@ export type TArticle = {
     description: string,
     content: string,
     lastUpdate: Date,
+
+    hideInProd?: boolean,
 };

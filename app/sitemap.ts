@@ -1,6 +1,6 @@
 import {MetadataRoute} from 'next'
 import {siteConfig} from "@/config/site";
-import {articles} from "@/articles/allArticles";
+import {allFilteredArticles} from "@/articles/allArticles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
@@ -11,9 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: siteConfig.env.hostUrl + '/about',
         },
 
-        ...articles
-            .filter(e => !e.onlyDev || siteConfig.env.dev)
-            .filter(e => e.articles.length)
+        ...allFilteredArticles
             .flatMap(category => category.articles.map(article => ({
                 url: `${siteConfig.env.hostUrl}/category/${category.id}/article/${article.id}`
             })))

@@ -6,6 +6,8 @@ const article: TArticle = {
     description: 'Description of article 1',
     lastUpdate: new Date('2022-01-01'),
 
+    hideInProd: true,
+
     content: `
 # Header 1
 ## Header 2
