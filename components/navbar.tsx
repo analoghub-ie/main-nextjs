@@ -9,8 +9,7 @@ import {ThemeSwitch} from "@/components/theme-switch";
 import {SearchIcon} from "@/svg/search";
 import {LogoMain} from "@/svg/logo/logoMain";
 import {LogoSmall} from "@/svg/logo/logoSmall";
-import {articles} from "@/articles/allArticles";
-import {siteConfig} from "@/config/site";
+import {allFilteredArticles} from "@/articles/allArticles";
 import {useState} from "react";
 
 
@@ -28,10 +27,7 @@ export const Navbar = () => {
             fullWidth
             startContent={<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />}
         >
-            {articles
-                .filter(e => !e.onlyDev || siteConfig.env.dev)
-                .filter(e => e.articles.length)
-                .sort((a, b) => a.title.localeCompare(b.title))
+            {allFilteredArticles
                 .map(category => (
                     <AutocompleteSection
                         key={category.id}

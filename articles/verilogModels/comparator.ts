@@ -13,19 +13,28 @@ This article contains Verilog-A model for a comparator.
 
 **Usage:**
 
-1. Create a new cell in Library Manager named *comp* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***comp*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3. Specify *VDD* variable to be the maximum output voltage of the comparator;
-4. Specify *t_edge* and *t_delay* variables to be the rising/falling time and delay of the output waveform;
-5. Perform *Check and Save*;
+3. Specify ***VDD*** variable to be the maximum output voltage of the comparator;
+4. Specify ***t_edge*** and ***t_delay*** variables to be the rising/falling time and delay of the output waveform;
+5. Perform ***Check and Save***;
 6. A cell symbol will be created;
-7. Instantiate *comp* cell into your design;
-8. Perform *Check and Save* and run the simulation.
+7. Instantiate ***comp*** cell into your design;
+8. Perform ***Check and Save*** and run the simulation.
 
 </br>
 
 
-> **Cell name:** comp
+<br/> <img src="http://localhost:3000/images/verilogModels/comparator-tb.png" alt="Comparator testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">Comparator testbench</p>  
+
+
+<br/> <img src="http://localhost:3000/images/verilogModels/comparator-sim.svg" alt="Comparator simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">Comparator simulation result</p> 
+ 
+</br>
+
+> **Cell name:** comparator
 
 > **Model type:** Verilog-A
 
@@ -39,11 +48,8 @@ This article contains Verilog-A model for a comparator.
 
 module comparator (inp, inn, out);
     input inp, inn;
-    
     output out;
-    
-    electrical inp, inn, out;
-    
+    electrical inp, inn, out; 
     parameter real VDD = 3.3; \t\t\t// Output voltage during high state
     parameter real t_delay = 1e-9; \t\t// Propagation delay
     parameter real t_edge = 100e-12; \t\t// Rise and fall times

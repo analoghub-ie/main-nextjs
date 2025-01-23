@@ -13,13 +13,13 @@ This page contains Verilog-A model of the decimal to binary encoder.
 
 **Usage:**
 
-1. Create a new cell in Library Manager named *dec2bin* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***dec2bin*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3. Specify *binary_bits* variable to be the desired binary bits number;
-4. Perform *Check and Save*;
+3. Specify ***binary_bits*** variable to be the desired binary bits number;
+4. Perform ***Check and Save***;
 5. A cell symbol will be created;
-6. Instantiate *dec2bin* cell into your design;
-7. Perform *Check and Save* and run the simulation.
+6. Instantiate ***dec2bin*** cell into your design;
+7. Perform ***Check and Save*** and run the simulation.
 
 
 <pre><code class="language-verilog">

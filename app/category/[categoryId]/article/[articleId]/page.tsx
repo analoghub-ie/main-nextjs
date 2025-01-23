@@ -1,4 +1,4 @@
-import {articles} from "@/articles/allArticles";
+import {allFilteredArticles} from "@/articles/allArticles";
 import {Breadcrumbs} from "@/components/breadcrumbs";
 import {redirect, RedirectType} from "next/navigation";
 import {MarkdownRenderer} from "@/components/markdownWrapper";
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-    return articles.flatMap((category) =>
+    return allFilteredArticles.flatMap((category) =>
         category.articles.map((article) => ({
             categoryId: category.id,
             articleId: article.id,
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
     const { categoryId, articleId } = await params;
 
-    const category = articles.filter(e => !e.onlyDev || siteConfig.env.dev).find((category) => category.id === categoryId);
+    const category = allFilteredArticles.find((category) => category.id === categoryId);
     const article = category?.articles.find((article) => article.id === articleId);
 
     return {
@@ -36,7 +36,7 @@ export default async function Page({params}: Props) {
     const { categoryId, articleId } = await params;
 
     // Find the category and article
-    const category = articles.filter(e => !e.onlyDev || siteConfig.env.dev).find((category) => category.id === categoryId);
+    const category = allFilteredArticles.find((category) => category.id === categoryId);
     const article = category?.articles.find((article) => article.id === articleId);
 
     if (!category) {
@@ -50,7 +50,8 @@ export default async function Page({params}: Props) {
     }
 
     const content = article.content
-            .replace(/<([a-zA-Z][^>]*)$/gm, '&lt;$1')
+            .replace(/<(?!iframe)([a-zA-Z][^>]*)$/gm, '&lt;$1')
+            // .replace(/<([a-zA-Z][^>]*)$/gm, '&lt;$1')
             .replaceAll('PASTEURLHERE', siteConfig.env.hostUrl)
             .replaceAll('http://localhost:3000', siteConfig.env.hostUrl)
             .replaceAll('https://dev.analoghub.ie', siteConfig.env.hostUrl)

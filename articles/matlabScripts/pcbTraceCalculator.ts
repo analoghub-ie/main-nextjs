@@ -32,7 +32,7 @@ W - width
 
 
 $$ 
-R = 10^3   \\frac{\\rho_0(1 + \\alpha (temp-25)}{T*W} [m\\Omega/m]
+R = 1000   \\frac{\\rho_0(1 + \\alpha (temp-25))}{TW} [m\\Omega/m]
 $$
 
 $$ 
@@ -49,19 +49,19 @@ $$
 
 **Stripline Equations:**
 $$ 
-R = 10^3  * \\frac{\\rho_0(1 + \\alpha (temp-25)}{TW} [m\\Omega/m]
+R = 1000   \\frac{\\rho_0(1 + \\alpha (temp-25))}{TW} [m\\Omega/m]
 $$
 
 $$ 
-C = 39.37 * \\frac{ \\epsilon_r sqrt{2}}{\\ln{ \\frac{1.9 B}{0.8W + T} } } [pF/m]
+C = 39.37  \\frac{ \\epsilon_r \\sqrt{2} }{\\ln{ \\frac{1.9 B}{0.8W + T} } } [pF/m]
 $$
 
 $$ 
-L = 199.8425 * \\ln \\frac{ 1.9 B} {0.8W + T} [nH/m]
+L = 199.8425  \\ln \\frac{ 1.9 B} {0.8W + T} [nH/m]
 $$
 
 $$ 
-Z = 60 * \\frac{\\ln{\\frac{1.9 B}{0.8W+ T}} }{ \\sqrt{\\epsilon_r}}
+Z = 60  \\frac{\\ln{\\frac{1.9 B}{0.8W+ T}} }{ \\sqrt{\\epsilon_r}}
 $$
 </br>
 

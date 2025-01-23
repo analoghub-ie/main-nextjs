@@ -5,6 +5,7 @@ const article: TArticle = {
     title: 'DC analysis',
     description: 'Description of article 1',
     lastUpdate: new Date('2022-01-01'),
+    hideInProd: true,
 
     content: `
 # DC analysis

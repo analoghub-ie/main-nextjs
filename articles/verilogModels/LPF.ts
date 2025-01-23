@@ -12,15 +12,25 @@ This article contains Verilog-A model for a low-pass filter. This model supports
 
 **Usage:**
 
-1. Create a new cell in Library Manager named *level_shifter* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***LPF*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3. Specify *Cutoff_frequency* variable to be -3dB frequency;
-4. Specify *Filter_Order* variable to be 1 if you want -20dB/dec or 2 if you want -40dB/dec ;
-5. Perform *Check and Save*;
+3. Specify ***Cutoff_frequency*** variable to be -3dB frequency;
+4. Specify ***Filter_Order*** variable to be 1 if you want -20dB/dec or 2 if you want -40dB/dec ;
+5. Perform ***Check and Save***;
 6. A cell symbol will be created;
-7. Instantiate *LPF* cell into your design;
-8. Perform *Check and Save* and run the simulation.
+7. Instantiate ***LPF*** cell into your design;
+8. Perform ***Check and Save*** and run the simulation.
 
+</br>
+
+<br/> <img src="http://localhost:3000/images/verilogModels/lpf-tb.png" alt="LPF model testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">LPF model testbench</p>  
+
+
+<br/> <img src="http://localhost:3000/images/verilogModels/lpf-sim.png" alt="LPF model simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">LPF model simulation result (Filter_Order =  1 - purple, 
+Filter_Order = 2 - green)</p> 
+ 
 </br>
 
 > **Cell name:** LPF

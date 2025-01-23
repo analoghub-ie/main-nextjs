@@ -14,14 +14,14 @@ const article: TArticle = {
 </br>
 
 **Usage:** 
-1. Create a new cell in Library Manager named *bin2therm* and select cell type *Verilog A*;
+1. Create a new cell in Library Manager named ***bin2therm*** and select cell type ***Verilog A***;
 2. Copy and paste the code provided;
-3.  Specify *binary_bits* variable to be the desired binary bits number;
-4. Specify *Start_Bit* to be 0 if you want thermometer code to start from 0 or 1  if you want thermometer code to start from 1;
-5. Perform *Check and Save*;
+3.  Specify ***binary_bits*** variable to be the desired binary bits number;
+4. Specify ***Start_Bit*** to be 0 if you want thermometer code to start from 0 or 1 if you want thermometer code to start from 1;
+5. Perform ***Check and Save***;
 6. A cell symbol will be created;
-7. Instantiate *bin2term* cell into your design;
-8. Perform *Check and Save* and run the simulation.
+7. Instantiate ***bin2term*** cell into your design;
+8. Perform ***Check and Save*** and run the simulation.
 
 </br>
 
