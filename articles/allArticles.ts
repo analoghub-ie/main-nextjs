@@ -45,6 +45,7 @@ const articles: TCategory[] = [
     {
         id: 'Circuits',
         title: 'Circuits',
+        hideInProd: true,
         articles: [
             LDO,
         ]
@@ -53,6 +54,7 @@ const articles: TCategory[] = [
     {
         id: 'circuitAnalysis',
         title: 'Circuit analysis',
+        hideInProd: true,
         articles: [
             circuitAnalysisTransferFunction, noiseAnalysis,
         ]
@@ -96,6 +98,7 @@ const articles: TCategory[] = [
     {
         id: 'skillScripts',
         title: 'SKILL scripts',
+        hideInProd: true,
         articles: [
 
         ]
@@ -114,6 +117,7 @@ const articles: TCategory[] = [
     {
         id: 'usefulMaterials',
         title: 'Useful links, books and sources',
+        hideInProd: true,
         articles: [ usefulMaterials,
 
         ]
@@ -132,6 +136,7 @@ const articles: TCategory[] = [
     {
         id: 'simulationHacks',
         title: 'Simulation Hacks',
+        hideInProd: true,
         articles: [ simulationHacks,
 
         ]
@@ -141,6 +146,7 @@ const articles: TCategory[] = [
     {
         id: 'cadenceEnvironmentSetup',
         title: 'Setting Up Cadence Environment',
+        hideInProd: true,
         articles: [ cadenceEnvironmentSetup,
 
         ]

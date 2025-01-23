@@ -22,11 +22,11 @@ const article: TArticle = {
 This is how to rename multiple nets in Cadence Virtuoso.
 1. Have your schematic with the multiple nets that you want to rename simultaniously:
 
-<br/> <img src="http://localhost:3000/images/cadenceTricks/renaming-multiple-nets-1.png" alt="Original schematic with multiple nets" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/cadenceTricks/renaming-multiple-nets-1.png" lightinvert alt="Original schematic with multiple nets" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Original schematic with multiple nets</p> 
 
 2. Create a pin named same as your current net name (Press *P* and enter the net name you have in the schematic):
-<br/> <img src="http://localhost:3000/images/cadenceTricks/renaming-multiple-nets-2.png" alt="Creating a pin with the same net name" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/cadenceTricks/renaming-multiple-nets-2.png" disableinvert alt="Creating a pin with the same net name" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Creating a pin with the same net name</p> 
 
 Add the pin to the schematic and press *Check and Save* (or *Shift+X*).
