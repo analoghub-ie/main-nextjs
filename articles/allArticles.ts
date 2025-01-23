@@ -29,13 +29,14 @@ import noiseAnalysis from "@/articles/circuitAnalysis/noiseAnalysis";
 import layoutViewer from "@/articles/designPresentation/layoutViewer";
 import simulationHacks from "@/articles/simulationHacks/simulationHacks";
 import cadenceEnvironmentSetup from "@/articles/cadenceEnvironmentSetup/cadenceEnvironmentSetup";
+import {siteConfig} from "@/config/site";
 
 
-export const articles: TCategory[] = [
+const articles: TCategory[] = [
     {
         id: 'category1',
         title: 'Category 1',
-        onlyDev: true,
+        hideInProd: true,
         articles: [
             article1,
         ]
@@ -145,3 +146,9 @@ export const articles: TCategory[] = [
         ]
     }
 ];
+
+export const allFilteredArticles = articles
+    .filter(e => !e.hideInProd || siteConfig.env.dev) // hide dev categories in prod
+    .map(e => ({...e, articles: e.articles.filter(e => !e.hideInProd || siteConfig.env.dev).sort((a, b) => a.title.localeCompare(b.title))})) // hide dev articles in prod
+    .filter(e => e.articles.length) // hide empty categories
+    .sort((a, b) => a.title.localeCompare(b.title))
