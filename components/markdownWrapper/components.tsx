@@ -44,7 +44,10 @@ export const components = {
 
     // Images
     img: ({ style = {}, ...props }: any) => {
-        return <Image removeWrapper style={{ maxWidth: "100%", ...style }} className={'dark:invert'} {...props} />
+        const attributes = Object.keys(props?.node?.properties || {});
+        const disableInvert = attributes.includes('disableinvert');
+        const lightInvert = attributes.includes('lightinvert');
+        return <Image removeWrapper style={{ maxWidth: "100%", ...style }} className={disableInvert ? '' : lightInvert ? 'invert dark:invert-0' : 'dark:invert'} {...props} />
     },
 
     // Code
