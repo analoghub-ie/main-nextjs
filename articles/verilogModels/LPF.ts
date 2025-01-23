@@ -23,6 +23,16 @@ This article contains Verilog-A model for a low-pass filter. This model supports
 
 </br>
 
+<br/> <img src="http://localhost:3000/images/verilogModels/lpf-tb.png" alt="LPF model testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">LPF model testbench</p>  
+
+
+<br/> <img src="http://localhost:3000/images/verilogModels/lpf-sim.png" alt="LPF model simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">LPF model simulation result (Filter_Order =  1 - purple, 
+Filter_Order = 2 - green)</p> 
+ 
+</br>
+
 > **Cell name:** LPF
 
 > **Model type:** Verilog-A

@@ -22,19 +22,20 @@ import layoutMatching from "@/articles/Layout/layoutMatching";
 import DAC from "@/articles/verilogModels/DAC";
 import layoutEditorSettings from "@/articles/Layout/layoutEditorSettings";
 import save2file from "@/articles/verilogModels/save2file";
-import howToRenameNets from "@/articles/cadenceTricks/howToRenameNets";
+import netNaming from "@/articles/cadenceTricks/netNaming";
 import hotkeysVirtuoso from "@/articles/cadenceTricks/hotkeysVirtuoso";
 import usefulMaterials from "@/articles/usefulMaterials/usefulMaterials";
 import noiseAnalysis from "@/articles/circuitAnalysis/noiseAnalysis";
 import layoutViewer from "@/articles/designPresentation/layoutViewer";
-import {siteConfig} from "@/config/site";
+import simulationHacks from "@/articles/simulationHacks/simulationHacks";
+import cadenceEnvironmentSetup from "@/articles/cadenceEnvironmentSetup/cadenceEnvironmentSetup";
 
 
-const articles: TCategory[] = [
+export const articles: TCategory[] = [
     {
         id: 'category1',
         title: 'Category 1',
-        hideInProd: true,
+        onlyDev: true,
         articles: [
             article1,
         ]
@@ -103,7 +104,7 @@ const articles: TCategory[] = [
     {
         id: 'cadenceTricks',
         title: 'Cadence Virtuoso tricks',
-        articles: [ howToRenameNets, hotkeysVirtuoso,
+        articles: [ netNaming, hotkeysVirtuoso,
 
         ]
     },
@@ -124,11 +125,23 @@ const articles: TCategory[] = [
         articles: [ layoutViewer,
 
         ]
+    },
+
+
+    {
+        id: 'simulationHacks',
+        title: 'Simulation Hacks',
+        articles: [ simulationHacks,
+
+        ]
+    },
+
+
+    {
+        id: 'cadenceEnvironmentSetup',
+        title: 'Setting Up Cadence Environment',
+        articles: [ cadenceEnvironmentSetup,
+
+        ]
     }
 ];
-
-export const allFilteredArticles = articles
-    .filter(e => !e.hideInProd || siteConfig.env.dev) // hide dev categories in prod
-    .map(e => ({...e, articles: e.articles.filter(e => !e.hideInProd || siteConfig.env.dev).sort((a, b) => a.title.localeCompare(b.title))})) // hide dev articles in prod
-    .filter(e => e.articles.length) // hide empty categories
-    .sort((a, b) => a.title.localeCompare(b.title))

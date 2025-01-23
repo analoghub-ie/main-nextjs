@@ -1,0 +1,64 @@
+import {TArticle} from "../types";
+
+const article: TArticle = {
+    id: 'cadenceEnvironmentSetup',
+    title: 'Setting up Cadence Environment',
+    description: 'Cadence Environment Setup description',
+    lastUpdate: new Date('2022-01-01'),
+    content: `
+    
+### Contents:
+1. [Introduction](#intro)
+2. [Bindkeys File](#bindkeys)
+3. [Display Resource File](#drf)
+4. [Initialisation File](#cdsinit)
+5. [Cadence Environment File](#cdsenv)
+
+<div id="intro"></div>
+
+## 1. Introduction
+Sometimes we are moving from one technology to another, from one company to another and we want to keep our bindkeys, 
+settings and UI the same. This article will help you to understand which files are responsible for the environment setup in 
+Cadence Virtuoso and how to keep and customise them to make your environment to feel home. All you need is to 
+create/export/copy the following files and keep them in your home directory. You can customise those files for your needs.
+All files are coming with explanations and use examples, so you can see exactly how they are implemented.
+
+<div id="bindkeys"></div>
+
+## 2. Bindkeys File
+
+<pre><code class="language-bash">
+
+</code></pre>
+
+
+<div id="drf"></div>
+
+## 3. Display Resource File
+
+<pre><code class="language-bash">
+
+</code></pre>
+
+
+<div id="cdsinit"></div>
+
+## 4. Initialisation File
+
+<pre><code class="language-bash">
+
+</code></pre>
+
+
+<div id="cdsenv"></div>     
+
+## 5. Cadence Environment File
+
+<pre><code class="language-bash">
+
+</code></pre>
+
+`
+};
+
+export default article;

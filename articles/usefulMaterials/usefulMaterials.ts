@@ -31,6 +31,9 @@ const article: TArticle = {
 
 ## Schematic design
 
+## IC Reverse-Engineering
+ - [Zeptobars.com](https://zeptobars.com/en/)
+
 
     `
 };

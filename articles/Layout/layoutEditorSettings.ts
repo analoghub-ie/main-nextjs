@@ -15,7 +15,10 @@ const article: TArticle = {
 3. [Dummies](#dummies)
 
 
-dddwdwqdwqdq
+### Basic Layout editor settings
+
+To prevent DRC errors and simplify layout, check the following setting in Layout Editor (hotkey E):
+- Activate ***Pin Names*** checkbox
 
 <br/> <img src="http://localhost:3000/images/layout/layout-editor-settings-1.svg" alt="Basic layout editor settings" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Basic layout editor settings</p> 
