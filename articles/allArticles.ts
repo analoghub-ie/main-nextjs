@@ -24,12 +24,21 @@ import layoutEditorSettings from "@/articles/Layout/layoutEditorSettings";
 import save2file from "@/articles/verilogModels/save2file";
 import netNaming from "@/articles/cadenceTricks/netNaming";
 import hotkeysVirtuoso from "@/articles/cadenceTricks/hotkeysVirtuoso";
-import usefulMaterials from "@/articles/usefulMaterials/usefulMaterials";
+import usefulMaterials from "@/articles/usefulMaterials/usefulMaterialsSchematic";
 import noiseAnalysis from "@/articles/circuitAnalysis/noiseAnalysis";
 import layoutViewer from "@/articles/designPresentation/layoutViewer";
 import simulationHacks from "@/articles/simulationHacks/simulationHacks";
 import cadenceEnvironmentSetup from "@/articles/cadenceEnvironmentSetup/cadenceEnvironmentSetup";
 import {siteConfig} from "@/config/site";
+import printableCheatsheets from "@/articles/usefulMaterials/printableCheatsheets";
+import schematicDiagram from "@/articles/designPresentation/schematicDiagram";
+import analysisCorner from "@/articles/cadenceAnalysis/analysisCorner";
+import analysisExtracted from "@/articles/cadenceAnalysis/analysisExtracted";
+import analysisMonteCarlo from "@/articles/cadenceAnalysis/analysisMonteCarlo";
+import parallelSimulations from "@/articles/cadenceTricks/parallelSimulations";
+import usefulMaterialsSchematic from "@/articles/usefulMaterials/usefulMaterialsSchematic";
+import usefulMaterialsLayout from "@/articles/usefulMaterials/usefulMaterialsLayout";
+import exportGDS from "@/articles/cadenceTricks/exportGDS";
 
 
 const articles: TCategory[] = [
@@ -64,7 +73,7 @@ const articles: TCategory[] = [
         id: 'cadenceAnalysis',
         title: 'Cadence analysis',
         articles: [
-            cadenceAnalysisEMIR, cadenceAnalysisDC,analysisPAC,
+            cadenceAnalysisEMIR, cadenceAnalysisDC,analysisPAC, analysisCorner, analysisMonteCarlo,analysisExtracted,
         ]
     },
 
@@ -107,8 +116,8 @@ const articles: TCategory[] = [
 
     {
         id: 'cadenceTricks',
-        title: 'Cadence Virtuoso tricks',
-        articles: [ netNaming, hotkeysVirtuoso,
+        title: 'CADENCE VIRTUOSO TRICKS',
+        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS,
 
         ]
     },
@@ -116,9 +125,9 @@ const articles: TCategory[] = [
 
     {
         id: 'usefulMaterials',
-        title: 'Useful links, books and sources',
-        hideInProd: true,
-        articles: [ usefulMaterials,
+        title: 'Useful materials',
+        hideInProd: false,
+        articles: [ usefulMaterialsSchematic, usefulMaterialsLayout, printableCheatsheets,
 
         ]
     },
@@ -127,7 +136,7 @@ const articles: TCategory[] = [
     {
         id: 'designPresentation',
         title: 'Design Presentation',
-        articles: [ layoutViewer,
+        articles: [ layoutViewer, schematicDiagram,
 
         ]
     },
@@ -150,7 +159,17 @@ const articles: TCategory[] = [
         articles: [ cadenceEnvironmentSetup,
 
         ]
-    }
+    },
+
+
+    // {
+    //     id: 'printableCheatsheets',
+    //     title: 'Printable Cheatsheets',
+    //     hideInProd: true,
+    //     articles: [ printableCheatsheets,
+    //
+    //     ]
+    // }
 ];
 
 export const allFilteredArticles = articles

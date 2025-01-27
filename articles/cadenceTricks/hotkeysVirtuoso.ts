@@ -5,13 +5,13 @@ const article: TArticle = {
     title: 'Useful hotkeys Cadence Virtuoso',
     description: 'This article describes hotkeys for Cadence Virtuoso',
     lastUpdate: new Date('2022-01-01'),
-
+    hideInProd: true,
     content: `
 
-### Cadence Virtuoso shortcuts
+### Cadence Virtuoso Shortcuts
 1. [Schematic Editor Shortcuts](#schematicEditor)
 2. [Layout Editor Shortcuts](#layoutEditor)
-3. [Bindkeys file](#bindkeysFile)
+3. [Bindkeys File](/category/cadenceEnvironmentSetup/article/cadenceEnvironmentSetup#bindkeys)
 
 <div id="schematicEditor"></div>
 
@@ -54,6 +54,10 @@ const article: TArticle = {
 #### Settings
  - **O** - Display settings;   
  - **F3** - Current function options;
+ 
+<br/> 
+<img src="http://localhost:3000/images/cadenceTricks/bindkeys-schematic.svg" alt="Layout Schematic Cheatsheet" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center"><a href="http://localhost:3000/images/cadenceTricks/bindkeys-schematic-A4.png">Schematic Bindkeys Cheatsheet (A4) download</a></p>
 
 
 #### Plots
@@ -95,11 +99,14 @@ const article: TArticle = {
 - **E** - Open layout editor options;
 - **F3** - Current function options;
 
+<br/> 
+<img src="http://localhost:3000/images/cadenceTricks/bindkeys-layout.svg" alt="Layout Bindkeys Cheatsheet" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center"><a href="http://localhost:3000/images/cadenceTricks/bindkeys-layout-A4.png">Layout Bindkeys Cheatsheet (A4) download</a></p>
 
-<div id="bindkeysFile"></div>
+<!--<div id="bindkeysFile"></div>-->
 
-### Bindkeys file
- 
+<!--### Bindkeys file-->
+
         `
 };
 

@@ -28,11 +28,11 @@ This article contains Verilog-A model for an Analog-to-Digital Converter (ADC).
 </br>
 
 
-<br/> <img src="http://localhost:3000/images/verilogModels/adc-dac-tb.png" alt="ADC-DAC testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<br/> <img src="http://localhost:3000/images/verilogModels/adc-dac-tb.png" disableinvert alt="ADC-DAC testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">ADC-DAC testbench</p>  
 
 
-<br/> <img src="http://localhost:3000/images/verilogModels/adc-dac-sim.png" alt="ADC-DAC simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<br/> <img src="http://localhost:3000/images/verilogModels/adc-dac-sim.png" disableinvert alt="ADC-DAC simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">ADC-DAC simulation result</p> 
  
 </br>
