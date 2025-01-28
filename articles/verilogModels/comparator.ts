@@ -29,7 +29,7 @@ This article contains Verilog-A model for a comparator.
 <p style="display: block; text-align: center">Comparator testbench</p>  
 
 
-<br/> <img src="http://localhost:3000/images/verilogModels/comparator-sim.svg" disableinvert alt="Comparator simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<br/> <img src="http://localhost:3000/images/verilogModels/comparator-sim.png" disableinvert alt="Comparator simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">Comparator simulation result</p> 
  
 </br>

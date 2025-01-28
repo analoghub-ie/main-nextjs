@@ -113,6 +113,14 @@ times ***int*** that ***net_name*** is connected to the bus.
 <br/> <img src="http://localhost:3000/images/cadenceTricks/solder-dot-fix.png" disableinvert alt="Solder dot warning fix" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Solder dot warning fix</p> 
 
+##  7. Renumerating instances in Cadence Virtuoso
+
+<br/> <img src="http://localhost:3000/images/cadenceTricks/renumerating-instances-1.png" disableinvert alt="Renumerating instances (before)" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<p style="display: block; text-align: center">Renumerating instances (before)</p> 
+
+<br/> <img src="http://localhost:3000/images/cadenceTricks/renumerating-instances-2.png" disableinvert alt="Renumerating instances (after)" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<p style="display: block; text-align: center">Renumerating instances (after)</p> 
+
 `
 };
 
