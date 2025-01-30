@@ -39,6 +39,7 @@ import parallelSimulations from "@/articles/cadenceTricks/parallelSimulations";
 import usefulMaterialsSchematic from "@/articles/usefulMaterials/usefulMaterialsSchematic";
 import usefulMaterialsLayout from "@/articles/usefulMaterials/usefulMaterialsLayout";
 import exportGDS from "@/articles/cadenceTricks/exportGDS";
+import displayParamsVerilogA from "@/articles/cadenceTricks/displayParamsVerilogA";
 
 
 const articles: TCategory[] = [
@@ -146,7 +147,7 @@ const articles: TCategory[] = [
         id: 'simulationHacks',
         title: 'Simulation Hacks',
         hideInProd: true,
-        articles: [ simulationHacks,
+        articles: [ simulationHacks, displayParamsVerilogA,
 
         ]
     },

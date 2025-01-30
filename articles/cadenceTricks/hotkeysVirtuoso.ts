@@ -56,7 +56,7 @@ const article: TArticle = {
  - **F3** - Current function options;
  
 <br/> 
-<img src="http://localhost:3000/images/cadenceTricks/bindkeys-schematic.svg" alt="Layout Schematic Cheatsheet" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<img src="http://localhost:3000/images/cadenceTricks/bindkeys-schematic.svg" alt="Schematic Bindkeys Cheatsheet" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center"><a href="http://localhost:3000/images/cadenceTricks/bindkeys-schematic-A4.png">Schematic Bindkeys Cheatsheet (A4) download</a></p>
 
 
