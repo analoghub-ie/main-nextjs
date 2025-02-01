@@ -40,6 +40,8 @@ import usefulMaterialsSchematic from "@/articles/usefulMaterials/usefulMaterials
 import usefulMaterialsLayout from "@/articles/usefulMaterials/usefulMaterialsLayout";
 import exportGDS from "@/articles/cadenceTricks/exportGDS";
 import displayParamsVerilogA from "@/articles/cadenceTricks/displayParamsVerilogA";
+import HPF from "@/articles/verilogModels/HPF";
+import thickerLinesCadence from "@/articles/cadenceTricks/thickerLinesCadence";
 
 
 const articles: TCategory[] = [
@@ -91,7 +93,7 @@ const articles: TCategory[] = [
         id: 'verilogModels',
         title: 'Verilog-A models',
         articles: [
-            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, nonoverlapClk, PWM, comparator, ADC, DAC, save2file,
+            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, HPF, nonoverlapClk, PWM, comparator, ADC, DAC, save2file,
         ]
     },
 
@@ -147,7 +149,7 @@ const articles: TCategory[] = [
         id: 'simulationHacks',
         title: 'Simulation Hacks',
         hideInProd: true,
-        articles: [ simulationHacks, displayParamsVerilogA,
+        articles: [ simulationHacks, displayParamsVerilogA, thickerLinesCadence,
 
         ]
     },
