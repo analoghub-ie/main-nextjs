@@ -5,7 +5,7 @@ const article: TArticle = {
     title: 'Layout Design Materials',
     description: 'This is a compilation of the useful links, books and sources for Analog IC Designers',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
     
 ## Contents:

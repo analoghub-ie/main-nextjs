@@ -5,7 +5,7 @@ const article: TArticle = {
     title: 'Net naming tricks in Cadence Virtuoso',
     description: 'Net naming tricks in Cadence Virtuoso',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
 
 ### List of tricks

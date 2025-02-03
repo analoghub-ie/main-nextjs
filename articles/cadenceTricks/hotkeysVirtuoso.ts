@@ -5,7 +5,7 @@ const article: TArticle = {
     title: 'Useful hotkeys Cadence Virtuoso',
     description: 'This article describes hotkeys for Cadence Virtuoso',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
 
 ### Cadence Virtuoso Shortcuts

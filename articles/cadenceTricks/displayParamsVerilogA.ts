@@ -5,7 +5,7 @@ const article: TArticle = {
     title: 'How to display Verilog-A model parameters in Cadence Virtuoso?',
     description: 'How to display Verilog-A model parameters on schematic in Cadence Virtuoso',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
 
 ## How to display Verilog-A model parameters in Cadence Virtuoso?

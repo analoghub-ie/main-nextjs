@@ -120,7 +120,7 @@ const articles: TCategory[] = [
     {
         id: 'cadenceTricks',
         title: 'CADENCE VIRTUOSO TRICKS',
-        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS,
+        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA, thickerLinesCadence,
 
         ]
     },
@@ -149,7 +149,7 @@ const articles: TCategory[] = [
         id: 'simulationHacks',
         title: 'Simulation Hacks',
         hideInProd: true,
-        articles: [ simulationHacks, displayParamsVerilogA, thickerLinesCadence,
+        articles: [ simulationHacks,
 
         ]
     },

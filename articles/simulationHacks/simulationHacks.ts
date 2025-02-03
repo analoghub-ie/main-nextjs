@@ -5,7 +5,7 @@ const article: TArticle = {
     title: 'Simulation Hacks',
     description: 'Simulation Hacks for Cadence Virtuoso',
     lastUpdate: new Date('2022-01-01'),
-
+    hideInProd: false,
     content: `
     
 ## Simulation Hacks 
