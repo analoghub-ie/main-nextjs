@@ -128,7 +128,7 @@ So, in summary:
 > - Usually caused by the incorrect wire width for a give current density.
 
 
-<br/> <img src="http://localhost:3000/images/layout/electromigration.gif" alt="Electromigration in layout" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/electromigration.gif" disableinvert alt="Electromigration in layout" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
 <p style="display: block; text-align: center">Electromigration process in CMOS technology</p>
 
 
@@ -139,7 +139,7 @@ So, in summary:
 - **Hillock:** If incoming ion flux is greater than the outgoing ion flux, It will cause the accumulation of ions and create a hillock in the interconnect. A hillock can increase the width of a metal interconnect and touch the neighbouring metal interconnect which may result in a short circuit.
 
 
-<br/> <img src="http://localhost:3000/images/layout/hillock-void.png" alt="Hillocks and voids" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/hillock-void.png" disableinvert alt="Hillocks and voids" style="display: block; margin-inline: auto; width: min(80%, 35rem)" /> 
 <p style="display: block; text-align: center">Hillocks and voids</p>
 
 

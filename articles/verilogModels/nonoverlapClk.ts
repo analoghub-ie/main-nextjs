@@ -33,6 +33,12 @@ This article contains Verilog-A models for a Non-overlapping clock generator.
 
 ### Non-overlapping clock generator (same as clk)
 
+<br/> <img src="http://localhost:3000/images/verilogModels/nonoverlap1-tb.png" disableinvert alt="Nonoverlap_clk testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">Nonoverlap_clk testbench</p>
+
+<br/> <img src="http://localhost:3000/images/verilogModels/nonoverlap1-sim.png" disableinvert alt="Nonoverlap_clk simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">Nonoverlap_clk simulation result</p>
+
 > **Cell name:** nonoverlap_clk
 
 > **Model type:** Verilog-A
@@ -91,6 +97,12 @@ endmodule
 <div id="nonoverlap2"></div>
 
 ### Non-overlapping clock generator with 2 phases
+
+<br/> <img src="http://localhost:3000/images/verilogModels/nonoverlap2-tb.png" disableinvert alt="Nonoverlap_clk_2ph testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">2-phases nonoverlap_clk testbench</p>
+
+<br/> <img src="http://localhost:3000/images/verilogModels/nonoverlap2-sim.png" disableinvert alt="Nonoverlap_clk_2ph simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">2-phases nonoverlap_clk simulation result</p>
 
 > **Cell name:** nonoverlap_clk_2ph
 
@@ -167,6 +179,12 @@ endmodule
 
 ### Non-overlapping clock generator with 4 phases
 
+<br/> <img src="http://localhost:3000/images/verilogModels/nonoverlap4-tb.png" disableinvert alt="Nonoverlap_clk_4ph testbench" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">4-phases nonoverlap_clk testbench</p>
+
+<br/> <img src="http://localhost:3000/images/verilogModels/nonoverlap4-sim.png" disableinvert alt="Nonoverlap_clk_4ph simulation result" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<p style="display: block; text-align: center">4-phases nonoverlap_clk simulation result</p>
+
 > **Cell name:** nonoverlap_clk_4ph
 
 > **Model type:** Verilog-A
@@ -197,7 +215,7 @@ module nonoverlap_clk_4ph (clk, ph1, ph2, ph3, ph4);
     output ph1, ph2, ph3, ph4;
     electrical clk, ph1, ph2, ph3, ph4;
 
-   \tparameter real vdd = 5.0;   // define clock high
+   \tparameter real vdd = 1.0;   // define clock high
     parameter real vss = 0.0;\t// define clock low
 \tparameter real t_edge = 1e-9;   // rising/falling edge of ph1/ph2
 \tparameter real t_delay = 1e-9;  // delay from the input clock edge for ph1/ph2/ph3/ph4

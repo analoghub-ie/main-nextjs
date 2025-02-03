@@ -5,7 +5,6 @@ const article: TArticle = {
     title: 'Article 1',
     description: 'Description of article 1',
     lastUpdate: new Date('2022-01-01'),
-
     hideInProd: true,
 
     content: `

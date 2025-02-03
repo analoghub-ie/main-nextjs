@@ -27,22 +27,22 @@ To prevent DRC errors and simplify layout, check the following setting in Layout
 <p style="display: block; text-align: center">Basic layout editor settings</p>
 
 
-<br/> <img src="http://localhost:3000/images/layout/drd-off.gif" alt="DRD off" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/drd-off.gif" disableinvert alt="DRD off" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">DRD off</p> 
  
-<br/> <img src="http://localhost:3000/images/layout/drd-warning.gif" alt="DRD warning on" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/drd-warning.gif" disableinvert alt="DRD warning on" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">DRD warning on</p>
   
-<br/> <img src="http://localhost:3000/images/layout/drd-stop.gif" alt="DRD stop on" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/drd-stop.gif" disableinvert alt="DRD stop on" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">DRD stop on</p> 
 
-<br/> <img src="http://localhost:3000/images/layout/inverter-layout-1.svg" alt="Basic inverter layers" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/inverter-layout-1.svg" disableinvert alt="Basic inverter layers" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Basic inverter layers</p> 
 
-<br/> <img src="http://localhost:3000/images/layout/inverter-layout-2.svg" alt="Basic inverter layers with guard rings" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/inverter-layout-2.svg" disableinvert alt="Basic inverter layers with guard rings" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Basic inverter layers with guard rings</p> 
 
-<br/> <img src="http://localhost:3000/images/layout/inverter-layout-3d.svg" alt="CMOS inverter layout 3D view" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/inverter-layout-3d.svg" disableinvert alt="CMOS inverter layout 3D view" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">CMOS inverter layout 3D view </p>
 
 
@@ -50,7 +50,7 @@ To prevent DRC errors and simplify layout, check the following setting in Layout
 
 <div style="display: block; margin-inline: auto; width: min(90%, 100rem); aspect-ratio: 16/9">
     <iframe 
-        src="https://www.youtube.com/embed/f6N9JAHcjRo" 
+        src="https://www.youtube.com/embed/KzH6KV-a6BA?list=PL0oLvNvFrW9xbe26NgdX-HsknCJ4ioGT7" 
         alt="Inverter layout tutorial" 
         style="width: 100%; height: 100%; border: none;">
     </iframe>

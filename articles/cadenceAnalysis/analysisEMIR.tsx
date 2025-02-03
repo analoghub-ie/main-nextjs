@@ -15,7 +15,7 @@ You can read more about electromigration [here](/category/Layout/article/layLayo
 ### EM analysis setup
 Workflow:
 1. [Extract your design](#extractingDesign) using Calibre PEX  to *.dspf*;
-2. {Configure simulator](#analysisSetting) for performing EM/IR analysis;
+2. [Configure simulator](#analysisSetting) for performing EM/IR analysis;
 3. Use files [.emDataFile](/category/cadenceAnalysis/article/cadenceAnalysisEMIR#emDataFile) 
 and [.map](/category/cadenceAnalysis/article/cadenceAnalysisEMIR#mapFile) for setting visual representation.
 
