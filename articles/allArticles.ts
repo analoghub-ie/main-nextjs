@@ -42,6 +42,7 @@ import exportGDS from "@/articles/cadenceTricks/exportGDS";
 import displayParamsVerilogA from "@/articles/cadenceTricks/displayParamsVerilogA";
 import HPF from "@/articles/verilogModels/HPF";
 import thickerLinesCadence from "@/articles/cadenceTricks/thickerLinesCadence";
+import solderDotWarning from "@/articles/cadenceTricks/solderDotWarning";
 
 
 const articles: TCategory[] = [
@@ -120,7 +121,7 @@ const articles: TCategory[] = [
     {
         id: 'cadenceTricks',
         title: 'CADENCE VIRTUOSO TRICKS',
-        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA, thickerLinesCadence,
+        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA, thickerLinesCadence, solderDotWarning,
 
         ]
     },
@@ -148,7 +149,7 @@ const articles: TCategory[] = [
     {
         id: 'simulationHacks',
         title: 'Simulation Hacks',
-        hideInProd: true,
+        hideInProd: false,
         articles: [ simulationHacks,
 
         ]
