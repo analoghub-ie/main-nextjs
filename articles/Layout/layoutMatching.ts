@@ -169,7 +169,7 @@ devices are located symmetrically to the agressor, hereby reducing and equalisin
 <div id="dummies"></div>
 
 
-## Dummies
+## 4. Dummies
 
 As we discussed previously, dummy devices are very useful in preventing layout-dependent effects and protecting the 
 core devices. However, we have to be careful while placing the dummies, because they may cause unwanted parasitics. 
