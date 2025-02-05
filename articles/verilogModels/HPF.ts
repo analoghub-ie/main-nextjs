@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'HPF',
-    title: 'HPF model',
+    title: 'High-pass filter (HPF) Verilog-A model',
     description: 'Verilog-A model for high-pass filter (HPF)',
     lastUpdate: new Date('2022-01-01'),
 

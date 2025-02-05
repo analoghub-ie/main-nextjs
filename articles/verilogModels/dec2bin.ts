@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'dec2bin',
-    title: 'Decimal to Binary Encoder model',
+    title: 'Decimal to Binary Encoder Verilog-A model',
     description: 'Verilog-A model for Decimal to Binary encoder',
     lastUpdate: new Date('2022-01-01'),
 

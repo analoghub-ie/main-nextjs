@@ -2,12 +2,12 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'DAC',
-    title: 'DAC model (any resolution)',
+    title: 'Digital-to-Analog Converter (DAC) Verilog-A model (any resolution)',
     description: 'Verilog-A model for a DAC',
     lastUpdate: new Date('2022-01-01'),
 
     content: `
-## DAC model
+## Digital-to_analog (DAC) Verilog-A model
 This article contains Verilog-A model for a Digital-toAnalog Converter (DAC).
 
 

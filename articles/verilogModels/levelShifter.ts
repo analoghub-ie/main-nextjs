@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'levelShifter',
-    title: 'Level shifter model',
+    title: 'Level shifter Verilog-A model',
     description: 'Verilog-A model for level shifter (digital)',
     lastUpdate: new Date('2022-01-01'),
 

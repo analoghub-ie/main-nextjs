@@ -12,12 +12,13 @@ const article: TArticle = {
 ### Table of Contents
 1. [Introduction](#introduction)
 2. [Matching techniques](#matchingTechniques)
-3. [Dummies](#dummies)
+3. [Placement](#placement)
+4. [Dummies](#dummies)
 
 
 <div id="introduction"></div>
 
-## Introduction
+## 1. Introduction
 
 **Matching** - is a very important technique in Analog IC layout. It helps compensating a lot of undesirable 
 [layout-dependent effects](/category/Layout/article/layoutDependentEffects). In IC design there are 
@@ -40,9 +41,9 @@ There are two main types of mismatch: **systematic** and **random** mismatch.
 <p style="display: block; text-align: center">Mismatch compensation techniques</p>  
 
 
-<div id="matching"></div>
+<div id="matchingTechniques"></div>
 
-## Matching
+## 2. Matching Techniques
 
 **Matching** - is a very useful technique in IC layout targeting similar performance from every device in analog design. 
 Let's take a look on a very simple example - a current mirror (1:2). Reference current $I_{ref}$ is copied from device A
@@ -136,7 +137,7 @@ By surrounding our core devices with dummy devices around, we are achieving two 
 <div id="placement"></div>
 
 
-## Placement
+## 3. Placement
 
 Correct placement of the devices is playing a vital role in layout. Placing devices aas evenly as possible will reduce 
 a lot of unwanted effects. Let's have a look on the placement examples and discuss their impact on the design.
@@ -165,10 +166,10 @@ is incorrect, because the gradient, caused by the agressor is affecting both dev
 devices are located symmetrically to the agressor, hereby reducing and equalising the stress on the sensitive devices.
 
 
-<div id="parasitics"></div>
+<div id="dummies"></div>
 
 
-## Dummy parasitics
+## Dummies
 
 As we discussed previously, dummy devices are very useful in preventing layout-dependent effects and protecting the 
 core devices. However, we have to be careful while placing the dummies, because they may cause unwanted parasitics. 

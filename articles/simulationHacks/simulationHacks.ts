@@ -31,7 +31,8 @@ the negative outputs, respectively. The results of the simulation of the followi
 <img src="http://localhost:3000/images/simulationHacks/differential-signal-sim.png" disableinvert alt="Differential signal generator simulation" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">Differential signal generator simulation</p> 
 
-        
+
+    
         
         
 `

@@ -3,7 +3,7 @@ import {TArticle} from "../types";
 const article: TArticle = {
     id: 'circuitsLDO',
     title: 'LDO',
-    description: 'Description of article 1',
+    description: 'LDO topologies and design explained',
     lastUpdate: new Date('2022-01-01'),
     hideInProd: true,
 

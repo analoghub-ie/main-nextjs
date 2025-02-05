@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'bin2therm',
-    title: 'Binary to Thermometer Encoder model',
+    title: 'Binary to Thermometer Encoder Verilog-A model',
     description: 'Verilog-A model for Binary to Thermometer encoder',
     lastUpdate: new Date('2022-01-01'),
 
