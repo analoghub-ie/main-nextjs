@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'nonoverlapClk',
-    title: 'Non-overlapping clock generator model',
+    title: 'Non-overlapping clock generator Verilog-A model',
     description: 'Verilog-A model non-overlapping clock generator',
     lastUpdate: new Date('2022-01-01'),
 

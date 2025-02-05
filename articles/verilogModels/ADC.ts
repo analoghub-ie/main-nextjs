@@ -2,12 +2,12 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'ADC',
-    title: 'ADC model (any resolution)',
+    title: 'Analog-to-Digital Converter (ADC) Verilog-A model (any resolution)',
     description: 'Verilog-A model for an ADC',
     lastUpdate: new Date('2022-01-01'),
 
     content: `
-## ADC model
+## Analog-to-Digital (ADC) Verilog-A model
 This article contains Verilog-A model for an Analog-to-Digital Converter (ADC).
 
 

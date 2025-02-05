@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'LPF',
-    title: 'LPF model',
+    title: 'Low-pass filter (LPF) Verilog-A model',
     description: 'Verilog-A model for low-pass filter (LPF)',
     lastUpdate: new Date('2022-01-01'),
 

@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'dec2therm',
-    title: 'Decimal to Thermometer Encoder model',
+    title: 'Decimal to Thermometer Encoder Verilog-A model',
     description: 'Verilog-A model for Decimal to Thermometer encoder',
     lastUpdate: new Date('2022-01-01'),
 

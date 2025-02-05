@@ -43,6 +43,9 @@ import displayParamsVerilogA from "@/articles/cadenceTricks/displayParamsVerilog
 import HPF from "@/articles/verilogModels/HPF";
 import thickerLinesCadence from "@/articles/cadenceTricks/thickerLinesCadence";
 import solderDotWarning from "@/articles/cadenceTricks/solderDotWarning";
+import schematicInterview from "@/articles/interviewQuestions/schematicInterview";
+import sarADC from "@/articles/Circuits/sarADC";
+import counter from "@/articles/verilogModels/counter";
 
 
 const articles: TCategory[] = [
@@ -60,7 +63,7 @@ const articles: TCategory[] = [
         title: 'Circuits',
         hideInProd: true,
         articles: [
-            LDO,
+            LDO, sarADC,
         ]
     },
 
@@ -92,9 +95,10 @@ const articles: TCategory[] = [
 
     {
         id: 'verilogModels',
-        title: 'Verilog-A models',
+        title: 'VERILOG-A MODELS',
         articles: [
-            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, HPF, nonoverlapClk, PWM, comparator, ADC, DAC, save2file,
+            bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, HPF, nonoverlapClk, PWM, comparator, ADC, DAC,
+            save2file, counter,
         ]
     },
 
@@ -161,6 +165,16 @@ const articles: TCategory[] = [
         title: 'Setting Up Cadence Environment',
         hideInProd: true,
         articles: [ cadenceEnvironmentSetup,
+
+        ]
+    },
+
+
+    {
+        id: 'interviewQuestions',
+        title: 'Interview Questions',
+        hideInProd: true,
+        articles: [ schematicInterview,
 
         ]
     },

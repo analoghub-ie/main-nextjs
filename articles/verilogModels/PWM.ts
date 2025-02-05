@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'PWM',
-    title: 'PWM generator model',
+    title: 'PWM generator Verilog-A model',
     description: 'Verilog-A model for pulse width generator',
     lastUpdate: new Date('2022-01-01'),
 

@@ -2,8 +2,8 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'save2file',
-    title: 'Veriliog-A for saving sim results to file',
-    description: 'Veriliog-A for saving sim results to file',
+    title: 'Verilog-A block for saving simulation results to file',
+    description: 'Verilog-A block for saving simulation results to file',
     lastUpdate: new Date('2022-01-01'),
 
     content: `

@@ -2,7 +2,7 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'comparator',
-    title: 'Comparator model',
+    title: 'Comparator Verilog-A model',
     description: 'Verilog-A model for a comparator',
     lastUpdate: new Date('2022-01-01'),
 
