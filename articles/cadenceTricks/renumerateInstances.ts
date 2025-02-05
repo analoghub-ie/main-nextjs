@@ -9,6 +9,7 @@ const article: TArticle = {
     content: `
 
 
+
 ##  7. Renumerating instances in Cadence Virtuoso
 
 <br/> <img src="http://localhost:3000/images/cadenceTricks/renumerating-instances-1.png" disableinvert alt="Renumerating instances (before)" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
