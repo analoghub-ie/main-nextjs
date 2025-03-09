@@ -2,10 +2,10 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'renumberInstances',
-    title: 'How to renumbering instances in Cadence Virtuoso?',
-    description: 'How to renumbering instances in Cadence Virtuoso',
+    title: 'How to renumber instances in Cadence Virtuoso?',
+    description: 'How to renumber instances in Cadence Virtuoso',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
 
 ## Renumerating instances in Cadence Virtuoso
