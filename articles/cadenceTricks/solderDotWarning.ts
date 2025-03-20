@@ -2,8 +2,8 @@ import {TArticle} from "../types";
 
 const article: TArticle = {
     id: 'solderDotWarning',
-    title: 'How to get rid of solder dot warning (intersection of 4 wires) in Cadence Virtuoso',
-    description: 'How to get rid of solder warning (intersection of 4 wires) in Cadence Virtuoso',
+    title: 'How to get rid of solder dot warning (intersection of 4 wires) in Cadence Virtuoso?',
+    description: 'How to get rid of solder warning (intersection of 4 wires) in Cadence Virtuoso?',
     lastUpdate: new Date('2022-01-01'),
     hideInProd: false,
     content: `

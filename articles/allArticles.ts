@@ -47,6 +47,7 @@ import schematicInterview from "@/articles/interviewQuestions/schematicInterview
 import sarADC from "@/articles/Circuits/sarADC";
 import counter from "@/articles/verilogModels/counter";
 import renumberInstances from "@/articles/cadenceTricks/renumberInstances";
+import skilllIdeSetup from "@/articles/SKILL/skilllIdeSetup";
 
 
 const articles: TCategory[] = [
@@ -177,6 +178,15 @@ const articles: TCategory[] = [
         title: 'Interview Questions',
         hideInProd: true,
         articles: [ schematicInterview,
+
+        ]
+    },
+
+    {
+        id: 'skill',
+        title: 'SKILL language',
+        hideInProd: false,
+        articles: [ skilllIdeSetup,
 
         ]
     },
