@@ -8,6 +8,9 @@ const article: TArticle = {
     hideInProd: false,
     content: `
 
+## Setting Up SKILL IDE in Cadence Virtuoso Environment
+
+
 ### Contents:
 1. [Writing SKILL Code](#writingSkill)
 2. [Invoking SKILL IDE](#invokeSkillIde)
@@ -15,7 +18,6 @@ const article: TArticle = {
 4. [Exploring SKILL Functions](#exploreSkillFunctions)
 
 
-## Setting Up SKILL IDE in Cadence Virtuoso Environment
 This guide will show you how to set up the SKILL IDE within Cadence's Virtuoso environment, enabling you to write and 
 execute SKILL programming language scripts to create custom tools and automate tasks.
 
@@ -41,18 +43,18 @@ To open the SKILL IDE, go to ***CIW -> Tools -> SKILL IDE…***
 To test the setup, start by writing a simple program, such as the classic "Hello, World!" example.
 
 <br/> <img src="http://localhost:3000/images/skill/helloWorldSkill.png" disableinvert alt="Hello World using SKILL" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
-<p style="display: block; text-align: center">Hello World using SKILL</p> 
+<p style="display: block; text-align: center">"Hello, World!" using SKILL</p> 
 
 To load and execute your SKILL code:
-1.\tSave your script with a .il extension.
-2.\tIn the SKILL IDE, click the curly-arrow icon to load the file.
-3.\tAfter loading, the output will be displayed in the CIW.
+1. Save your script with a *.il* extension.
+2. In the SKILL IDE, click the curly-arrow icon to load the file.
+3. After loading, the output will be displayed in the CIW.
 
 <br/> <img src="http://localhost:3000/images/skill/loadCodeSkill.png" disableinvert alt="Loading SKILL code" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Loading SKILL code</p> 
 
-
-Note: You can also write and execute SKILL code directly in the CIW, though using the SKILL IDE provides additional 
+ > **Tip:**
+ > You can also write and execute SKILL code directly in the CIW, though using the SKILL IDE provides additional 
 functionalities that streamline the development process.
 
 <br/> <img src="http://localhost:3000/images/skill/outputSkill.png" disableinvert alt="SKILL code output" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
@@ -62,18 +64,20 @@ functionalities that streamline the development process.
 
 ### 4. Exploring SKILL Functions
 To delve deeper into the SKILL programming language, refer to Cadence's forums and official documentation. 
-Additionally, the SKILL API Finder is a valuable tool for discovering functions and their descriptions.
+Additionally, the **SKILL API Finder** is a valuable tool for discovering functions and their descriptions.
 To open API Finder, go to **CIW -> Tools -> SKILL API Finder**
 
 <br/> <img src="http://localhost:3000/images/skill/skillApiFinder.png" disableinvert alt="SKILL API finder" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
 <p style="display: block; text-align: center">SKILL API finder</p> 
 
 This will open a window where you can search for any SKILL function and view its description. For detailed documentation, 
-click on "More Info..." to access comprehensive information about each function.
+click on *"More Info..."* to access comprehensive information about each function.
 
 <br/> <img src="http://localhost:3000/images/skill/skillDocumentation.png" disableinvert alt="SKILL Documentation View" style="display: block; margin-inline: auto; width: min(80%, 25rem)" /> 
 <p style="display: block; text-align: center">SKILL Documentation View</p> 
 
+
+ > **Author:** <a class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity" href="https://www.linkedin.com/in/eugenykhanchin/" tabindex="0" role="link" node="[object Object]">Eugeny Khanchin</a>
 `
 };
 
