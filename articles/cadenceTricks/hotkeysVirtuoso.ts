@@ -15,8 +15,7 @@ const article: TArticle = {
 
 <div id="schematicEditor"></div>
 
-### Schematic Editor
-
+### 1. Schematic Editor Shortcuts
 
 #### Creating a schematic
  - **W** - Draw a wire;
@@ -74,7 +73,7 @@ const article: TArticle = {
   
 <div id="layoutEditor"></div>    
 
-### Layout Editor
+### 2. Layout Editor Shortcuts
 
 #### Creating a layout
 - **P** - Create a wire;

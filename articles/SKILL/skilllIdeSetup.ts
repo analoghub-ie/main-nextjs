@@ -77,7 +77,9 @@ click on *"More Info..."* to access comprehensive information about each functio
 <p style="display: block; text-align: center">SKILL Documentation View</p> 
 
 
- > **Author:** <a class="relative inline-flex items-center tap-highlight-transparent outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-medium text-primary no-underline hover:opacity-80 active:opacity-disabled transition-opacity" href="https://www.linkedin.com/in/eugenykhanchin/" tabindex="0" role="link" node="[object Object]">Eugeny Khanchin</a>
+ > **Author:** [Eugeny Khanchin](https://www.linkedin.com/in/eugenykhanchin/)
+
+
 `
 };
 

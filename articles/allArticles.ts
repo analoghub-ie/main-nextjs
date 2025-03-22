@@ -48,6 +48,8 @@ import sarADC from "@/articles/Circuits/sarADC";
 import counter from "@/articles/verilogModels/counter";
 import renumberInstances from "@/articles/cadenceTricks/renumberInstances";
 import skilllIdeSetup from "@/articles/SKILL/skilllIdeSetup";
+import cmosInverterLayout from "@/articles/Layout/cmosInverterLayout";
+import commonDRC from "@/articles/Layout/commonDRC";
 
 
 const articles: TCategory[] = [
@@ -90,7 +92,7 @@ const articles: TCategory[] = [
         id: 'Layout',
         title: 'Layout',
         articles: [
-            layoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings,
+            layoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings, cmosInverterLayout, commonDRC,
         ]
     },
 
