@@ -46,6 +46,8 @@ import solderDotWarning from "@/articles/cadenceTricks/solderDotWarning";
 import schematicInterview from "@/articles/interviewQuestions/schematicInterview";
 import sarADC from "@/articles/Circuits/sarADC";
 import counter from "@/articles/verilogModels/counter";
+import renumberInstances from "@/articles/cadenceTricks/renumberInstances";
+import skilllIdeSetup from "@/articles/SKILL/skilllIdeSetup";
 
 
 const articles: TCategory[] = [
@@ -125,7 +127,8 @@ const articles: TCategory[] = [
     {
         id: 'cadenceTricks',
         title: 'CADENCE VIRTUOSO TRICKS',
-        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA, thickerLinesCadence, solderDotWarning,
+        articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA,
+            thickerLinesCadence, solderDotWarning, renumberInstances,
 
         ]
     },
@@ -175,6 +178,15 @@ const articles: TCategory[] = [
         title: 'Interview Questions',
         hideInProd: true,
         articles: [ schematicInterview,
+
+        ]
+    },
+
+    {
+        id: 'skill',
+        title: 'SKILL language',
+        hideInProd: false,
+        articles: [ skilllIdeSetup,
 
         ]
     },
