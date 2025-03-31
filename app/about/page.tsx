@@ -20,14 +20,28 @@ Hi everyone, my name is [Aleksandr Sidun](https://www.linkedin.com/in/sidun-av/)
 
 Analog IC design is a very interesting and challenging job, but the lack of information, user-unfriendly software and knowledge gaps are opposing engineers.
 
-My goal is to create a one-stop website, where all Analog IC design engineers can get and share useful information. I will post useful scripts, tutorials, documentation and equations into one knowledge base that will hopefully get bookmarked :)
+My goal is to create a one-stop website, where all Analog IC design engineers can get and share useful information. 
+I will post useful scripts, tutorials, documentation and equations into one knowledge base that will hopefully get 
+bookmarked :)
 
 I also believe that analog design is missing some sort of "code style" that should make our designs more clear and friendly.
 
-All the information provided on this website is free. You can use everything for personal purposes for free. If you find any mistakes or want to contribute with your own article/script/documentation, please contact me by email:
+All the information provided on this website is free. You can use everything for personal purposes for free. If you find 
+any mistakes or want to contribute with your own article/script/documentation, please contact me by email:
 [suggestions@analoghub.ie](mailto:suggestions@analoghub.ie)
 
-Special thanks to [Timofey Klimov](https://www.linkedin.com/in/klimofey/), who made my ideas come true by creating this website.
+Special thanks to [Timofey Klimov](https://www.linkedin.com/in/klimofey/), who made my ideas come true by 
+creating this website.
+
+**Contributors:**
+
+[Timofey Klimov](https://www.linkedin.com/in/klimofey/) - Web development and support
+
+[Eugeny Khanchin](https://www.linkedin.com/in/eugenykhanchin/) - SKILL language expert and first contributor to AnalogHub
+
+[Ivan Smirnov]() - Analog Design and Verilog-A expert
+
+
           `}
                     </MarkdownRenderer>
                 </div>

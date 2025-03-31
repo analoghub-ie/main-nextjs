@@ -32,7 +32,7 @@ Change the device line thickness to **thickline2** or any one you like.
 <br/> <img src="http://localhost:3000/images/cadenceTricks/drf-save.png" alt="Saving DRF change" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Saving DRF change</p>  
 
-Press ***Modify Current Packet** to save.
+Press **Modify Current Packet** to save.
 To see changes, in Schematic window perform: **View → Redraw (F6)**:
 
 <br/> <img src="http://localhost:3000/images/cadenceTricks/drf-result.png" disableinvert alt="DRF change result" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 

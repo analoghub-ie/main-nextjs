@@ -44,7 +44,7 @@ Select *Results → Direct Plot → Main Form*. Then select *PAC* tab and select
 P.S. We will see some artefacts near the sampling frequency, which is normal and makes complete sense
 
 
-> Written by: Ivan Smirnov
+> **Author**: [Ivan Smirnov]()
         `
 };
 
