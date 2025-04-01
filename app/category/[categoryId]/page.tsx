@@ -8,6 +8,12 @@ type Props = {
     params: Promise<{ categoryId: string }>;
 };
 
+export async function generateStaticParams() {
+    return allFilteredArticles.flatMap((category) => ({
+        categoryId: category.id,
+    }));
+}
+
 export async function generateMetadata({ params }: Props) {
     const { categoryId } = await params;
 
