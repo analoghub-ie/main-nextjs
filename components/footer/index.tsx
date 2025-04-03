@@ -16,7 +16,7 @@ export const Footer = () => {
                           target="_blank"
                           className="flex items-center gap-2"
                     >
-                        <AiOutlineMail size={24} className="text-text" />
+                        <AiOutlineMail size={24} className="text-text"/>
                         <span>contact@analoghub.ie</span>
                     </Link>
 
@@ -24,7 +24,7 @@ export const Footer = () => {
                           target="_blank"
                           className="flex items-center gap-2"
                     >
-                        <AiFillLinkedin size={24} className="text-text" />
+                        <AiFillLinkedin size={24} className="text-text"/>
                         <span>Aleksandr Sidun</span>
                     </Link>
 
@@ -32,16 +32,26 @@ export const Footer = () => {
                     <Link href="/about"
                           className="flex items-center gap-2"
                     >
-                        <AiOutlineInfoCircle size={24} className="text-text" />
+                        <AiOutlineInfoCircle size={24} className="text-text"/>
                         <span>About Us</span>
                     </Link>
                 </div>
 
-                <Spacer y={4} />
+                <Spacer y={4}/>
+
+                <p className="text-small">
+                    Analoghhub.ie is run independently, with no affiliation, partnership, or association with
+                    Analog Devices, Inc. (AD). ADI does not endorse or collaborate with the author for material posted
+                    on this website.
+                </p>
+
+                <Spacer y={4}/>
 
                 <p className="text-small">
                     &copy; 2024-{new Date().getFullYear()} All Rights Reserved
                 </p>
+
+
             </div>
         </footer>
     );
