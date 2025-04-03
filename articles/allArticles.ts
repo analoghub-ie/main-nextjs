@@ -207,6 +207,11 @@ const articles: TCategory[] = [
 
 export const allFilteredArticles = articles
     .filter(e => !e.hideInProd || siteConfig.env.dev) // hide dev categories in prod
-    .map(e => ({...e, articles: e.articles.filter(e => !e.hideInProd || siteConfig.env.dev).sort((a, b) => a.title.localeCompare(b.title))})) // hide dev articles in prod
+    .map(e => ({
+        ...e,
+        articles: e.articles
+            .filter(e => !e.hideInProd || siteConfig.env.dev) // hide dev articles in prod
+            .sort((a, b) => a.title.localeCompare(b.title)) // sort by title
+    }))
     .filter(e => e.articles.length) // hide empty categories
     .sort((a, b) => a.title.localeCompare(b.title))
