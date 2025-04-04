@@ -50,7 +50,21 @@ export default async function Page({params}: Props) {
     }
 
     const content = article.content
-            .replace(/<(?!iframe)([a-zA-Z][^>]*)$/gm, '&lt;$1')
+            .replace(/<(?!iframe)([a-zA-Z][^>]*)$/gm, '&lt;$1') // Escape all tags except iframe
+            .replace(/<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/gi,
+                (match, codeContent) => {
+                    const escaped = codeContent
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                    return match.replace(codeContent, escaped);
+                })
+            .replace(/```(\w+)?\n([\s\S]*?)```/g,
+                (match, lang, codeContent) => {
+                    const escaped = codeContent
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                    return `\`\`\`${lang ?? ''}\n${escaped}\`\`\``;
+                })
             // .replace(/<([a-zA-Z][^>]*)$/gm, '&lt;$1')
             .replaceAll('PASTEURLHERE', siteConfig.env.hostUrl)
             .replaceAll('http://localhost:3000', siteConfig.env.hostUrl)

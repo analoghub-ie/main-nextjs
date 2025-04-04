@@ -50,12 +50,21 @@ export const components = {
         return <Image removeWrapper style={{ maxWidth: "100%", ...style }} className={disableInvert ? '' : lightInvert ? 'invert dark:invert-0' : 'dark:invert'} {...props} />
     },
 
+    pre({children}: any) {
+        // console.log(children)
+        return children
+    },
+
     // Code
     code: ({ node, inline, className, children, ...props }: any) => {
         const match = /language-(\w+)/.exec(className || "");
 
         // Remove extra newlines
-        const cleanedChildren = String(children).replace(/^\n+/, "").replace(/\n+$/, "");
+        const cleanedChildren = String(children)
+            .replace(/^\n+/, "").replace(/\n+$/, "") // Remove leading and trailing newlines
+            // .replace(/</g, '&lt;').replace(/>/g, '&gt;'); // Escape HTML tags
+
+        console.log(cleanedChildren)
 
         return !inline && match ? (
             <SyntaxHighlighter
