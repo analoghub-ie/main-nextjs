@@ -1,7 +1,7 @@
 import * as React from "react";
 import {IconSvgProps} from "@/types";
 
-export const LogoMain: React.FC<IconSvgProps> = ({className, ...props}) => (
+export const LogoMainOld: React.FC<IconSvgProps> = ({className, ...props}) => (
     <svg width="30.544mm" height="6.8239mm" version="1.1" viewBox="0 0 30.544 6.8239" className={className}
          xmlns="http://www.w3.org/2000/svg">
         <g transform="translate(-169.33 -150.04)">
@@ -31,6 +31,17 @@ export const LogoMain: React.FC<IconSvgProps> = ({className, ...props}) => (
             <path d="m175.9 153.84 0.33334-1 0.53589 2 0.80385-3 0.5359 2h19.458" fill="none" stroke="currentColor"
                   strokeLinecap="round" strokeLinejoin="round" strokeWidth=".29736"
             />
+        </g>
+    </svg>
+);
+
+export const LogoMain: React.FC<IconSvgProps> = ({className, ...props}) => (
+    <svg width="30.5mm" height="6mm" version="1.1" viewBox="0 0 19.1 3" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg" className={className}>
+        <g transform="translate(-96.837 -61.648)">
+            <text x="96.803047" y="64.152504" fill="currentColor" fontWeight="bold" letterSpacing="0px" strokeWidth=".26458" wordSpacing="0px" xmlSpace="preserve">
+                <tspan fontSize="3.5278px">Analog</tspan>
+                <tspan  fontSize="3.5278px" className={'fill-primary'}>Hub</tspan>
+            </text>
         </g>
     </svg>
 );

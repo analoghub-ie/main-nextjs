@@ -63,9 +63,7 @@ export const components = {
         const cleanedChildren = String(children)
             .replace(/^\n+/, "").replace(/\n+$/, "") // Remove leading and trailing newlines
             // .replace(/</g, '&lt;').replace(/>/g, '&gt;'); // Escape HTML tags
-
-        console.log(cleanedChildren)
-
+        
         return !inline && match ? (
             <SyntaxHighlighter
                 style={dracula}
