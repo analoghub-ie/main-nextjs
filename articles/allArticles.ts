@@ -51,6 +51,7 @@ import skilllIdeSetup from "@/articles/SKILL/skilllIdeSetup";
 import cmosInverterLayout from "@/articles/Layout/cmosInverterLayout";
 import commonDRC from "@/articles/Layout/commonDRC";
 import extractingLib from "@/articles/SKILL/extractingLib";
+import skillBindkeysSetup from "@/articles/SKILL/skillBindkeysSetup";
 
 
 const articles: TCategory[] = [
@@ -189,7 +190,7 @@ const articles: TCategory[] = [
         id: 'skill',
         title: 'SKILL language',
         hideInProd: false,
-        articles: [ skilllIdeSetup, extractingLib,
+        articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup,
 
         ]
     },

@@ -244,7 +244,6 @@ fastTree -lib  <library name> -cell <cell name> -view <view name> -cdslib <path 
 </code></pre>
 
 This creates a file *(default: cellName.viewName.tree)* that can be parsed with SKILL or other programming languages.
-// Adding a comment to push the commit
 
 
  > **Author:** [Eugeny Khanchin](https://www.linkedin.com/in/eugenykhanchin/)
