@@ -41,20 +41,19 @@ tracking visited library and cell names with SKILL's table data structure.
 <pre><code class="language-lisp">
 procedure( getLibrariesCellsUsedIn(cellView 
             @optional (usedLibrariesCellsTable nil))
-    /*
-    Retrieves all libraries and cells used in the hierarchy of a given
-    cell view.
+    ;Retrieves all libraries and cells used in the hierarchy of a given
+    ;cell view.
 
     @param cellView dbObject
-    The cell view object from which to retrieve the hierarchy.
+    ;The cell view object from which to retrieve the hierarchy.
 
     @param usedLibrariesCellsTable table
-    Optional. A table to keep track of used libraries and cells.
-    If not provided, a new table is created.
+    ;Optional. A table to keep track of used libraries and cells.
+    ;If not provided, a new table is created.
 
     @return table
-    A table containing libraries as keys and tables of cell names as
-    values, representing the hierarchy.
+    ;A table containing libraries as keys and tables of cell names as
+    ;values, representing the hierarchy.
     */
     let( (cellTable libName cellName cellObject message viewName nextCellView)
 
@@ -104,15 +103,14 @@ procedure( getLibrariesCellsUsedIn(cellView
 
 
 procedure( mapViewName(viewName)
-    /* Maps a view name to a common view name that includes 'instances'
-    for hierarchy traversal.
+    ;Maps a view name to a common view name that includes 'instances'
+    ;for hierarchy traversal.
 
     @param viewName string
-    The name of the view to be mapped.
+    ;The name of the view to be mapped.
 
     @return string
-    The mapped view name.
-    */
+    ;The mapped view name.
 
     if( viewName == "symbol"  ; Symbol's cell view doesn't have ~>instances
     then
@@ -238,11 +236,14 @@ Use *Edit -> Hierarchy -> Tree…*  or *Shift+T* bind key (by default) to genera
 In schematic view it’s *“Print Tree”*.
 
 - Using fastTree tool in a Linux terminal (if installed):
-<pre><code class="language-bash">
-fastTree -lib <library name> -cell <cell name> -view <view name> -cdslib <path to CDS lib file>
-</code></pre>
-This creates a file *(default: cellName.viewName.tree)* that can be parsed with SKILL or other programming languages.
 
+<pre><code class="language-lisp">
+
+fastTree -lib  <library name> -cell <cell name> -view <view name> -cdslib <path to CDS lib file>
+
+</code></pre>
+
+This creates a file *(default: cellName.viewName.tree)* that can be parsed with SKILL or other programming languages.
 
 
  > **Author:** [Eugeny Khanchin](https://www.linkedin.com/in/eugenykhanchin/)

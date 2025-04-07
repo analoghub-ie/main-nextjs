@@ -11,9 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: siteConfig.env.hostUrl + '/about',
         },
 
+        {
+            url: siteConfig.env.hostUrl + '/pageTester',
+        },
+
         ...allFilteredArticles
-            .flatMap(category => category.articles.map(article => ({
-                url: `${siteConfig.env.hostUrl}/category/${category.id}/article/${article.id}`
-            })))
+            .flatMap(category => [
+                {
+                    url: siteConfig.env.hostUrl + '/category/' + category.id,
+                },
+                ...category.articles.map(article => ({
+                    url: siteConfig.env.hostUrl + '/category/' + category.id + '/article/' + article.id,
+                }))
+            ])
     ]
 }

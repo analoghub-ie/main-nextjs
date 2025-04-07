@@ -51,6 +51,7 @@ import skilllIdeSetup from "@/articles/SKILL/skilllIdeSetup";
 import cmosInverterLayout from "@/articles/Layout/cmosInverterLayout";
 import commonDRC from "@/articles/Layout/commonDRC";
 import extractingLib from "@/articles/SKILL/extractingLib";
+import skillBindkeysSetup from "@/articles/SKILL/skillBindkeysSetup";
 
 
 const articles: TCategory[] = [
@@ -189,7 +190,7 @@ const articles: TCategory[] = [
         id: 'skill',
         title: 'SKILL language',
         hideInProd: false,
-        articles: [ skilllIdeSetup, extractingLib,
+        articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup,
 
         ]
     },
@@ -207,6 +208,11 @@ const articles: TCategory[] = [
 
 export const allFilteredArticles = articles
     .filter(e => !e.hideInProd || siteConfig.env.dev) // hide dev categories in prod
-    .map(e => ({...e, articles: e.articles.filter(e => !e.hideInProd || siteConfig.env.dev).sort((a, b) => a.title.localeCompare(b.title))})) // hide dev articles in prod
+    .map(e => ({
+        ...e,
+        articles: e.articles
+            .filter(e => !e.hideInProd || siteConfig.env.dev) // hide dev articles in prod
+            .sort((a, b) => a.title.localeCompare(b.title)) // sort by title
+    }))
     .filter(e => e.articles.length) // hide empty categories
     .sort((a, b) => a.title.localeCompare(b.title))
