@@ -6,6 +6,7 @@ import {Breadcrumbs} from "@/components/breadcrumbs";
 import {MarkdownRenderer} from "@/components/markdownWrapper";
 import {Divider} from "@nextui-org/divider";
 import {Textarea} from "@nextui-org/input";
+import {siteConfig} from "@/config/site";
 
 export default function MarkdownPage() {
     const [markdown, setMarkdown] = useState(`# Hello 👋
@@ -19,6 +20,31 @@ console.warn("Hello, " + name + "!")
 
 
     `);
+
+    const content = markdown
+            .replace(/<(?!iframe)([a-zA-Z][^>]*)$/gm, '&lt;$1') // Escape all tags except iframe
+            .replace(/<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/gi,
+                (match, codeContent) => {
+                    const escaped = codeContent
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                    return match.replace(codeContent, escaped);
+                })
+            .replace(/```(\w+)?\n([\s\S]*?)```/g,
+                (match, lang, codeContent) => {
+                    const escaped = codeContent
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                    return `\`\`\`${lang ?? ''}\n${escaped}\`\`\``;
+                })
+            // .replace(/<([a-zA-Z][^>]*)$/gm, '&lt;$1')
+            .replaceAll('PASTEURLHERE', siteConfig.env.hostUrl)
+            .replaceAll('http://localhost:3000', siteConfig.env.hostUrl)
+            .replaceAll('https://dev.analoghub.ie', siteConfig.env.hostUrl)
+            .replaceAll('https://analoghub.ie', siteConfig.env.hostUrl)
+        // .replaceAll('#000000', 'currentColor')
+        // .replaceAll('#000', 'currentColor')
+    ;
 
     return (
         <>
@@ -50,7 +76,7 @@ console.warn("Hello, " + name + "!")
                 <div className="w-1/2 p-4 overflow-hidden flex flex-col">
                     <h2 className="text-xl font-bold mb-2">Preview</h2>
                     <div className="prose dark:prose-invert max-w-none flex-grow overflow-auto">
-                        <MarkdownRenderer>{markdown}</MarkdownRenderer>
+                        <MarkdownRenderer>{content}</MarkdownRenderer>
                     </div>
                 </div>
             </div>
