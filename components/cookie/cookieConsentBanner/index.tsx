@@ -9,6 +9,16 @@ export const CookieConsentBanner: FC = () => {
     const { theme } = useTheme();
     const isDark = theme === "dark";
 
+
+    const handleConsent = (granted: boolean) => {
+        if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('consent', 'update', {
+                ad_storage: granted ? 'granted' : 'denied',
+                analytics_storage: granted ? 'granted' : 'denied',
+            });
+        }
+    };
+
     return (
         <CookieConsent
             location="bottom"
@@ -47,10 +57,12 @@ export const CookieConsentBanner: FC = () => {
             onAccept={() => {
                 // Add functionality when user accepts cookies
                 console.log("Cookies accepted");
+                handleConsent(true);
             }}
             onDecline={() => {
                 // Add functionality when user declines cookies
                 console.log("Cookies declined");
+                handleConsent(false);
             }}
         >
             This website uses cookies to enhance the user experience.
