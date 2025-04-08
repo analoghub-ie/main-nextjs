@@ -9,54 +9,57 @@ import {fontSans} from "@/config/fonts";
 import {Navbar} from "@/components/navbar";
 import {Footer} from "@/components/footer";
 
+import {GoogleTagManager} from '@next/third-parties/google'
+
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.svg",
-  },
-  // robots: "noindex, nofollow",
-  verification:{
-    google: '1kxPJq-eEbbmU3H-LrbnIuE3Vnd0GWqky63RH_31ikU',
-  }
+    title: {
+        default: siteConfig.name,
+        template: `%s - ${siteConfig.name}`,
+    },
+    description: siteConfig.description,
+    icons: {
+        icon: "/favicon.svg",
+    },
+    robots: siteConfig.env.dev ? "noindex, nofollow" : undefined,
+    verification:{
+        google: '1kxPJq-eEbbmU3H-LrbnIuE3Vnd0GWqky63RH_31ikU',
+    }
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+    themeColor: [
+        { media: "(prefers-color-scheme: light)", color: "white" },
+        { media: "(prefers-color-scheme: dark)", color: "black" },
+    ],
 };
 
 export default function RootLayout({
-                                     children,
+                                       children,
                                    }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-      <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
-      <body
-          className={clsx(
-              "min-h-screen bg-background font-sans antialiased",
-              fontSans.variable,
-          )}
-          style={{minHeight: "100dvh"}}
-      >
-      <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-        <div className="relative flex flex-col h-full min-h-vh min-h-dvh">
-          <Navbar />
+    return (
+        <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
+        {!siteConfig.env.dev && <GoogleTagManager gtmId="GTM-T6JZSH2D" />}
+        <body
+            className={clsx(
+                "min-h-screen bg-background font-sans antialiased",
+                fontSans.variable,
+            )}
+            style={{minHeight: "100dvh"}}
+        >
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+            <div className="relative flex flex-col h-full min-h-vh min-h-dvh">
+                <Navbar />
 
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col">
-              {children}
-            </main>
+                <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow flex flex-col">
+                    {children}
+                </main>
 
-          <Footer/>
-        </div>
-      </Providers>
-      </body>
-      </html>
-  );
+                <Footer/>
+            </div>
+        </Providers>
+        </body>
+        </html>
+    );
 }
