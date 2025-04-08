@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
     return (
         <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
-        {!siteConfig.env.dev && <GoogleTagManager gtmId="GTM-T6JZSH2D"  />}
+        {!siteConfig.env.dev && <GoogleTagManager gtmId="G-ZLSWQ36PZ5"  />}
         <body
             className={clsx(
                 "min-h-screen bg-background font-sans antialiased",
