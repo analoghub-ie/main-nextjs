@@ -9,7 +9,7 @@ import {fontSans} from "@/config/fonts";
 import {Navbar} from "@/components/navbar";
 import {Footer} from "@/components/footer";
 
-import {GoogleTagManager} from '@next/third-parties/google'
+import {GoogleAnalytics} from '@next/third-parties/google'
 import {CookieConsentBanner} from "@/components/cookie/cookieConsentBanner";
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function RootLayout({
 }) {
     return (
         <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
-        {!siteConfig.env.dev && <GoogleTagManager gtmId="G-ZLSWQ36PZ5"  />}
+        {!siteConfig.env.dev && <GoogleAnalytics gaId="G-ZLSWQ36PZ5"  />}
         <body
             className={clsx(
                 "min-h-screen bg-background font-sans antialiased",
