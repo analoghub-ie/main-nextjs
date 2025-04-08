@@ -130,7 +130,7 @@ const articles: TCategory[] = [
 
     {
         id: 'cadenceTricks',
-        title: 'CADENCE VIRTUOSO TRICKS',
+        title: 'Cadence Virtuoso Tricks',
         articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA,
             thickerLinesCadence, solderDotWarning, renumberInstances,
 
@@ -188,7 +188,7 @@ const articles: TCategory[] = [
 
     {
         id: 'skill',
-        title: 'SKILL language',
+        title: 'SKILL',
         hideInProd: false,
         articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup,
 
