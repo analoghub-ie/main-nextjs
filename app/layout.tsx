@@ -10,6 +10,7 @@ import {Navbar} from "@/components/navbar";
 import {Footer} from "@/components/footer";
 
 import {GoogleTagManager} from '@next/third-parties/google'
+import {CookieConsentBanner} from "@/components/cookie/cookieConsentBanner";
 
 export const metadata: Metadata = {
     title: {
@@ -40,7 +41,7 @@ export default function RootLayout({
 }) {
     return (
         <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
-        {!siteConfig.env.dev && <GoogleTagManager gtmId="GTM-T6JZSH2D" />}
+        {!siteConfig.env.dev && <GoogleTagManager gtmId="GTM-T6JZSH2D"  />}
         <body
             className={clsx(
                 "min-h-screen bg-background font-sans antialiased",
@@ -58,6 +59,8 @@ export default function RootLayout({
 
                 <Footer/>
             </div>
+
+            {!siteConfig.env.dev && <CookieConsentBanner/>}
         </Providers>
         </body>
         </html>

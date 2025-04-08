@@ -95,4 +95,14 @@ export const components = {
     tr: ({ ...props }: any) => <TableRow {...props} />,
     th: ({ ...props }: any) => <TableColumn {...props} />,
     td: ({ ...props }: any) => <TableCell {...props} />,
+
+    iframe: ({ ...props }: any) => {
+        // const ytId = props?.src?.split('/').pop();
+        //
+        // return (props?.src?.includes('youtube.com/embed/'))
+        //     ? <YouTubeEmbed videoid={ytId} style={props?.style} params={'enablejsapi=1&rel=0'} />
+        //     : <iframe {...props} />
+
+        return <iframe {...props} />
+    },
 };
