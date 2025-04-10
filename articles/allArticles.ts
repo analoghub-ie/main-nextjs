@@ -52,6 +52,9 @@ import cmosInverterLayout from "@/articles/Layout/cmosInverterLayout";
 import commonDRC from "@/articles/Layout/commonDRC";
 import extractingLib from "@/articles/SKILL/extractingLib";
 import skillBindkeysSetup from "@/articles/SKILL/skillBindkeysSetup";
+import schematicDesignPractices from "@/articles/goodDesignPractices/schematicDesignPractices";
+import schematicDesignChecks from "@/articles/goodDesignPractices/schematicDesignChecks";
+import layoutDesignChecks from "@/articles/goodDesignPractices/layoutDesignChecks";
 
 
 const articles: TCategory[] = [
@@ -191,6 +194,15 @@ const articles: TCategory[] = [
         title: 'SKILL',
         hideInProd: false,
         articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup,
+
+        ]
+    },
+
+    {
+        id: 'goodDesignPractices',
+        title: 'Good Design Practices',
+        hideInProd: true,
+        articles: [ schematicDesignPractices, schematicDesignChecks, layoutDesignChecks,
 
         ]
     },
