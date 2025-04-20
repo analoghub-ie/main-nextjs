@@ -46,7 +46,7 @@ hiSetBindKey("Layout" "Ctrl<Key>Q" "leSetAllLayerVisible(nil)")
 > **Tip:** To discover functions for most actions, enable all filter options in the "Set Log File Display Filter" form 
 (CIW ⟶ Options ⟶ Log Filter), perform the action, and check the CIW terminal for the function used.
 
-<br/> <img src="http://localhost:3000/images/skill/skillDisplayFilter.png" disableinvert alt="Log File Display Filter Menu" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
+<br/> <img src="http://localhost:3000/images/skill/skillDisplayFilter.png" disableinvert alt="Log File Display Filter Menu" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Log File Display Filter Menu</p> 
 
 <br/> <img src="http://localhost:3000/images/skill/skillDisplayLog.png" disableinvert alt="Log File Display Filter Output" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
@@ -148,7 +148,7 @@ Now we’ve got to set bind keys for these two functions.
 Each bind key can be configured with a single command, as demonstrated earlier:
 
 <pre><code class="language-lisp">
-hiSetBindKey("Layout" "<Key>," “changeLayoutDimmingIntensity(-1)")
+hiSetBindKey("Layout" "<Key>," "changeLayoutDimmingIntensity(-1)")
 hiSetBindKey("Layout" "<Key>." "changeLayoutDimmingIntensity(1)")
 hiSetBindKey("Layout" "<Key>/" "toggleLayoutDimming()")
 
@@ -206,7 +206,7 @@ Re-open Virtuoso to test the automatic loading.
 
 <div id="conclusion"></div>
 
-5. Conclusion
+6. Conclusion
 
 To maintain a clean and readable code structure, separate your bind key definitions into one file and the functions 
 they use into another. This approach helps declutter your code and enhances readability. You can then load these files 
