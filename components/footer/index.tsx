@@ -40,7 +40,7 @@ export const Footer = () => {
                 <Spacer y={4}/>
 
                 <p className="text-small">
-                    Analoghhub.ie is run independently, with no affiliation, partnership, or association with
+                    AnalogHub.ie is run independently, with no affiliation, partnership, or association with
                     Analog Devices, Inc. (AD). ADI does not endorse or collaborate with the author for material posted
                     on this website.
                 </p>

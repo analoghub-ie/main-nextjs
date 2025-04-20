@@ -55,7 +55,7 @@ import skillBindkeysSetup from "@/articles/SKILL/skillBindkeysSetup";
 import schematicDesignPractices from "@/articles/goodDesignPractices/schematicDesignPractices";
 import schematicDesignChecks from "@/articles/goodDesignPractices/schematicDesignChecks";
 import layoutDesignChecks from "@/articles/goodDesignPractices/layoutDesignChecks";
-
+import skillCreateForms from "@/articles/SKILL/skillCreateForms";
 
 const articles: TCategory[] = [
     {
@@ -193,7 +193,7 @@ const articles: TCategory[] = [
         id: 'skill',
         title: 'SKILL',
         hideInProd: false,
-        articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup,
+        articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup, skillCreateForms,
 
         ]
     },
