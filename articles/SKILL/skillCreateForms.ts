@@ -237,7 +237,7 @@ hiCreateLayoutForm(
 </code></pre>
 
 > **Note:**
-> Note: You can define field callbacks either as a symbol, like 'myFunc, or as a string, such as **"myFunc()"**. Using a 
+> You can define field callbacks either as a symbol, like 'myFunc, or as a string, such as **"myFunc()"**. Using a 
 > symbol automatically passes default arguments to the function based on the field, with each field's callback having its 
 > own set of default arguments. In case of the **?mapCB**, it sends the current form object as an argument. Setting callbacks 
 > as strings is useful when you need to pass different arguments to a function.
@@ -431,7 +431,7 @@ in the report field.
 
 <div id="conclusion"></div>
 
-### 6. Conclusion
+### 7. Conclusion
 
 In this guide, we've explored how to use layout forms, define various callbacks, highlight string fields, display 
 error messages, invoke the Library Manager, and utilize **let()** and **prog()** scopes. To further explore, check out 
@@ -439,7 +439,7 @@ Cadence guides on creating forms and experiment with different fields and parame
 
 <div id="fullCode"></div>
 
-### 7. Full code
+### 8. Full code
 
 <pre><code class="language-lisp">
 procedure( createLibrariesCellsInUseForm()
