@@ -11,6 +11,7 @@ import {Footer} from "@/components/footer";
 
 import {GoogleAnalytics} from '@next/third-parties/google'
 import {CookieConsentBanner} from "@/components/cookie/cookieConsentBanner";
+import {NotAnalogDevicesBanner} from "@/components/notAnalogDevicesBanner";
 
 export const metadata: Metadata = {
     title: {
@@ -60,6 +61,7 @@ export default function RootLayout({
                 <Footer/>
             </div>
 
+            <NotAnalogDevicesBanner/>
             {!siteConfig.env.dev && <CookieConsentBanner/>}
         </Providers>
         </body>

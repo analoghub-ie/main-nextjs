@@ -1,7 +1,7 @@
 "use client";
 
 import {Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuToggle,} from "@nextui-org/navbar";
-import {Autocomplete, AutocompleteItem, AutocompleteSection} from "@nextui-org/react";
+import {Autocomplete, AutocompleteItem, AutocompleteSection, Link} from "@nextui-org/react";
 import NextLink from "next/link";
 
 import {ThemeSwitch} from "@/components/theme-switch";
@@ -11,6 +11,7 @@ import {LogoMain} from "@/svg/logo/logoMain";
 import {LogoSmall} from "@/svg/logo/logoSmall";
 import {allFilteredArticles} from "@/articles/allArticles";
 import {useState} from "react";
+import {IoBeer} from "react-icons/io5";
 
 
 export const Navbar = () => {
@@ -66,6 +67,16 @@ export const Navbar = () => {
 
             <NavbarContent className="basis-1/5" justify="end">
                 <ThemeSwitch />
+
+                <Link href="https://buymeacoffee.com/analoghub"
+                      className="flex items-center gap-2"
+                      target="_blank"
+                      style={{justifyContent: 'center'}}
+                >
+                    <IoBeer size={24} className="text-text"/>
+                    <span className={'hidden xl:block'}>Buy me a beer</span>
+                </Link>
+
                 <NavbarMenuToggle className={'sm:hidden'}
                                   onClick={toggleMenu}
                                   isSelected={menuOpen}

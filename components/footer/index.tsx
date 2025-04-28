@@ -3,6 +3,7 @@
 import {Divider, Link, Spacer} from "@nextui-org/react";
 import {AiFillLinkedin, AiOutlineInfoCircle, AiOutlineMail} from "react-icons/ai";
 
+
 export const Footer = () => {
     return (
         <footer className="py-8 mt-auto bg-background text-text">
@@ -11,7 +12,7 @@ export const Footer = () => {
             <Spacer y={8} />
 
             <div className="container mx-auto text-center">
-                <div className="flex flex-row flex-wrap justify-center gap-6">
+                <div className="flex flex-row flex-wrap justify-center gap-6" >
                     <Link href="mailto:contact@analoghub.ie"
                           target="_blank"
                           className="flex items-center gap-2"
@@ -28,7 +29,6 @@ export const Footer = () => {
                         <span>Aleksandr Sidun</span>
                     </Link>
 
-                    {/* Added link to /about */}
                     <Link href="/about"
                           className="flex items-center gap-2"
                     >
@@ -37,13 +37,13 @@ export const Footer = () => {
                     </Link>
                 </div>
 
-                <Spacer y={4}/>
+                {/*<Spacer y={4}/>*/}
 
-                <p className="text-small">
-                    AnalogHub.ie is run independently, with no affiliation, partnership, or association with
-                    Analog Devices, Inc. (AD). ADI does not endorse or collaborate with the author for material posted
-                    on this website.
-                </p>
+                {/*<p className="text-small max-w-3xl mx-auto">*/}
+                {/*    AnalogHub.ie is run independently, with no affiliation, partnership, or association with*/}
+                {/*    Analog Devices, Inc. (AD). ADI does not endorse or collaborate with the author for material posted*/}
+                {/*    on this website.*/}
+                {/*</p>*/}
 
                 <Spacer y={4}/>
 
