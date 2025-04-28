@@ -45,7 +45,7 @@ Let's have a look on a very basic circuit - CMOS inverter in layout. CMOS invert
 NMOS transistors. Both devices are manufactured in the substrate of a p-type. In a standard CMOS process, PMOS device 
 is manufactured in NWELL (n-type pocket) and NMOS is manufactured in p-substrate (or PWELL). P-substrate is connected 
 to ground and NWELL is connected to the supply voltage (VDD). This measure is used to ensure correct device performance 
-and prevent [latch-up](/category/Layout/article/layyoutDependentEffects).
+and prevent [latch-up](/category/Layout/article/layoutDependentEffects).
 
 <br/> <img src="http://localhost:3000/images/layout/inverter-cross-section.svg" alt="CMOS inverter cross-section" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">CMOS inverter cross-section</p>

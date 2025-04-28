@@ -31,7 +31,7 @@ import simulationHacks from "@/articles/simulationHacks/simulationHacks";
 import cadenceEnvironmentSetup from "@/articles/cadenceEnvironmentSetup/cadenceEnvironmentSetup";
 import {siteConfig} from "@/config/site";
 import printableCheatsheets from "@/articles/usefulMaterials/printableCheatsheets";
-import schematicDiagram from "@/articles/designPresentation/schematicDiagram";
+import schematicDiagram from "@/articles/designPresentation/schematicDesignPresentation";
 import analysisCorner from "@/articles/cadenceAnalysis/analysisCorner";
 import analysisExtracted from "@/articles/cadenceAnalysis/analysisExtracted";
 import analysisMonteCarlo from "@/articles/cadenceAnalysis/analysisMonteCarlo";
@@ -56,6 +56,8 @@ import schematicDesignPractices from "@/articles/goodDesignPractices/schematicDe
 import schematicDesignChecks from "@/articles/goodDesignPractices/schematicDesignChecks";
 import layoutDesignChecks from "@/articles/goodDesignPractices/layoutDesignChecks";
 import skillCreateForms from "@/articles/SKILL/skillCreateForms";
+import schematicDesignPresentation from "@/articles/designPresentation/schematicDesignPresentation";
+import skillExternalTools from "@/articles/SKILL/skillExternalTools";
 
 const articles: TCategory[] = [
     {
@@ -154,7 +156,7 @@ const articles: TCategory[] = [
     {
         id: 'designPresentation',
         title: 'Design Presentation',
-        articles: [ layoutViewer, schematicDiagram,
+        articles: [ layoutViewer, schematicDesignPresentation,
 
         ]
     },
@@ -193,7 +195,7 @@ const articles: TCategory[] = [
         id: 'skill',
         title: 'SKILL',
         hideInProd: false,
-        articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup, skillCreateForms,
+        articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup, skillCreateForms, skillExternalTools,
 
         ]
     },

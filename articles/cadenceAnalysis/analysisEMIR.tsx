@@ -62,7 +62,7 @@ Extract the whole design, or only specific nets you need:
 - Select instances/nets for the analysis;
 - Set the EM/IR analysis options;
 - Click Add/Modify;
-- Add EM file [(tsmc65.emDataFile)](/category/cadenceAnalysis/article/analysisEMIR#emDataFile).
+- Add EM file [(tsmc65.emDataFile)](/category/cadenceAnalysis/article/cadenceAnalysisEMIR#emDataFile).
 
 <br/> <img src="http://localhost:3000/images/cadenceAnalysis/EMIR-ADEL.png" alt="EMIR analysis settings1" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">EMIR analysis settings</p> 
