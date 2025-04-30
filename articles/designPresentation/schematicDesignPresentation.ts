@@ -5,7 +5,7 @@ const article: TArticle = {
     title: 'Schematic Design Presentation',
     description: 'Creating clean and informative schematic diagrams for Analog IC design',
     lastUpdate: new Date('2025-04-26'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
    
 
