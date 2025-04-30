@@ -204,7 +204,7 @@ const articles: TCategory[] = [
         id: 'goodDesignPractices',
         title: 'Good Design Practices',
         hideInProd: true,
-        articles: [ schematicDesignPractices, schematicDesignChecks, layoutDesignChecks,
+        articles: [ schematicDesignPractices, schematicDesignChecks, layoutDesignChecks, schematicDesignPresentation,
 
         ]
     },
