@@ -23,9 +23,6 @@ This article contains Verilog-A model for Decimal to Thermometer encoder. This b
 
 </br>
 
-> **Cell name:** dec2term
-> **Model type:** Verilog-A
-
 > Example:
 > ***therm_bits = 4, Start_Bit = 0***
 
@@ -45,6 +42,16 @@ This article contains Verilog-A model for Decimal to Thermometer encoder. This b
 |    1      |      0010      |
 |    2      |      0100      |
 |    2      |      1000      |
+
+</br>
+
+> **Cell name:** dec2term
+
+> **Model type:** Verilog-A
+
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/dec2therm.va)
+
+
 
 <pre><code class="language-verilog">
 // Decimal to Thermometer decoder

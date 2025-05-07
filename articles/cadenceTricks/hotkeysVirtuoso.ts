@@ -56,7 +56,7 @@ const article: TArticle = {
  
 <br/> 
 <img src="http://localhost:3000/images/cadenceTricks/bindkeys-schematic.svg" alt="Schematic Bindkeys Cheatsheet" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
-<p style="display: block; text-align: center"><a href="http://localhost:3000/images/cadenceTricks/bindkeys-schematic-A4.png">Schematic Bindkeys Cheatsheet (A4) download</a></p>
+<p style="display: block; text-align: center"><a href="https://github.com/analoghub-ie/art/blob/main/cadenceBindkeys/bindkeys-schematic.pdf">Schematic Bindkeys Cheatsheet (A4) download</a></p>
 
 
 #### Plots
@@ -100,7 +100,7 @@ const article: TArticle = {
 
 <br/> 
 <img src="http://localhost:3000/images/cadenceTricks/bindkeys-layout.svg" alt="Layout Bindkeys Cheatsheet" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
-<p style="display: block; text-align: center"><a href="http://localhost:3000/images/cadenceTricks/bindkeys-layout-A4.png">Layout Bindkeys Cheatsheet (A4) download</a></p>
+<p style="display: block; text-align: center"><a href="https://github.com/analoghub-ie/art/blob/main/cadenceBindkeys/bindkeys-layout.pdf">Layout Bindkeys Cheatsheet (A4) download</a></p>
 
 <!--<div id="bindkeysFile"></div>-->
 

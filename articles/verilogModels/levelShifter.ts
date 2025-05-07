@@ -35,7 +35,9 @@ This article contains Verilog-A model for a digital Level Shifter.
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog">    
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/HPF.va)
+
+<pre><code class="language-verilog">
 // Digital level shifter (without inversion)
 // Takes differential input - connect your signal to inp, reference to inn
 // Output will be level-shifted to the "low" and "high" levels
@@ -51,7 +53,7 @@ module level_shifter (inp, inn, outn, outp, low, high);
     electrical inp, inn, outp, outn, low, high;
 \tinteger d_outp, d_outn;             // logic output state
 
-   \tparameter real input_swing = 5.0;   // define input singnal swing
+   \tparameter real input_swing = 5.0;   // define input signal swing
 \tparameter real t_edge = 1e-9;
 \tparameter real t_delay = 1e-9;
 

@@ -25,9 +25,6 @@ const article: TArticle = {
 
 </br>
 
-> **Cell name:** bin2term
-> **Model type:** Verilog-A
-
 > Example:
 > ***binary_bits = 2, Start_Bit = 0***
 
@@ -47,6 +44,13 @@ const article: TArticle = {
 |    01      |      0010      |
 |    10      |      0100      |
 |    11      |      1000      |
+
+
+> **Cell name:** bin2term
+
+> **Model type:** Verilog-A
+
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/bin2therm.va)
 
 <pre><code class="language-verilog">
 // Binary to Thermometer decoder

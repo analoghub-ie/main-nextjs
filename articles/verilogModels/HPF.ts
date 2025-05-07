@@ -5,6 +5,7 @@ const article: TArticle = {
     title: 'High-pass filter (HPF) Verilog-A model',
     description: 'Verilog-A model for high-pass filter (HPF)',
     lastUpdate: new Date('2022-01-01'),
+    hideInProd: false,
 
     content: `
 ## High-pass filter model
@@ -35,8 +36,10 @@ This article contains Verilog-A model for a high-pass filter.
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog">    
-// Low Pass filter model based on -3dB frequency definition
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/HPF.va)
+
+<pre><code class="language-verilog">
+// High Pass filter model based on -3dB frequency definition
 // Author: A. Sidun
 // Source: AnalogHub.ie
 
@@ -46,7 +49,6 @@ This article contains Verilog-A model for a high-pass filter.
 module HPF(in, out);
 electrical in, out;
 parameter real Cutoff_frequency = 10k;      // -3dB frequency
-parameter real Filter_Order = 1;            // 1 for 20dB/dec, 2 for 40dB/dec
 
 analog begin
  V(out) <+ laplace_nd(V(in),{0, 1},{2*\`M_PI*Cutoff_frequency, 1});

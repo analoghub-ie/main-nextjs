@@ -69,7 +69,7 @@ Analog and Mixed-Signal schematic drawings.
 
 6. You are all set and ready to create beautiful vector drawings like these:
 
-<br/> <img src="http://localhost:3000/images/circuits/ldoPMOS.svg" disableinvert alt="Inkscape Symbol Libraries use example" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
+<br/> <img src="http://localhost:3000/images/circuits/ldoPMOS.svg" alt="Inkscape Symbol Libraries use example" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
 <p style="display: block; text-align: center">Inkscape Symbol Libraries use example</p> 
 
 If you have any suggestions or want any other symbols to be added, please send an email to: contact@analoghub.ie

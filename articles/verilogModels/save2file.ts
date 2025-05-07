@@ -28,6 +28,8 @@ This article contains Verilog-A model for saving simulation results to *.txt* fi
 
 > **Model type:** Verilog-A
 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/save2file.va)
+
 <pre><code class="language-verilog">
 // Verilog-A file for saving sim data to .txt
 // Authors: I.Smirnov,  M.Gaidukov

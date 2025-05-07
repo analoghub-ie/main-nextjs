@@ -113,6 +113,9 @@ Extract the whole design, or only specific nets you need:
 <div id="emDataFile"></div>
 
 ### .EMDataFile example 
+
+[Download from Github](https://github.com/analoghub-ie/software/blob/main/EMIR%20files/EM_example.emDataFile)
+
 <pre><code class="language-lisp">
 (
 cadGrid = 0.001
@@ -338,6 +341,9 @@ ACpeakCurrentDensSpecList = (
 <div id="mapFile"></div>
 
 ### .map file example 
+
+[Download from Github](https://github.com/analoghub-ie/software/blob/main/EMIR%20files/dfii.map)
+
 <pre><code class="language-bash">
 # &lt;type&gt; &lt;extraction_layer_name&gt; &lt;dfII_layer_name&gt;
 poly poly PO
