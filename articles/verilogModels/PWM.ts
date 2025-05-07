@@ -32,7 +32,9 @@ This article contains Verilog-A models for a Pulse Width Modulated generator.
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog"> 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/pwm_gen_clk.va)
+
+<pre><code class="language-verilog">
 // PWM generator (fixed duty cycle, internal clock)
 // Author: A. Sidun
 // Source: AnalogHub.ie

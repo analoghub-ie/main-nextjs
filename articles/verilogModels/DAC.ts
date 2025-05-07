@@ -41,6 +41,8 @@ This article contains Verilog-A model for a Digital-toAnalog Converter (DAC).
 
 > **Model type:** Verilog-A
 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/DAC.va)
+
 <pre><code class="language-verilog">
 // N-bit Digital to Analog Converter
 // LSB is <0>

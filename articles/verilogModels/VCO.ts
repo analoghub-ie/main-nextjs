@@ -21,7 +21,13 @@ Tunable parameters:
 - Amplitude;
 - Start frequency;
 - Number of points per period - can be useful for FFT simulations etc.
-    
+
+> **Cell name:** vco
+
+> **Model type:** Verilog-A
+
+> **Download from Github**: [Model 1](https://github.com/analoghub-ie/software/blob/main/Verilog-A/vco1.va),
+[Model 2](https://github.com/analoghub-ie/software/blob/main/Verilog-A/vco2.va)
     
 <pre><code class="language-verilog">
 // VCO model

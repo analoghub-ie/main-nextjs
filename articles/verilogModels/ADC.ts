@@ -37,10 +37,11 @@ This article contains Verilog-A model for an Analog-to-Digital Converter (ADC).
  
 </br>
 
-
 > **Cell name:** ADC
 
 > **Model type:** Verilog-A
+
+> [Download from GitHub](https://github.com/analoghub-ie/software/blob/main/Verilog-A/ADC.va)
 
 <pre><code class="language-verilog">
 // N-bit Analog to Digital Converter

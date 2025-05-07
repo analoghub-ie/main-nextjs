@@ -22,6 +22,13 @@ This page contains Verilog-A model of the decimal to binary encoder.
 7. Perform ***Check and Save*** and run the simulation.
 
 
+> **Cell name:** dec2bin
+
+> **Model type:** Verilog-A
+
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/dec2bin.va)
+
+
 <pre><code class="language-verilog">
 // Decimal number to binary code converter
 // LSB is [0]

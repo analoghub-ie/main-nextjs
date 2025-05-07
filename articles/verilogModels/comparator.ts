@@ -38,6 +38,8 @@ This article contains Verilog-A model for a comparator.
 
 > **Model type:** Verilog-A
 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/comparator.va)
+
 <pre><code class="language-verilog">    
 // Comparator model
 // Author: A. Sidun

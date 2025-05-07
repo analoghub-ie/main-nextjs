@@ -44,7 +44,10 @@ This article contains Verilog-A model for a binary counter, which counts up or d
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog">    
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/counter.va)
+
+
+<pre><code class="language-verilog">
 // Verilog-A model for Binary Counter
 // Source: AnalogHub.ie
 // Author: A. Sidun

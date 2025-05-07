@@ -43,7 +43,9 @@ This article contains Verilog-A models for a Non-overlapping clock generator.
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog"> 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/nonoverlap_clk.va)
+
+<pre><code class="language-verilog">
 // Non-overlap clock generator (same freq as clk)
 // Author: A. Sidun
 // Source: AnalogHub.ie
@@ -108,7 +110,9 @@ endmodule
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog"> 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/nonoverlap_clk_2ph.va)
+
+<pre><code class="language-verilog">
 // Non-overlap clock generator (frequency-divided)
 // Author: A. Sidun
 // Source: AnalogHub.ie
@@ -189,7 +193,9 @@ endmodule
 
 > **Model type:** Verilog-A
 
-<pre><code class="language-verilog"> 
+> [Download from Github](https://github.com/analoghub-ie/software/blob/main/Verilog-A/nonoverlap_clk_4ph.va)
+
+<pre><code class="language-verilog">
 // 4-phases non-overlap clock generator 
 // Author: A. Sidun
 // Source: AnalogHub.ie
