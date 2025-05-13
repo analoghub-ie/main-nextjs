@@ -51,8 +51,8 @@ hiDisplayAppDBox(
 )
 </code></pre>
 
-<br/> <img src="http://localhost:3000/images/skill/displayError.png" disableinvert alt="Output of the hiDisplayAppDBox()" style="display: block; margin-inline: auto; width: min(80%, 15rem)" /> 
-<p style="display: block; text-align: center">Output of the hiDisplayAppDBox()</p> 
+<br/> <img src="http://localhost:3000/images/skill/displayError.png" disableinvert alt="Example using hiDisplayAppDBox() function" style="display: block; margin-inline: auto; width: min(80%, 15rem)" /> 
+<p style="display: block; text-align: center">Example using hiDisplayAppDBox() function</p> 
 
 <div id="displayError"></div>
 
@@ -105,6 +105,9 @@ procedure( writeData(filePath data)
 );procedure
 </code></pre>
 
+<br/> <img src="http://localhost:3000/images/skill/errorExample.png" disableinvert alt="Example of an error message" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
+<p style="display: block; text-align: center">Example of an error message</p> 
+
 > **Note:** The code after the **hiDisplayAppDBox()** function is executed, so make sure to exit/stop a function after 
 showing an error message.
 
@@ -135,6 +138,9 @@ procedure( runVerifications()
 \t);let
 );procedure
 </code></pre>
+
+<br/> <img src="http://localhost:3000/images/skill/warningExample.png" disableinvert alt="Example of a warning message" style="display: block; margin-inline: auto; width: min(80%, 15rem)" /> 
+<p style="display: block; text-align: center">Example of a warning message</p> 
 
 <div id="displayInfo"></div>
 
@@ -168,6 +174,9 @@ procedure( runTask()
 \t);let
 );procedure
 </code></pre>
+
+<br/> <img src="http://localhost:3000/images/skill/infoExample.png" disableinvert alt="Example of an info message" style="display: block; margin-inline: auto; width: min(80%, 15rem)" /> 
+<p style="display: block; text-align: center">Example of an info message</p> 
 
 <div id="displayDialog"></div>
 
@@ -210,6 +219,9 @@ procedure( askUser()
 \t);let
 );procedure
 </code></pre>
+
+<br/> <img src="http://localhost:3000/images/skill/dialogExample.png" disableinvert alt="Example of a dialog message" style="display: block; margin-inline: auto; width: min(80%, 25rem)" /> 
+<p style="display: block; text-align: center">Example of a dialog message</p> 
 
 Here, we use ?buttons option to define the buttons. **hiDisplayAppDBox()** returns the number of the button clicked 
 (1-based), which helps us to determine which logic to run after.
