@@ -78,13 +78,6 @@ above, the repeatCommand variable will contain **“func() repeatCommand(\\”fu
 
 > **Tip:** To stop the function from repeating, simply redefine **repeatTask()** to do nothing.
 
-
-<br/> <img src="http://localhost:3000/images/skill/errorExample.png" disableinvert alt="Example of an error message" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
-<p style="display: block; text-align: center">Example of an error message</p> 
-
-> **Note:** The code after the **hiDisplayAppDBox()** function is executed, so make sure to exit/stop a function after 
-showing an error message.
-
 <pre><code class="language-lisp">
 procedure( repeatTask(function)
 \tnil
