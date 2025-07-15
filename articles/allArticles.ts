@@ -93,7 +93,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Lorem ipsum dolor sit amet.',
-        logo: '/images/categoryLogos/no-image.svg',
+        logo: '/images/categoryLogos/circuit analysis.png',
     },
 
     {
@@ -114,7 +114,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Lorem ipsum dolor sit adipiscing elit. ',
-        logo: '/images/categoryLogos/no-image.svg',
+        logo: '/images/categoryLogos/layout.png',
     },
 
 
@@ -229,7 +229,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Lorem ipsum dolor adipiscing elit. ',
-        logo: '/images/categoryLogos/no-image.svg',
+        logo: '/images/categoryLogos/interview.png',
     },
 
     {
