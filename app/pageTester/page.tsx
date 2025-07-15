@@ -53,19 +53,19 @@ console.warn("Hello, " + name + "!")
                 {title: 'Test your markdown', href: `/pageTester`}
             ]}/>
 
-            <div className={'flex flex-grow'}>
+            <div className={'flex grow'}>
                 <div className="w-1/2 p-4 overflow-hidden flex flex-col">
                     <h2 className="text-xl font-bold mb-2">Markdown Input</h2>
                     <Textarea
                         classNames={{
-                            inputWrapper: '!h-full',
-                            input: '!h-full',
+                            inputWrapper: 'h-full!',
+                            input: 'h-full!',
                         }}
                         // style={{
                         //     height: '100% !important',
                         // }}
                         disableAutosize
-                        className="flex-grow"
+                        className="grow"
                         value={markdown}
                         onChange={(e) => setMarkdown(e.target.value)}
                     />
@@ -75,7 +75,7 @@ console.warn("Hello, " + name + "!")
 
                 <div className="w-1/2 p-4 overflow-hidden flex flex-col">
                     <h2 className="text-xl font-bold mb-2">Preview</h2>
-                    <div className="prose dark:prose-invert max-w-none flex-grow overflow-auto">
+                    <div className="prose dark:prose-invert max-w-none grow overflow-auto">
                         <MarkdownRenderer>{content}</MarkdownRenderer>
                     </div>
                 </div>
