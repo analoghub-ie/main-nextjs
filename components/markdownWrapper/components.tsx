@@ -1,10 +1,7 @@
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {dracula} from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {Code} from "@heroui/code";
-import {Divider} from "@heroui/divider";
-import Link from "next/link";
+import {Code, Divider, Image, Link} from "@heroui/react";
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@/components/table";
-import {Image} from "@heroui/image";
 
 
 export const components = {

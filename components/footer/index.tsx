@@ -1,8 +1,7 @@
 'use client';
 
-import {Divider, Spacer} from "@heroui/react";
+import {Divider, Link, Spacer} from "@heroui/react";
 import {AiFillLinkedin, AiOutlineInfoCircle, AiOutlineMail} from "react-icons/ai";
-import Link from "next/link";
 
 
 export const Footer = () => {
