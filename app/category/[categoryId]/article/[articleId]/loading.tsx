@@ -1,5 +1,6 @@
+import {Skeleton} from "@heroui/skeleton";
 import {Breadcrumbs} from "@/components/breadcrumbs";
-import {Skeleton} from "@nextui-org/skeleton";
+
 
 export default async function Loading() {
     return (

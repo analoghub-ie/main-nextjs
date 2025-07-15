@@ -1,13 +1,5 @@
-import {redirect, RedirectType} from "next/navigation";
+// page/category/page.tsx
 
-
-export default async function Page() {
-
-    redirect('/', RedirectType.replace);
-
-    // return (
-    //     <div className="flex flex-col gap-4 overflow-auto">
-    //
-    //     </div>
-    // );
+export default function Page() {
+    return null;
 }

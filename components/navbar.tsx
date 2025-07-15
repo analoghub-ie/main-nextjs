@@ -1,7 +1,7 @@
 "use client";
 
-import {Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuToggle,} from "@nextui-org/navbar";
-import {Autocomplete, AutocompleteItem, AutocompleteSection, Link} from "@nextui-org/react";
+import {Navbar as NextUINavbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuToggle} from "@heroui/navbar";
+import {Autocomplete, AutocompleteItem, AutocompleteSection, Link} from "@heroui/react";
 import NextLink from "next/link";
 
 import {ThemeSwitch} from "@/components/theme-switch";

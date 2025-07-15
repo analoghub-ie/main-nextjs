@@ -1,3 +1,5 @@
+// app/layout.tsx
+
 import "@/styles/globals.css";
 import {Metadata, Viewport} from "next";
 import clsx from "clsx";
@@ -40,8 +42,9 @@ export default function RootLayout({
                                    }: {
     children: React.ReactNode;
 }) {
+
     return (
-        <html suppressHydrationWarning lang="en" className={'scroll-smooth'}>
+        <html suppressHydrationWarning className={'scroll-smooth'} lang="en">
         {!siteConfig.env.dev && <GoogleAnalytics gaId="G-ZLSWQ36PZ5"  />}
         <body
             className={clsx(

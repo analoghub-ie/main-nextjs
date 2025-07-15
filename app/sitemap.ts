@@ -15,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         //     url: siteConfig.env.hostUrl + '/pageTester',
         // },
 
+        {
+            url: siteConfig.env.hostUrl + '/category/',
+        },
         ...allFilteredArticles
             .flatMap(category => [
                 {

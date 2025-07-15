@@ -4,8 +4,8 @@
 import {useState} from 'react';
 import {Breadcrumbs} from "@/components/breadcrumbs";
 import {MarkdownRenderer} from "@/components/markdownWrapper";
-import {Divider} from "@nextui-org/divider";
-import {Textarea} from "@nextui-org/input";
+import {Divider} from "@heroui/divider";
+import {Textarea} from "@heroui/input";
 import {siteConfig} from "@/config/site";
 
 export default function MarkdownPage() {

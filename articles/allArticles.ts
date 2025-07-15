@@ -24,19 +24,18 @@ import layoutEditorSettings from "@/articles/Layout/layoutEditorSettings";
 import save2file from "@/articles/verilogModels/save2file";
 import netNaming from "@/articles/cadenceTricks/netNaming";
 import hotkeysVirtuoso from "@/articles/cadenceTricks/hotkeysVirtuoso";
-import usefulMaterials from "@/articles/usefulMaterials/usefulMaterialsSchematic";
+import usefulMaterialsSchematic from "@/articles/usefulMaterials/usefulMaterialsSchematic";
 import noiseAnalysis from "@/articles/circuitAnalysis/noiseAnalysis";
 import layoutViewer from "@/articles/designPresentation/layoutViewer";
 import simulationHacks from "@/articles/simulationHacks/simulationHacks";
 import cadenceEnvironmentSetup from "@/articles/cadenceEnvironmentSetup/cadenceEnvironmentSetup";
 import {siteConfig} from "@/config/site";
 import printableCheatsheets from "@/articles/usefulMaterials/printableCheatsheets";
-import schematicDiagram from "@/articles/designPresentation/schematicDesignPresentation";
+import schematicDesignPresentation from "@/articles/designPresentation/schematicDesignPresentation";
 import analysisCorner from "@/articles/cadenceAnalysis/analysisCorner";
 import analysisExtracted from "@/articles/cadenceAnalysis/analysisExtracted";
 import analysisMonteCarlo from "@/articles/cadenceAnalysis/analysisMonteCarlo";
 import parallelSimulations from "@/articles/cadenceTricks/parallelSimulations";
-import usefulMaterialsSchematic from "@/articles/usefulMaterials/usefulMaterialsSchematic";
 import usefulMaterialsLayout from "@/articles/usefulMaterials/usefulMaterialsLayout";
 import exportGDS from "@/articles/cadenceTricks/exportGDS";
 import displayParamsVerilogA from "@/articles/cadenceTricks/displayParamsVerilogA";
@@ -56,7 +55,6 @@ import schematicDesignPractices from "@/articles/goodDesignPractices/schematicDe
 import schematicDesignChecks from "@/articles/goodDesignPractices/schematicDesignChecks";
 import layoutDesignChecks from "@/articles/goodDesignPractices/layoutDesignChecks";
 import skillCreateForms from "@/articles/SKILL/skillCreateForms";
-import schematicDesignPresentation from "@/articles/designPresentation/schematicDesignPresentation";
 import skillExternalTools from "@/articles/SKILL/skillExternalTools";
 import handlingWarnings from "@/articles/SKILL/handlingWarnings";
 import hiRegTimer from "@/articles/SKILL/hiRegTimer";
@@ -68,7 +66,10 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [
             article1,
-        ]
+        ],
+
+        smallDescription: 'This is a small description of Category 1',
+        logo: '/images/categoryLogos/Category.png',
     },
 
     {
@@ -77,7 +78,10 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [
             LDO, sarADC,
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor.',
+        logo: '/images/categoryLogos/Circuits.png',
     },
 
     {
@@ -86,23 +90,31 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [
             circuitAnalysisTransferFunction, noiseAnalysis,
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit amet.',
+        logo: '/images/categoryLogos/circuit analysis.png',
     },
 
     {
         id: 'cadenceAnalysis',
         title: 'Cadence analysis',
         articles: [
-            cadenceAnalysisEMIR, cadenceAnalysisDC,analysisPAC, analysisCorner, analysisMonteCarlo,analysisExtracted,
-        ]
-    },
+            cadenceAnalysisEMIR, cadenceAnalysisDC, analysisPAC, analysisCorner, analysisMonteCarlo, analysisExtracted,
+        ],
 
+        smallDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+        logo: '/images/categoryLogos/Cadence analysis.png',
+    },
     {
         id: 'Layout',
         title: 'Layout',
         articles: [
             layoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings, cmosInverterLayout, commonDRC,
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit adipiscing elit. ',
+        logo: '/images/categoryLogos/layout.png',
     },
 
 
@@ -112,7 +124,10 @@ const articles: TCategory[] = [
         articles: [
             bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, HPF, nonoverlapClk, PWM, comparator, ADC, DAC,
             save2file, counter,
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum elit. ',
+        logo: '/images/categoryLogos/VERILOG.png',
     },
 
 
@@ -121,7 +136,10 @@ const articles: TCategory[] = [
         title: 'MATLAB scripts',
         articles: [
             pcbTraceCalculator,
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        logo: '/images/categoryLogos/MATLAB scripts.png',
     },
 
 
@@ -131,7 +149,10 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum',
+        logo: '/images/categoryLogos/SKILL.png',
     },
 
 
@@ -141,7 +162,10 @@ const articles: TCategory[] = [
         articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA,
             thickerLinesCadence, solderDotWarning, renumberInstances,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit',
+        logo: '/images/categoryLogos/Cadence Virtuoso Tricks.png',
     },
 
 
@@ -151,7 +175,10 @@ const articles: TCategory[] = [
         hideInProd: false,
         articles: [ usefulMaterialsSchematic, usefulMaterialsLayout, printableCheatsheets,
 
-        ]
+        ],
+
+        smallDescription: 'Lor',
+        logo: '/images/categoryLogos/Useful materials.png',
     },
 
 
@@ -160,7 +187,10 @@ const articles: TCategory[] = [
         title: 'Design Presentation',
         articles: [ layoutViewer, schematicDesignPresentation,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor elit. ',
+        logo: '/images/categoryLogos/Design Presentation.png',
     },
 
 
@@ -170,7 +200,10 @@ const articles: TCategory[] = [
         hideInProd: false,
         articles: [ simulationHacks,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit.',
+        logo: '/images/categoryLogos/Simulation Hacks.png',
     },
 
 
@@ -180,7 +213,10 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [ cadenceEnvironmentSetup,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit amet, elit. ',
+        logo: '/images/categoryLogos/Setting Up Cadence Environment.png',
     },
 
 
@@ -190,7 +226,10 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [ schematicInterview,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor adipiscing elit. ',
+        logo: '/images/categoryLogos/interview.png',
     },
 
     {
@@ -200,7 +239,10 @@ const articles: TCategory[] = [
         articles: [ skilllIdeSetup, extractingLib, skillBindkeysSetup, skillCreateForms, skillExternalTools, handlingWarnings,
             hiRegTimer,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem ipsum dolor sit, consectetur adipiscing elit. ',
+        logo: '/images/categoryLogos/SKILL.png',
     },
 
     {
@@ -209,7 +251,10 @@ const articles: TCategory[] = [
         hideInProd: true,
         articles: [ schematicDesignPractices, schematicDesignChecks, layoutDesignChecks, schematicDesignPresentation,
 
-        ]
+        ],
+
+        smallDescription: 'Lorem amet, consectetur adipiscing elit. ',
+        logo: '/images/categoryLogos/Good Design Practices.png',
     },
 
 
