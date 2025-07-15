@@ -2,6 +2,8 @@ export type TCategory = {
     id: string,
     title: string,
     articles: TArticle[]
+    logo?: string,
+    smallDescription?: string,
 
     hideInProd?: boolean,
 };

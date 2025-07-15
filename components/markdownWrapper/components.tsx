@@ -1,10 +1,10 @@
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {dracula} from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {Code} from "@nextui-org/code";
-import {Divider} from "@nextui-org/divider";
-import {Link} from "@nextui-org/link";
+import {Code} from "@heroui/code";
+import {Divider} from "@heroui/divider";
+import Link from "next/link";
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@/components/table";
-import {Image} from "@nextui-org/image";
+import {Image} from "@heroui/image";
 
 
 export const components = {
@@ -35,7 +35,7 @@ export const components = {
             className="border-l-4 border-primary pl-4 italic text-primary"
             style={{
                 margin: "1rem 0",
-                color: "var(--nextui-colors-text)", // Основной текстовый цвет темы
+                color: "var(--heroui-colors-text)", // Основной текстовый цвет темы
             }}
             {...props}
         />
@@ -86,7 +86,7 @@ export const components = {
     li: ({ ...props }) => <li {...props} className="leading-relaxed"/>,
 
     // Links
-    a: ({ ...props }) => <Link {...props} />,
+    a: ({ ...props }) => <Link {...props} href={props.href} />,
 
     // Tables
     table: ({ ...props }: any) => <Table {...props}/>,

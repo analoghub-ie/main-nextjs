@@ -1,9 +1,9 @@
 "use client";
 
-import {BreadcrumbItem as NextUiBreadcrumbItem, Breadcrumbs as NextUiBreadcrumbs} from "@nextui-org/breadcrumbs";
+import {BreadcrumbItem as NextUiBreadcrumbItem, Breadcrumbs as NextUiBreadcrumbs} from "@heroui/breadcrumbs";
 import React, {FC} from "react";
 
-import {Skeleton} from "@nextui-org/skeleton";
+import {Skeleton} from "@heroui/skeleton";
 
 
 type TParams = {

@@ -1,11 +1,11 @@
-import {nextui} from '@nextui-org/theme'
+import {heroui} from '@heroui/theme'
 
 /** @type {import('tailwindcss').Config} */
 const tailwindConfig = {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
     './svg/**/*.{js,ts,jsx,tsx,mdx}',
     './articles/**/*.{js,ts,jsx,tsx,mdx}',
     './articles/**/*.{js,ts,jsx,tsx,mdx}',
@@ -20,7 +20,7 @@ const tailwindConfig = {
   },
   darkMode: "class",
   plugins: [
-    nextui({
+    heroui({
       layout: {
         dividerWeight: "1px", // h-divider the default height applied to the divider component
         disabledOpacity: 0.5, // this value is applied as opacity-[value] when the component is disabled
