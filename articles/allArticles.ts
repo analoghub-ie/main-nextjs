@@ -86,7 +86,7 @@ const articles: TCategory[] = [
 
     {
         id: 'circuitAnalysis',
-        title: 'Circuit analysis',
+        title: 'Circuit Analysis',
         hideInProd: true,
         articles: [
             circuitAnalysisTransferFunction, noiseAnalysis,
@@ -120,20 +120,20 @@ const articles: TCategory[] = [
 
     {
         id: 'verilogModels',
-        title: 'Verilog-A Models',
+        title: 'Verilog-A',
         articles: [
             bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, HPF, nonoverlapClk, PWM, comparator, ADC, DAC,
             save2file, counter,
         ],
 
-        smallDescription: 'Variety of Verilog-A models for simulation ',
+        smallDescription: 'Variety of models for simulation',
         logo: '/images/categoryLogos/VERILOG.png',
     },
 
 
     {
         id: 'matlabScripts',
-        title: 'MATLAB scripts',
+        title: 'MATLAB',
         articles: [
             pcbTraceCalculator,
         ],
@@ -158,20 +158,20 @@ const articles: TCategory[] = [
 
     {
         id: 'cadenceTricks',
-        title: 'Cadence Virtuoso Tricks',
+        title: 'Virtuoso Tricks',
         articles: [ netNaming, hotkeysVirtuoso, parallelSimulations, exportGDS, displayParamsVerilogA,
             thickerLinesCadence, solderDotWarning, renumberInstances,
 
         ],
 
-        smallDescription: 'Tips and tricks to tame Cadence',
+        smallDescription: 'Tips and tricks to tame Virtuoso',
         logo: '/images/categoryLogos/Cadence Virtuoso Tricks.png',
     },
 
 
     {
         id: 'usefulMaterials',
-        title: 'Useful materials',
+        title: 'Useful Materials',
         hideInProd: false,
         articles: [ usefulMaterialsSchematic, usefulMaterialsLayout, printableCheatsheets,
 
@@ -209,7 +209,7 @@ const articles: TCategory[] = [
 
     {
         id: 'cadenceEnvironmentSetup',
-        title: 'Setting Up Cadence Environment',
+        title: 'Virtuoso Customization',
         hideInProd: true,
         articles: [ cadenceEnvironmentSetup,
 
@@ -247,13 +247,13 @@ const articles: TCategory[] = [
 
     {
         id: 'goodDesignPractices',
-        title: 'Good Design Practices',
+        title: 'Design Practices',
         hideInProd: true,
         articles: [ schematicDesignPractices, schematicDesignChecks, layoutDesignChecks, schematicDesignPresentation,
 
         ],
 
-        smallDescription: 'Schematic and layout design checks and best practices ',
+        smallDescription: 'Best design practices and checks',
         logo: '/images/categoryLogos/Good Design Practices.png',
     },
 
