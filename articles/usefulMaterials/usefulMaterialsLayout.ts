@@ -10,8 +10,8 @@ const article: TArticle = {
     
 ## Contents:
 
-1. [Analog IC Layout Videos](#analogLayoutVideos);
-2. [Analog IC Layout Books](#analogLayoutBooks);
+1. [Analog IC Layout Videos](#analogLayoutVideos)
+2. [Analog IC Layout Books](#analogLayoutBooks)
 
 <div id="analogLayoutVideos"></div>
 
