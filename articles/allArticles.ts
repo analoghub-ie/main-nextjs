@@ -80,7 +80,7 @@ const articles: TCategory[] = [
             LDO, sarADC,
         ],
 
-        smallDescription: 'Lorem ipsum dolor.',
+        smallDescription: 'Design and layout of the basic circuits',
         logo: '/images/categoryLogos/Circuits.png',
     },
 
@@ -92,7 +92,7 @@ const articles: TCategory[] = [
             circuitAnalysisTransferFunction, noiseAnalysis,
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit amet.',
+        smallDescription: 'Analysing circuits theoretically',
         logo: '/images/categoryLogos/circuit analysis.png',
     },
 
@@ -103,7 +103,7 @@ const articles: TCategory[] = [
             cadenceAnalysisEMIR, cadenceAnalysisDC, analysisPAC, analysisCorner, analysisMonteCarlo, analysisExtracted,
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing.',
+        smallDescription: 'Explaining different types of analyses',
         logo: '/images/categoryLogos/Cadence analysis.png',
     },
     {
@@ -113,20 +113,20 @@ const articles: TCategory[] = [
             layoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings, cmosInverterLayout, commonDRC,
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit adipiscing elit. ',
+        smallDescription: 'Layout techniques and verification',
         logo: '/images/categoryLogos/layout.png',
     },
 
 
     {
         id: 'verilogModels',
-        title: 'VERILOG-A MODELS',
+        title: 'Verilog-A Models',
         articles: [
             bin2therm, dec2bin, vcoModel, dec2therm, levelShifter, LPF, HPF, nonoverlapClk, PWM, comparator, ADC, DAC,
             save2file, counter,
         ],
 
-        smallDescription: 'Lorem ipsum elit. ',
+        smallDescription: 'Variety of Verilog-A models for simulation ',
         logo: '/images/categoryLogos/VERILOG.png',
     },
 
@@ -138,22 +138,22 @@ const articles: TCategory[] = [
             pcbTraceCalculator,
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+        smallDescription: 'Calculators, estimators and more',
         logo: '/images/categoryLogos/MATLAB scripts.png',
     },
 
 
-    {
-        id: 'skillScripts',
-        title: 'SKILL scripts',
-        hideInProd: true,
-        articles: [
-
-        ],
-
-        smallDescription: 'Lorem ipsum',
-        logo: '/images/categoryLogos/SKILL.png',
-    },
+//    {
+//        id: 'skillScripts',
+//        title: 'SKILL scripts',
+//        hideInProd: true,
+//        articles: [
+//
+//        ],
+//
+//        smallDescription: 'Lorem ipsum',
+//        logo: '/images/categoryLogos/SKILL.png',
+//    },
 
 
     {
@@ -164,7 +164,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit',
+        smallDescription: 'Tips and tricks to tame Cadence',
         logo: '/images/categoryLogos/Cadence Virtuoso Tricks.png',
     },
 
@@ -177,7 +177,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lor',
+        smallDescription: 'Cheatsheets and useful links',
         logo: '/images/categoryLogos/Useful materials.png',
     },
 
@@ -189,7 +189,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem ipsum dolor elit. ',
+        smallDescription: 'Design code and clarity tips',
         logo: '/images/categoryLogos/Design Presentation.png',
     },
 
@@ -202,7 +202,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit.',
+        smallDescription: 'How to simulate efficiently',
         logo: '/images/categoryLogos/Simulation Hacks.png',
     },
 
@@ -215,7 +215,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit amet, elit. ',
+        smallDescription: 'Virtuoso customization and optimization ',
         logo: '/images/categoryLogos/Setting Up Cadence Environment.png',
     },
 
@@ -228,7 +228,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem ipsum dolor adipiscing elit. ',
+        smallDescription: 'Questions and puzzles to get you prepared for an interview ',
         logo: '/images/categoryLogos/interview.png',
     },
 
@@ -241,7 +241,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem ipsum dolor sit, consectetur adipiscing elit. ',
+        smallDescription: 'Get maximum out of SKILL ',
         logo: '/images/categoryLogos/SKILL.png',
     },
 
@@ -253,7 +253,7 @@ const articles: TCategory[] = [
 
         ],
 
-        smallDescription: 'Lorem amet, consectetur adipiscing elit. ',
+        smallDescription: 'Schematic and layout design checks and best practices ',
         logo: '/images/categoryLogos/Good Design Practices.png',
     },
 
