@@ -20,7 +20,7 @@ There are two main LDO topologies: NMOS and PMOS-based.
 A bandgap voltage reference provides a stable reference signal for the regulator. An error amplifier (EA), typically implemented as an OTA (Operational Transconductance Amplifier), detects differences between the feedback voltage and the reference voltage, adjusting the pass-element resistance accordingly.
 A feedback resistor network divides the output voltage for comparison with the reference voltage (Vref). The pass device (usually a MOSFET) regulates resistance between the input and output voltages to maintain stability. In practical applications, the pass device is commonly a PMOS transistor. Next, we’ll compare the use of PMOS vs. NMOS topologies:
 |                |PMOS\t |NMOS\t |
-|----------------|-------|-------|
+|----------------|:-------:|:-------:|
 |Maximum output voltage\t\t| $$V_{dsat} (\\approx 50-100mV)$$    |$$V_{dd}-V_{th}(\\approx 0.4-0.6V)$$\t |
 |PSRR\t \t\t\t\t\t|Low  |High\t |
 |Output impedance\t\t\t|Lower  |Higher\t | 
@@ -41,6 +41,37 @@ To calculate the parasitic parameters of the PCB trace you can use [this MATLAB 
 <br/> <img src="http://localhost:3000/images/circuits/ldo-parasitics-full.svg" alt="LDO parasitics model" style="display: block; margin-inline: auto; width: min(80%, 80rem)" /> 
 <p style="display: block; text-align: center">LDO parasitics model</p>
 
+
+---
+**New material here:**
+Using a voltage divider equation, we get:
+$$
+V_{fb} = V_{out}\\frac{R_2}{R_1 + R_2}
+$$
+Knowing that $V_{fb} = V_{ref}$ and assuming feedback resistors ratio to be $R_2 = kR_1$ , we can rewrite the equation:
+$$
+V_{ref}  = V_{out}\\frac{kR_1}{R_1 + kR_1}
+$$
+Solving for $k$, we get:
+$$
+k = \\frac{\\frac{V_{ref}}{V_{out}}}{1 - \\frac{V_{ref}}{V_{out}}}
+$$
+Using that equation, we can easily calculate the feedback resistor values, knowing the output voltage of an LDO and a reference voltage:
+
+**Feedback resistance calculation example here:**
+PSRR - dominated by the gain of amplifier, weakened by Cgs of the pass device
+Regulation - defined by the gain of the amplifier
+Power consumption - opamp + Iq
+Noise - opamp
+BW - Cload, Cgs of the pass device, opamp BW
+
+
+|Amplifier Topology|Regulation| Stability| PSRR| Noise|Power consumption| 
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|Telescopic|Medium\t|High\t  |Medium\t|Low\t  |Low\t\t|
+|Folded cascode||||||
+|Two-stage||||||
+|Gain-boosted||||||
     `
 };
 
