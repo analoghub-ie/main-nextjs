@@ -5,16 +5,18 @@ const article: TArticle = {
     title: 'Matching patterns',
     description: 'This article describes matching patterns like interdigitation and common centroid',
     lastUpdate: new Date('2025-07-25'),
-    hideInProd: true,
+    hideInProd: false,
     content: `
 
 ## Matching patterns in layout
 
 ### Table of Contents
 1. [Introduction](#introduction)
-2. [Matching patterns](#matchingPatterns)
-2.1 [Interdigitation](#interdigitation)
-2.2 [Common Centroid](#commonCentroid)
+2. [Golden Rules of Matching](#matchingGoldenRules)
+3. [Matching patterns](#matchingPatterns)
+4. [Interdigitation](#interdigitation)
+5. [Common Centroid](#commonCentroid)
+6. [Matching guide](#matchingGuide)
 
 <div id="introduction"></div>
 
@@ -22,12 +24,27 @@ const article: TArticle = {
 
 In the previous [article](/category/Layout/article/layoutMatching) 
 we spoke about the matching theory in analog layout. In this article we will dive deeper into matching 
-patterns, such as interdigitation and common centroid and how to create your own matching pattern in layout. We will 
-also discuss some practical aspects of matching.
+patterns, such as **Interdigitation** and **Common Centroid** and how to create your own matching pattern in layout. We 
+will also discuss some practical aspects of matching.
+
+
+<div id="matchingGoldenRules"></div>
+
+## 2. Golden Rules of Matching
+1. **Geometry** – Every segment of the array should be unit-sized and have the same geometry;
+2. **Symmetry** – Array segments should be placed symmetrically for both X- and Y-axes; Orientation of all devices 
+should be the same;
+3. **Coincidence** – Geometrical centres of the array should coincide;
+4. **Compactness** – The array should be as compact as possible, ideally square-shaped;
+5. **Distribution** – Array segments should be distributed as evenly as possible;
+6. **Positioning** – Matched array should be placed as far as possible from potential aggressors (high current/frequency 
+blocks etc.)
+7. **Edging** – Array segments should be surrounded by dummies to ensure equal edge conditions for core devices and 
+protect from [layout-dependent effects](/category/Layout/article/layoutDependentEffects).
 
 <div id="matchingPatterns"></div>
 
-## 2. Matching Patterns
+## 3. Matching Patterns
 
 The main goal of matching is to achieve an equal impact of non-idealities in CMOS process for the critical structures, 
 such as differential pairs and current sources. There are plenty of factors that are playing against precision of the 
@@ -39,9 +56,12 @@ sees the same impact and will cancel it, just as differential signalling.
 There are two main types of matching patterns in layout - **Interdigitation** and **Common Centroid**. Let's walk 
 through them and understand each other's application. 
 
+<br/> <img src="http://localhost:3000/images/layout/matchingPatterns.svg" alt="Matching patterns" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<p style="display: block; text-align: center">Matching patterns</p> 
+
 <div id="interdigitation"></div>
 
-## 2.1 Interdigitation
+## 4. Interdigitation
 
 **Interdigitation** - is the simplest way of matching a circuit. This pattern is suitable for the simple current mirrors, 
 voltage dividers (resistive or capacitive) and simple biasing circuits. Interdigitation provides good matching 
@@ -49,12 +69,12 @@ properties against 1D-gradients and is suitable for the simple circuits. **The m
 an imaginary center line and place your devices symmetrically, relative to this line. The simplest example of that is 
 so called **"ABBA"** pattern:
 
-<br/> <img src="http://localhost:3000/images/layout/interdigitation1.svg" alt="The classics of matching - the ABBA pattern" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/interdigitation1.svg" alt="The classics of matching - the ABBA pattern" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
 <p style="display: block; text-align: center">The classics of matching - the "ABBA" pattern</p> 
 
 Let's compare an unmatched array and an interdigitated array by applying a simple 1D gradient to both structures:
 
-<br/> <img src="http://localhost:3000/images/layout/interdigitationGradient.svg" alt="Applying a linear gradient to the devices" style="display: block; margin-inline: auto; width: min(80%, 60rem)" /> 
+<br/> <img src="http://localhost:3000/images/layout/interdigitationGradient.svg" alt="Applying a linear gradient to the devices" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Applying a gradient for the devices</p>
 
 Now, let's count the impact for each device:
@@ -117,10 +137,16 @@ $$
 Taking into account that $$A = 2B = 2C$$, we can see that all devices in this array are seeing the same impact from 
 1D gradient applied. 
 
+**Interdigitation matching procedure:**
+1. Make sure the smallest device has at least 2 multipliers and 2 fingers (in case of MOS device);
+2. Each device has the same finger width and length. Use multipliers to achieve the required total width;
+3. Place the smallest device in the center of the pattern;
+4. Keep adding devices on the left and on the right, starting from the smallest devices.
+
 
 <div id="commonCentroid"></div>
 
-## 2.2 Common Centroid
+## 5. Common Centroid
 
 **Common Centroid** is more advanced matching technique, suitable for more complex analog structures, such as 
 differential pairs, BJT arrays in Bandgaps, R/C DAC array etc. **The difference between interdigitation and 
@@ -131,7 +157,10 @@ The main idea behind common centroid is that we make our array symmetrical of th
 should be symmetrical in both **X-** and **Y-** axes. 
 
 Let's dive in through an example - a complex current mirror that has **2A**, **4B** and **8C** devices:
-**PLACE CURRENT MIRROR PIC HERE**
+
+<br/> <img src="http://localhost:3000/images/layout/ccCurrentMirror.svg" alt="Current mirror example" style="display: block; margin-inline: auto; width: min(80%, 20rem)" /> 
+<p style="display: block; text-align: center">Current mirror example</p>  
+
 The first step would be to draw an imaginary symmetry lines for X- and Y- axes. Then, we will place the smallest device 
 on the first diagonal, as shown below:
 
@@ -213,99 +242,32 @@ $$
 > **Note:** Even though devices in both arrays are facing the same impact, the second array would be more preferable, 
 because it exhibits better distribution of the $$C$$ devices within the array.
 
-### Matching procedure
-1. Define the purpose and type of the structure (current mirror/diff. pair etc.)
-2. Define the type of matching required (interdigitation/common centroid)
-3. Check/select unit element sizing:
 
-3a. **NMOS/PMOS transistors:**
-- All devices have the same length
-- Minimum-sized device has at least 2 fingers and (if possible) 2 multipliers
-- Other devices have at least 2 fingers
-
-3b. **Capacitive/resistive arrays:**
-- All devices are multiples of the unit-sized device
-
-3c. **BJT arrays:**
-- All devices are multiples of the unit-sized device
-
-
-4. Shape an array as close as possible to the square
-5. Estimate main routing lines and reserve space for them between array elements
-6. Apply proper matching pattern to the array
-7. Surround the array with dummies and adjust their size for area efficiency
-8. Place the guard ring and add a PWELL/NWELL layer
-9. Combine N+/P+ areas to avoid spacing DRCs.
-
-
-
-### Golden Rules of Matching:
-1. **Geometry** – Every segment of the array should be unit-sized and have the same geometry;
-2. **Symmetry** – Array segments should be placed symmetrically for both X- and Y-axes; Orientation of all devices should be the same;
-3. **Coincidence** – Geometrical centres of the array should coincide;
-4. **Compactness** – The array should be as compact as possible, ideally square-shaped;
-5. **Distribution** – Array segments should be distributed as evenly as possible;
-6. **Positioning** – Matched array should be placed as far as possible from potential aggressors (high current/frequency blocks etc.)
-7. **Edging** – Array segments should be surrounded by dummies to ensure equal edge conditions for core devices and protect from [layout-dependent effects](/category/Layout/article/layoutDependentEffects).
-
-### Matching guide:
-#### Choosing matching pattern:
-**Interdigitation:** simple current mirrors, biasing circuits
-
-**Common centroid:** precise current mirrors, differential pairs, R/C arrays, BJT arrays (Bandgap)
-
-#### Abutted/separated:
-**Abutted:** current mirrors (benefit of reduced $$R_{ds}$$), biasing circuits
-
-**Separated:** differential pairs (to reduce parasitic dummy capacitor impact), R/C arrays for ADC/DAC, BJT arrays
-
-#### Interdigitation matching procedure:
-1. Make sure the smallest device has at least 2 multipliers and 2 fingers (in case of MOS device);
-2. Each device has the same finger width and length. Use multipliers to achieve the required total width;
-3. Place the smallest device in the center of the pattern;
-4. Keep adding devices on the left and on the right, starting from the smallest devices.
-
-
-
-
-
-#### Common centroid procedure
+**Common Centroid matching procedure:**
 1. Make sure all devices are unit-sized;
 2. Make sure every device has at least 2 fingers and 2 multipliers;
 3. Assign one letter to each device and count its multipliers;
 4. Draw a vertical and horizontal axis; the intersection would be the center of our array;
+5. Imagine two diagonal cuts, $D_1$ and $D_2$;
+6. Take the smallest device and place two multipliers in the center on $D_1$; if this device has more than 2 
+multipliers, place them too, but on $D_2$
 
 
 
-5. Imagine two diagonal cuts, $D_1$ and $D_2$ as shown below:
-6. Take the smallest device and place two multipliers in the center on $D_1$; if this device has more than 2 multipliers, place them too, but on $D_2$
+<div id="matchingGuide"></div>
 
+## 6. Matching guide
 
+So, we've learned two main matching patterns and how to implement and check them in layout. You might ask a reasonable 
+question - **How to select a suitable matching pattern for an analog structure?** The answer is quite simple - the 
+**Interdigitation** is less complex method, and it would be sufficient for structures like small current mirrors and biasing circuits. 
+Using this pattern will be **more area-efficient** and allows **simple routing**.
 
+When we are talking about the structures that require **maximum precision** -- such as R/C DAC arrays, differential pairs -- 
+we have to use the **Common Centroid** to achieve the best performance. The typical analog structures and the 
+corresponding matching patterns are summarized in the table below:
 
---------
-
-Interdigitation 1D gradient calculation:
-$$
-A = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36
-$$
-
-$$
-B = 2 + 3 + 6 + 7 = 18
-$$
-
-$$
-C = 1 + 4 + 5 + 8 = 18
-$$
-
-Taking into account the sizes of the devices, we can see that the impact is equal:
-
-$$
-2C = 2B = A
-$$
-
-
-|Subcircuit type|Interdigitation|Common Centroid|
+|Subcircuit type|**Interdigitation**|**Common Centroid**|
 |---------------|:-----:|:---------------:|
 |Biasing circuit|✔|\t\t\t\t|
 |Current mirror |✔\t\t\t\t|\t\t\t\t|
@@ -315,6 +277,31 @@ $$
 |Resistive ADC/DAC array|\t\t|✔\t\t\t\t|
 |Capacitive ADC/DAC array|\t\t|✔\t\t\t\t|
 |Bandgap BJT array|\t\t\t\t|✔\t\t\t\t|
+
+Summarizing the things we discussed above we can come up with a generic matching procedure, listed below.
+
+<b><ins>Matching procedure:</b></ins>
+1. **Define the purpose** and type of the structure (current mirror/diff. pair etc.)
+2. Define the **type of matching** required (interdigitation/common centroid)
+3. Check/select **unit element sizing**:
+<p style="margin-left: 15px;"><b>3a. NMOS/PMOS transistors:</b></p>
+<p style="margin-left: 15px;">- All devices have the same length</p>
+<p style="margin-left: 15px;">- Minimum-sized device has at least 2 fingers and (if possible) 2 multipliers</p>
+<p style="margin-left: 15px;">- Other devices have at least 2 fingers</p>
+
+<p style="margin-left: 15px;"><b>3b. Capacitive/resistive arrays:</b></p>
+<p style="margin-left: 15px;">- All devices are multiples of the unit-sized device</p>
+
+<p style="margin-left: 15px;"><b>3c. BJT arrays:</b></p>
+<p style="margin-left: 15px;">- All devices are multiples of the unit-sized device</p>
+
+4. **Shape an array** as close as possible to the square
+5. **Estimate main routing** lines and reserve space for them between array elements
+6. **Apply** proper **matching** pattern to the array
+7. Surround the array with **dummies** and adjust their size for area efficiency
+8. **Place the guard ring** and add a PWELL/NWELL layer
+9. **Combine N+/P+** areas to avoid spacing DRCs.
+
         `
 };
 
