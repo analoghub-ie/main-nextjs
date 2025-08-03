@@ -12,7 +12,7 @@ const article: TArticle = {
 
 ### Table of Contents
 1. [Introduction](#introduction)
-2. [Golden Rules of Matching](#matchingGoldenRules)
+2. [Matching principles](#matchingGoldenRules)
 3. [Matching patterns](#matchingPatterns)
 4. [Interdigitation](#interdigitation)
 5. [Common Centroid](#commonCentroid)
@@ -30,17 +30,39 @@ will also discuss some practical aspects of matching.
 
 <div id="matchingGoldenRules"></div>
 
-## 2. Golden Rules of Matching
-1. **Geometry** – Every segment of the array should be unit-sized and have the same geometry;
-2. **Symmetry** – Array segments should be placed symmetrically for both X- and Y-axes; Orientation of all devices 
+## 2. Matching principles
+
+While creating a layout pattern we should follow a few simple, but important rules that will ensure that our array 
+provides a proper matching to every device and neutralises negative effects, ensuring the best possible performance of 
+the circuit. Here are the rules:
+
+
+1. **Geometry** – Every segment of the array should be unit-sized and have the same geometry; Orientation of all devices 
 should be the same;
-3. **Coincidence** – Geometrical centres of the array should coincide;
-4. **Compactness** – The array should be as compact as possible, ideally square-shaped;
-5. **Distribution** – Array segments should be distributed as evenly as possible;
-6. **Positioning** – Matched array should be placed as far as possible from potential aggressors (high current/frequency 
+
+<br/> <img src="http://localhost:3000/images/layout/matchingRule1.svg" alt="Geometry" style="display: block; margin-inline: auto; width: min(80%, 60rem)" /> 
+
+2. **Symmetry** – Array segments should be placed symmetrically for both X- and Y-axes; 
+
+<br/> <img src="http://localhost:3000/images/layout/matchingRule2.svg" alt="Symmetry" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+<!--**Coincidence** – Geometrical centres of the array should coincide; -->
+3. **Compactness** – The array should be as compact as possible, ideally square-shaped;
+
+<br/> <img src="http://localhost:3000/images/layout/matchingRule3.svg" alt="Compactness" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+
+4. **Distribution** – Array segments should be distributed as evenly as possible;
+
+<br/> <img src="http://localhost:3000/images/layout/matchingRule4.svg" alt="Distribution" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+
+5. **Positioning** – Matched array should be placed as far as possible from potential aggressors (high current/frequency 
 blocks etc.)
-7. **Edging** – Array segments should be surrounded by dummies to ensure equal edge conditions for core devices and 
+
+<br/> <img src="http://localhost:3000/images/layout/matchingRule5.svg" alt="Positioning" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
+
+6. **Edging** – Array segments should be surrounded by dummies to ensure equal edge conditions for core devices and 
 protect from [layout-dependent effects](/category/Layout/article/layoutDependentEffects).
+
+<br/> <img src="http://localhost:3000/images/layout/matchingRule6.svg" alt="Edging" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 
 <div id="matchingPatterns"></div>
 
@@ -79,7 +101,7 @@ Let's compare an unmatched array and an interdigitated array by applying a simpl
 
 Now, let's count the impact for each device:
 
-**Unmatched:**
+<b><u>Unmatched:</u></b>
 
 $$
 A = 1 + 2 = 3
@@ -92,7 +114,7 @@ $$
 That's a huge difference, isn't it? Imagine those devices being your input differential pair - this would cause a wild 
 offset due to the unsymmetry of those devices!
 
-**ABBA pattern:**
+<b><u>ABBA pattern:</u></b>
 
 $$
 A = 1 + 4 = 5
@@ -120,7 +142,7 @@ To check that our pattern is still correct, we can apply the same procedure, as 
 <br/> <img src="http://localhost:3000/images/layout/interdigitation3Gradient.svg" alt="Interdigitation gradient for 8A-4B-4C array" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
 <p style="display: block; text-align: center">Interdigitation gradient for 8A-4B-4C array</p>  
 
-Apllying a linear gradient to all devices and calculating the impact for each segment, we get:
+Applying a linear gradient to all devices and calculating the impact for each segment, we get:
 
 $$
 A = 1 + 2 + 3 +4  +5 +6+7+8 =36 
@@ -137,11 +159,25 @@ $$
 Taking into account that $$A = 2B = 2C$$, we can see that all devices in this array are seeing the same impact from 
 1D gradient applied. 
 
-**Interdigitation matching procedure:**
+<b><u>Interdigitation matching procedure:</b></u>
 1. Make sure the smallest device has at least 2 multipliers and 2 fingers (in case of MOS device);
 2. Each device has the same finger width and length. Use multipliers to achieve the required total width;
 3. Place the smallest device in the center of the pattern;
 4. Keep adding devices on the left and on the right, starting from the smallest devices.
+
+The following tutorial shows how to create an **interdigitation** pattern for a current mirror in Cadence Layout GXL:
+
+<br/>
+
+<div style="display: block; margin-inline: auto; width: min(90%, 100rem); aspect-ratio: 16/9">
+    <iframe 
+        src="https://www.youtube.com/embed/hy_APHz8XwQ?list=PL0oLvNvFrW9xbe26NgdX-HsknCJ4ioGT7" 
+        alt="Current Mirror Layout Using Modgen (Cadence Layout GXL)" 
+        style="width: 100%; height: 100%; border: none;">
+    </iframe>
+</div>
+
+<!--<p style="display: block; text-align: center">Current Mirror Layout Using Modgen (Cadence Layout GXL)</p> -->
 
 
 <div id="commonCentroid"></div>
@@ -243,7 +279,7 @@ $$
 because it exhibits better distribution of the $$C$$ devices within the array.
 
 
-**Common Centroid matching procedure:**
+<b><u>Common Centroid matching procedure:</b></u>
 1. Make sure all devices are unit-sized;
 2. Make sure every device has at least 2 fingers and 2 multipliers;
 3. Assign one letter to each device and count its multipliers;
@@ -252,7 +288,19 @@ because it exhibits better distribution of the $$C$$ devices within the array.
 6. Take the smallest device and place two multipliers in the center on $D_1$; if this device has more than 2 
 multipliers, place them too, but on $D_2$
 
+The following tutorial shows how to create a **common centroid** pattern for a differential pair in Cadence Layout GXL:
 
+<br/>
+
+<div style="display: block; margin-inline: auto; width: min(90%, 100rem); aspect-ratio: 16/9">
+    <iframe 
+        src="https://www.youtube.com/embed/mca7NKcTlhU?list=PL0oLvNvFrW9xbe26NgdX-HsknCJ4ioGT7" 
+        alt="Differential Pair Layout Using Modgen (Cadence Layout GXL)" 
+        style="width: 100%; height: 100%; border: none;">
+    </iframe>
+</div>
+
+<!--<p style="display: block; text-align: center">Differential Pair Layout Using Modgen (Cadence Layout GXL)</p> -->
 
 <div id="matchingGuide"></div>
 
@@ -260,10 +308,10 @@ multipliers, place them too, but on $D_2$
 
 So, we've learned two main matching patterns and how to implement and check them in layout. You might ask a reasonable 
 question - **How to select a suitable matching pattern for an analog structure?** The answer is quite simple - the 
-**Interdigitation** is less complex method, and it would be sufficient for structures like small current mirrors and biasing circuits. 
-Using this pattern will be **more area-efficient** and allows **simple routing**.
+**Interdigitation** is a less complex method, and it would be sufficient for structures like small current mirrors and 
+biasing circuits. Using this pattern will be **more area-efficient** and allows **simple routing**.
 
-When we are talking about the structures that require **maximum precision** -- such as R/C DAC arrays, differential pairs -- 
+When we are talking about structures that require **maximum precision** - such as R/C DAC arrays, differential pairs - 
 we have to use the **Common Centroid** to achieve the best performance. The typical analog structures and the 
 corresponding matching patterns are summarized in the table below:
 
@@ -280,7 +328,7 @@ corresponding matching patterns are summarized in the table below:
 
 Summarizing the things we discussed above we can come up with a generic matching procedure, listed below.
 
-<b><ins>Matching procedure:</b></ins>
+#### Matching procedure:
 1. **Define the purpose** and type of the structure (current mirror/diff. pair etc.)
 2. Define the **type of matching** required (interdigitation/common centroid)
 3. Check/select **unit element sizing**:

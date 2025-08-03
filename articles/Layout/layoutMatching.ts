@@ -20,7 +20,7 @@ const article: TArticle = {
 
 ## 1. Introduction
 
-**Matching** - is a very important technique in Analog IC layout. It helps compensating a lot of undesirable 
+**Matching** - is a very important technique in Analog IC layout. It helps to compensate a lot of undesirable 
 [layout-dependent effects](/category/Layout/article/layoutDependentEffects). In IC design there are 
 multiple sources of nonidealities that affecting IC performance. We can split them into two categories: 
 **manufacturing-related** and **environmental**. **Manufacturing-related sources** includes dopant gradients, oxide 
@@ -108,29 +108,6 @@ By surrounding our core devices with dummy devices around, we are achieving two 
 <br/> <img src="http://localhost:3000/images/layout/dummy-wpe-gradients.svg" alt="Gradient and WPE impact on the matched devices" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">Gradient and WPE impact on the matched devices</p>  
 
-<br/>
-
-<div style="display: block; margin-inline: auto; width: min(90%, 100rem); aspect-ratio: 16/9">
-    <iframe 
-        src="https://www.youtube.com/embed/hy_APHz8XwQ?list=PL0oLvNvFrW9xbe26NgdX-HsknCJ4ioGT7" 
-        alt="Current Mirror Layout Using Modgen (Cadence Layout GXL)" 
-        style="width: 100%; height: 100%; border: none;">
-    </iframe>
-</div>
-
-<!--<p style="display: block; text-align: center">Current Mirror Layout Using Modgen (Cadence Layout GXL)</p> -->
-
-<br/>
-
-<div style="display: block; margin-inline: auto; width: min(90%, 100rem); aspect-ratio: 16/9">
-    <iframe 
-        src="https://www.youtube.com/embed/mca7NKcTlhU?list=PL0oLvNvFrW9xbe26NgdX-HsknCJ4ioGT7" 
-        alt="Differential Pair Layout Using Modgen (Cadence Layout GXL)" 
-        style="width: 100%; height: 100%; border: none;">
-    </iframe>
-</div>
-
-<!--<p style="display: block; text-align: center">Differential Pair Layout Using Modgen (Cadence Layout GXL)</p> -->
 
 
 
