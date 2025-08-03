@@ -58,6 +58,7 @@ import skillCreateForms from "@/articles/SKILL/skillCreateForms";
 import skillExternalTools from "@/articles/SKILL/skillExternalTools";
 import handlingWarnings from "@/articles/SKILL/handlingWarnings";
 import hiRegTimer from "@/articles/SKILL/hiRegTimer";
+import layoutMatchingPatterns from "@/articles/Layout/layoutMatchingPatterns";
 
 const articles: TCategory[] = [
     {
@@ -110,7 +111,7 @@ const articles: TCategory[] = [
         id: 'Layout',
         title: 'Layout',
         articles: [
-            layoutDependentEffects, layoutBasics, layoutMatching, layoutEditorSettings, cmosInverterLayout, commonDRC,
+            layoutDependentEffects, layoutBasics, layoutMatching, layoutMatchingPatterns, cmosInverterLayout, commonDRC,
         ],
 
         smallDescription: 'Layout techniques and verification',
