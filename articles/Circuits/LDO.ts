@@ -8,12 +8,24 @@ const article: TArticle = {
     hideInProd: true,
     content: `
 
-##  LDO design
-Low-dropout oscillator (LDO) is a very important circuit that helps in achieving better performance of the internal 
-circuits irrespectably of external conditions (supply voltage variation, noise etc.). It is usually used together with 
-bandgap reference to ensure constant output voltage.
-LDOs have a variety of topologies and oriented for use with analog or digital circuits.
-There are two main LDO topologies: NMOS and PMOS-based.
+##  Low-dropout oscillator (LDO)
+
+### Table of Contents
+1. [LDO basics](#ldoBasics)
+explain basic principles of operation
+- LDO types (capless, w/external cap, PMOS/NMOS based)
+- LDO stability
+
+
+
+<div id="ldoBasics"></div>
+
+## 1. LDO basics
+
+**Low-dropout oscillator (LDO)** -  is a critical part in ICs, that helps in achieving better 
+performance of the internal circuits irrespective of external conditions (supply voltage variation, noise etc.). 
+It is usually used together with the bandgap reference to ensure constant output voltage. LDOs have a variety of topologies 
+and oriented for use with analog or digital circuits. There are two main LDO topologies: NMOS and PMOS-based.
 
 <br/> <img src="http://localhost:3000/images/circuits/ldo-topologies.svg" alt="LDO topologies" style="display: block; margin-inline: auto; width: min(80%, 80rem)" /> 
 <p style="display: block; text-align: center">LDO topologies</p>
@@ -24,6 +36,7 @@ reference voltage, adjusting the pass-element resistance accordingly.
 A feedback resistor network divides the output voltage for comparison with the reference voltage (Vref). The pass device 
 (usually a MOSFET) regulates resistance between the input and output voltages to maintain stability. In practical 
 applications, the pass device is commonly a PMOS transistor. Next, we’ll compare the use of PMOS vs. NMOS topologies:
+
 |                |PMOS\t |NMOS\t |
 |----------------|:-------:|:-------:|
 |Maximum output voltage\t\t| $$V_{dsat} (\\approx 50-100mV)$$    |$$V_{dd}-V_{th}(\\approx 0.4-0.6V)$$\t |
@@ -72,6 +85,7 @@ Using that equation, we can easily calculate the feedback resistor values, knowi
 reference voltage:
 
 **Feedback resistance calculation example here:**
+
 PSRR - dominated by the gain of amplifier, weakened by Cgs of the pass device
 Regulation - defined by the gain of the amplifier
 Power consumption - opamp + Iq
@@ -85,6 +99,33 @@ BW - Cload, Cgs of the pass device, opamp BW
 |Folded cascode||||||
 |Two-stage||||||
 |Gain-boosted||||||
+
+
+
+--- 
+> **Feedback resistor highlights:**
+> - Use **low-mismatch resistors**, such as polysilicon resistors;
+> - **Make resistors** as **wide** as possible to reduce mismatch;
+> - Use **unit-sized segments**; connect resistors in parallel or in series, if needed;
+> - **[Match](http://localhost:3000/category/Layout/article/layoutMatchingPatterns)** feedback resistors in layout; 
+> - Total **resistance defines quiescent current ($$I_q$$)** - a trade-off between stability and power consumption;
+
+
+Amplifier error:  
+$$V_{out} = A(V_{+}-V_{-})$$  
+$$V_{-}=V_{out}$$  
+$$V_{+}=V_{in}$$  
+$$V_{out} = AV_{+}-AV_{out}$$  
+$$(1+A)V_{out}=AV_{in}$$  
+$$V_{out} = \\frac{A}{1+A}V_{in}$$  
+  
+For $$A=40dB$$  the gain error is:  
+$$\\delta A = \\frac{10'000}{1+10'000} = 0.9999$$  
+So for $$Vref = 1.2V$$  it translates into $$\\delta V_{out} = 1.9988V$$ , which means an error of 0.01%
+
+
+
+
     `
 };
 

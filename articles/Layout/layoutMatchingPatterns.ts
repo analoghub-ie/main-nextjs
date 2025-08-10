@@ -3,7 +3,7 @@ import {TArticle} from "../types";
 const article: TArticle = {
     id: 'layoutMatchingPatterns',
     title: 'Matching patterns',
-    description: 'This article describes matching patterns like interdigitation and common centroid',
+    description: 'Dive into interdigitation and common centroid',
     lastUpdate: new Date('2025-07-25'),
     hideInProd: false,
     content: `
@@ -112,7 +112,7 @@ B = 3 + 4 = 7
 $$
 
 That's a huge difference, isn't it? Imagine those devices being your input differential pair - this would cause a wild 
-offset due to the unsymmetry of those devices!
+offset due to the asymmetry of those devices!
 
 <b><u>ABBA pattern:</u></b>
 

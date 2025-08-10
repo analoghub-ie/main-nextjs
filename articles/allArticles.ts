@@ -59,6 +59,7 @@ import skillExternalTools from "@/articles/SKILL/skillExternalTools";
 import handlingWarnings from "@/articles/SKILL/handlingWarnings";
 import hiRegTimer from "@/articles/SKILL/hiRegTimer";
 import layoutMatchingPatterns from "@/articles/Layout/layoutMatchingPatterns";
+import resLadderCalc from "@/articles/matlabScripts/resLadderCalc";
 
 const articles: TCategory[] = [
     {
@@ -136,7 +137,7 @@ const articles: TCategory[] = [
         id: 'matlabScripts',
         title: 'MATLAB',
         articles: [
-            pcbTraceCalculator,
+            pcbTraceCalculator, resLadderCalc,
         ],
 
         smallDescription: 'Calculators, estimators and more',
