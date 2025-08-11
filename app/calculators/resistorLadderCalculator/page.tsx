@@ -1,5 +1,8 @@
 import React from "react";
+
 import ResistorLadderCalculator from "@/components/calculators/ResistorLadderCalculator";
+import SeriesParallelCalculator from "@/components/calculators/SeriesParallelCalculator";
+import PCBCalculator from "@/components/calculators/PCBCalculator";
 
 export const metadata = {
     title: "Resistor Ladder Calculator",
@@ -12,7 +15,17 @@ export default function ResistorLadderCalculatorPage() {
             <h1 className="text-3xl font-bold mb-8 text-center">
                 Resistor Ladder Calculator
             </h1>
-            <ResistorLadderCalculator />
+            <ResistorLadderCalculator/>
+
+            <h1 className="text-3xl font-bold mb-8 text-center">
+                Series-Parallel Calculator
+            </h1>
+            <SeriesParallelCalculator/>
+
+            <h1 className="text-3xl font-bold mb-8 text-center">
+                PCB Calculator
+            </h1>
+            <PCBCalculator/>
         </main>
     );
 }
