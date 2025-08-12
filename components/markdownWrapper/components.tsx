@@ -104,7 +104,7 @@ export const components = {
     },
     // calculators
     "ldo-calculator": () => (
-        <div className="my-4"> {/* Tailwind: 1rem top/bottom margin */}
+        <div className="my-2"> {/* Tailwind: 1rem top/bottom margin */}
             <LDOCalculator />
         </div>
     ),

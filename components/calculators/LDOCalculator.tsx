@@ -49,7 +49,7 @@ export default function LDOCalculator() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen p-4">
+        // <div className="flex justify-center items-center min-h-screen p-4">
             <Card className="w-full max-w-md">
                 <CardHeader>
                     <h2 className="text-lg font-bold">LDO Feedback Resistance Calculator</h2>
@@ -97,6 +97,6 @@ export default function LDOCalculator() {
                     </div>
                 </CardBody>
             </Card>
-        </div>
+        //</div>
     );
 }
