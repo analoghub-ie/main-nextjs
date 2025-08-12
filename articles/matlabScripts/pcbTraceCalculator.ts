@@ -18,6 +18,7 @@ This article contains MATLAB script for the calculation of the parasitic paramet
 > - W/H < 7.475 - 1.25*(T/H) -  for a microstrip
 > - W/B < 2.375 - 1.25*(T/B) - for a stripline
 
+<ldo-calculator></ldo-calculator>
 
 First coefficient in equation - conversion from inches to m.
 
