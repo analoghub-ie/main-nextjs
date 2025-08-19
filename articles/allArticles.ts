@@ -83,7 +83,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Design and layout of the basic circuits',
-        logo: '/images/categoryLogos/Circuits.png',
+        logo: '/images/categoryLogos/Circuits.svg',
     },
 
     {
@@ -95,7 +95,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Analysing circuits theoretically',
-        logo: '/images/categoryLogos/circuit analysis.png',
+        logo: '/images/categoryLogos/circuit analysis.svg',
     },
 
     {
@@ -106,7 +106,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Explaining different types of analyses',
-        logo: '/images/categoryLogos/Cadence analysis.png',
+        logo: '/images/categoryLogos/Cadence analysis.svg',
     },
     {
         id: 'Layout',
@@ -116,7 +116,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Layout techniques and verification',
-        logo: '/images/categoryLogos/layout.png',
+        logo: '/images/categoryLogos/layout.svg',
     },
 
 
@@ -129,7 +129,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Variety of models for simulation',
-        logo: '/images/categoryLogos/VERILOG.png',
+        logo: '/images/categoryLogos/VERILOG.svg',
     },
 
 
@@ -141,7 +141,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Calculators, estimators and more',
-        logo: '/images/categoryLogos/MATLAB scripts.png',
+        logo: '/images/categoryLogos/MATLAB scripts.svg',
     },
 
 
@@ -180,7 +180,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Cheatsheets and useful links',
-        logo: '/images/categoryLogos/Useful materials.png',
+        logo: '/images/categoryLogos/Useful materials.svg',
     },
 
 
@@ -192,7 +192,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Design code and clarity tips',
-        logo: '/images/categoryLogos/Design Presentation.png',
+        logo: '/images/categoryLogos/Design Presentation.svg',
     },
 
 
@@ -205,7 +205,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'How to simulate efficiently',
-        logo: '/images/categoryLogos/Simulation Hacks.png',
+        logo: '/images/categoryLogos/Simulation Hacks.svg',
     },
 
 
@@ -244,7 +244,7 @@ const articles: TCategory[] = [
         ],
 
         smallDescription: 'Get maximum out of SKILL ',
-        logo: '/images/categoryLogos/SKILL.png',
+        logo: '/images/categoryLogos/SKILL.svg',
     },
 
     {
