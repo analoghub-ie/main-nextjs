@@ -5,6 +5,7 @@ import { Card, CardHeader, CardBody } from "@heroui/react";
 import { Input } from "@heroui/react";
 import { Button } from "@heroui/react";
 import { Divider } from "@heroui/react";
+import UnitSelect from "./UnitSelect";
 
 type Result = {
     target: number;
@@ -14,18 +15,45 @@ type Result = {
     accuracyPct: number;
 };
 
+const UNIT_OPTIONS = ["Ω", "kΩ", "MΩ"];
+
+function convertToUnit(value: number, unit: string) {
+    switch (unit) {
+        case "kΩ":
+            return value / 1e3;
+        case "MΩ":
+            return value / 1e6;
+        default:
+            return value;
+    }
+}
+
+function convertFromUnit(value: number, unit: string) {
+    switch (unit) {
+        case "kΩ":
+            return value * 1e3;
+        case "MΩ":
+            return value * 1e6;
+        default:
+            return value;
+    }
+}
+
 export default function SeriesParallelCalculator() {
     const [rUnit, setRUnit] = useState<number>(1000);
+    const [rUnitUnit, setRUnitUnit] = useState<string>("Ω");
     const [targetsText, setTargetsText] = useState<string>("1750,2250,1250,2250");
+    const [targetsUnit, setTargetsUnit] = useState<string>("Ω");
     const [N, setN] = useState<number>(1000);
     const [accuracyPct, setAccuracyPct] = useState<number>(1);
     const [results, setResults] = useState<Result[] | null>(null);
 
-    const parseTargets = (text: string) =>
+    const parseTargets = (text: string, unit: string) =>
         text
             .split(/[ ,;]+/)
             .map((s) => Number(s.trim()))
-            .filter((n) => !isNaN(n) && n > 0);
+            .filter((n) => !isNaN(n) && n > 0)
+            .map((n) => convertFromUnit(n, unit));
 
     const compute = (rUnit: number, targets: number[], maxN: number, accPct: number) => {
         const results: Result[] = [];
@@ -52,9 +80,9 @@ export default function SeriesParallelCalculator() {
 
     const onCompute = (e?: React.FormEvent) => {
         e?.preventDefault();
-        const targets = parseTargets(targetsText);
-        if (!targets.length) return alert("Enter at least one target resistance");
-        setResults(compute(rUnit, targets, N, accuracyPct));
+        const parsedTargets = parseTargets(targetsText, targetsUnit);
+        if (!parsedTargets.length) return alert("Enter at least one target resistance");
+        setResults(compute(convertFromUnit(rUnit, rUnitUnit), parsedTargets, N, accuracyPct));
     };
 
     return (
@@ -66,13 +94,18 @@ export default function SeriesParallelCalculator() {
                 </CardHeader>
                 <CardBody>
                     <form onSubmit={onCompute} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <Input label="Unit resistor (Ω)" type="number" value={String(rUnit)} onChange={(e) => setRUnit(Number(e.target.value))} />
+                        <div className="flex gap-2">
+                            <Input label="Unit resistor" type="number" value={String(rUnit)} onChange={(e) => setRUnit(Number(e.target.value))} />
+                            <UnitSelect label="Unit" value={rUnitUnit} options={UNIT_OPTIONS} onChange={setRUnitUnit} />
+                        </div>
                         <Input label="Max groups (N)" type="number" value={String(N)} onChange={(e) => setN(Number(e.target.value))} />
-                        <Input label="Target resistances (Ω)" className="md:col-span-2" value={targetsText} onChange={(e) => setTargetsText(e.target.value)} />
+                        <div className="flex gap-2 md:col-span-2">
+                            <Input label="Target resistances" value={targetsText} onChange={(e) => setTargetsText(e.target.value)} />
+                            <UnitSelect label="Unit" value={targetsUnit} options={UNIT_OPTIONS} onChange={setTargetsUnit} />
+                        </div>
                         <Input label="Accuracy (% tolerance)" type="number" value={String(accuracyPct)} onChange={(e) => setAccuracyPct(Number(e.target.value))} />
                         <div className="flex items-end gap-2">
                             <Button type="submit" color="primary">Compute</Button>
-                            <Button type="button" variant="bordered" onClick={() => { setRUnit(1000); setTargetsText("1750,2250,1250,2250"); setN(1000); setAccuracyPct(1); setResults(null); }}>Reset</Button>
                         </div>
                     </form>
                 </CardBody>
@@ -83,22 +116,41 @@ export default function SeriesParallelCalculator() {
                     <CardHeader className="flex justify-between">
                         <div>
                             <div className="text-sm text-default-500">Target</div>
-                            <div className="text-lg font-semibold">{r.target} Ω</div>
+                            <div className="text-lg font-semibold">{convertToUnit(r.target, targetsUnit).toPrecision(3)} {targetsUnit}</div>
                         </div>
                         <div className="text-right">
                             <div className="text-sm text-default-500">Total achieved</div>
-                            <div className="text-lg font-semibold">{r.total.toFixed(6)} Ω</div>
-                            <div className="text-sm text-default-500">Accuracy: {r.accuracyPct.toFixed(6)}%</div>
+                            <div className="text-lg font-semibold">{convertToUnit(r.total, targetsUnit).toPrecision(3)} {targetsUnit}</div>
+                            <div className="text-sm text-default-500">Accuracy: {r.accuracyPct.toFixed(1)}%</div>
                         </div>
                     </CardHeader>
                     <Divider />
                     <CardBody>
-                        <div className="text-sm">- Resistors in series: <strong>{r.counts[0] ?? 0}</strong> [ {(r.counts[0] ?? 0) * r.unit} Ω ]</div>
-                        {r.counts.slice(1).map((c, i) => c > 0 && (
-                            <div key={i} className="text-sm">
-                                - {i + 2} in parallel: <strong>{c}</strong> [ {c * (r.unit / (i + 2))} Ω total ]
-                            </div>
-                        ))}
+                        <table className="w-full text-sm border-collapse text-center">
+                            <thead>
+                            <tr className="border-b">
+                                <th className="p-2">Type of connection</th>
+                                <th className="p-2">Number of resistors</th>
+                                <th className="p-2">Total resistance</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {r.counts[0] > 0 && (
+                                <tr>
+                                    <td className="p-2">Series</td>
+                                    <td className="p-2">{r.counts[0]}</td>
+                                    <td className="p-2">{convertToUnit((r.counts[0] ?? 0) * r.unit, targetsUnit).toPrecision(3)} {targetsUnit}</td>
+                                </tr>
+                            )}
+                            {r.counts.slice(1).map((c, i) => c > 0 && (
+                                <tr key={i}>
+                                    <td className="p-2">{i + 2} in Parallel</td>
+                                    <td className="p-2">{c}</td>
+                                    <td className="p-2">{convertToUnit(c * (r.unit / (i + 2)), targetsUnit).toPrecision(3)} {targetsUnit}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
                     </CardBody>
                 </Card>
             ))}

@@ -5,7 +5,6 @@ import {
     Card,
     CardHeader,
     CardBody,
-    NumberInput,
     Input,
     Button,
     Select,
@@ -14,15 +13,13 @@ import {
 
 export default function ResistorLadderCalculator() {
     const [vin, setVin] = useState<number>(1);
-    const [vinUnit, setVinUnit] = useState<string>("V");
+    const [vinUnit, setVinUnit] = useState("V");
     const [iin, setIin] = useState<number>(1);
-    const [iinUnit, setIinUnit] = useState<string>("mA");
-    const [voltages, setVoltages] = useState<string>("0.7, 0.2, 0.4, 0.9");
-    const [voutUnit, setVoutUnit] = useState<string>("V");
-    const [results, setResults] = useState<
-        { resistor: JSX.Element; value: string; vout: string }[]
-    >([]);
-    const [rtot, setRtot] = useState<string>("");
+    const [iinUnit, setIinUnit] = useState("mA");
+    const [voltages, setVoltages] = useState("0.7, 0.2, 0.4, 0.9");
+    const [voutUnit, setVoutUnit] = useState("V");
+    const [results, setResults] = useState<any[]>([]);
+    const [rtot, setRtot] = useState("");
 
     const currentUnits: Record<string, number> = {
         A: 1,
@@ -85,6 +82,7 @@ export default function ResistorLadderCalculator() {
             return;
         }
 
+        // Sort ascending (0 → Vin)
         Voltages.sort((a, b) => a - b);
 
         const Rtot = Vin / Iin;
@@ -96,15 +94,23 @@ export default function ResistorLadderCalculator() {
 
         res.push(Rtot - res.reduce((a, b) => a + b, 0));
 
-        const voltagesWithZero = [0, ...Voltages];
+        // Add 0 V (GND) and Vin to the voltage markers
+        const voltagesWithEnds = [0, ...Voltages, Vin];
 
         setRtot(formatWithUnit(Rtot, "Ω"));
 
-        const resultRows = res.map((r, i) => ({
+        // Build rows
+        let resultRows = res.map((r, i) => ({
             resistor: <span>R<sub>{i + 1}</sub></span>,
             value: formatWithUnit(r, "Ω"),
-            vout: i < voltagesWithZero.length ? formatWithUnit(voltagesWithZero[i], "V") : "",
+            vout:
+                i < voltagesWithEnds.length
+                    ? formatWithUnit(voltagesWithEnds[i + 1], "V")
+                    : "",
         }));
+
+        // ✅ Reverse order so R1 is at Vin side, last resistor at GND
+        resultRows = resultRows.reverse();
 
         setResults(resultRows);
     };
@@ -112,23 +118,29 @@ export default function ResistorLadderCalculator() {
     return (
         <Card className="w-full max-w-3xl mx-auto" shadow="none">
             <CardHeader>
-                <p className="text-md font-bold text-center w-full">Resistor Ladder Calculator</p>
+                <p className="text-md font-bold text-center w-full">
+                    Resistor Ladder Calculator
+                </p>
             </CardHeader>
             <CardBody>
                 <div className="grid gap-4 mb-6">
                     {/* Vin */}
-                    <div className="flex gap-2 items-end w-full">
-                        <NumberInput
-                            label="Input voltage"
-                            value={vin}
-                            onValueChange={(val) => setVin(val || 0)}
-                            className="flex-1"
+                    <div className="flex gap-2 items-end">
+                        <Input
+                            label="Vin"
+                            type="number"
+                            placeholder="Input voltage"
+                            value={vin.toString()}
+                            onChange={(e) => setVin(parseFloat(e.target.value))}
+                            className="w-2/3"
                         />
                         <Select
                             aria-label="Vin unit"
                             selectedKeys={[vinUnit]}
-                            onSelectionChange={(keys) => setVinUnit(Array.from(keys)[0] as string)}
-                            className="ml-2 h-10 w-20"
+                            onSelectionChange={(keys) =>
+                                setVinUnit(Array.from(keys)[0] as string)
+                            }
+                            className="w-1/3"
                         >
                             {Object.keys(voltageUnits).map((unit) => (
                                 <SelectItem key={unit}>{unit}</SelectItem>
@@ -137,18 +149,22 @@ export default function ResistorLadderCalculator() {
                     </div>
 
                     {/* Iin */}
-                    <div className="flex gap-2 items-end w-full">
-                        <NumberInput
-                            label="Total current"
-                            value={iin}
-                            onValueChange={(val) => setIin(val || 0)}
-                            className="flex-1"
+                    <div className="flex gap-2 items-end">
+                        <Input
+                            label="Iin"
+                            type="number"
+                            placeholder="Total current"
+                            value={iin.toString()}
+                            onChange={(e) => setIin(parseFloat(e.target.value))}
+                            className="w-2/3"
                         />
                         <Select
                             aria-label="Iin unit"
                             selectedKeys={[iinUnit]}
-                            onSelectionChange={(keys) => setIinUnit(Array.from(keys)[0] as string)}
-                            className="ml-2 h-10 w-20"
+                            onSelectionChange={(keys) =>
+                                setIinUnit(Array.from(keys)[0] as string)
+                            }
+                            className="w-1/3"
                         >
                             {Object.keys(currentUnits).map((unit) => (
                                 <SelectItem key={unit}>{unit}</SelectItem>
@@ -156,20 +172,22 @@ export default function ResistorLadderCalculator() {
                         </Select>
                     </div>
 
-                    {/* Voltages */}
-                    <div className="flex gap-2 items-end w-full">
+                    {/* Vout */}
+                    <div className="flex gap-2 items-end">
                         <Input
-                            label="Output voltage(s)"
+                            label="Vout(s)"
+                            placeholder="Comma-separated"
                             value={voltages}
                             onChange={(e) => setVoltages(e.target.value)}
-                            placeholder="e.g. 0.7, 0.2, 0.4, 0.9"
-                            className="flex-1"
+                            className="w-2/3"
                         />
                         <Select
                             aria-label="Vout unit"
                             selectedKeys={[voutUnit]}
-                            onSelectionChange={(keys) => setVoutUnit(Array.from(keys)[0] as string)}
-                            className="ml-2 h-10 w-20"
+                            onSelectionChange={(keys) =>
+                                setVoutUnit(Array.from(keys)[0] as string)
+                            }
+                            className="w-1/3"
                         >
                             {Object.keys(voltageUnits).map((unit) => (
                                 <SelectItem key={unit}>{unit}</SelectItem>
@@ -179,25 +197,30 @@ export default function ResistorLadderCalculator() {
 
                     <Button
                         onPress={calculate}
-                        className="mb-6 w-full bg-[#FFA31A] hover:bg-[#FFA31A] text-white"
+                        className="mb-6 w-full bg-orange-500 text-white hover:bg-orange-600"
                     >
                         Calculate
                     </Button>
 
                     {results.length > 0 && (
                         <div>
-                            <h3 className="font-semibold mb-2 text-center">Total Resistance: {rtot}</h3>
+                            <h3 className="font-semibold mb-2 text-center">
+                                Total Resistance: {rtot}
+                            </h3>
                             <table className="w-full border border-gray-300 dark:border-gray-700 rounded-md overflow-hidden">
                                 <thead className="bg-gray-100 dark:bg-gray-800">
                                 <tr>
                                     <th className="p-2 text-left">Resistor</th>
                                     <th className="p-2 text-left">Value</th>
-                                    <th className="p-2 text-left">Output voltage(s)</th>
+                                    <th className="p-2 text-left">Vout</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {results.map((r, idx) => (
-                                    <tr key={idx} className="border-t border-gray-300 dark:border-gray-700">
+                                    <tr
+                                        key={idx}
+                                        className="border-t border-gray-300 dark:border-gray-700"
+                                    >
                                         <td className="p-2">{r.resistor}</td>
                                         <td className="p-2">{r.value}</td>
                                         <td className="p-2">{r.vout}</td>
