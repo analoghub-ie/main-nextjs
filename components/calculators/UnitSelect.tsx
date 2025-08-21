@@ -1,4 +1,3 @@
-// UnitSelect.tsx
 "use client";
 
 import React from "react";
@@ -13,18 +12,16 @@ interface UnitSelectProps {
 
 export default function UnitSelect({ label, value, options, onChange }: UnitSelectProps) {
     return (
-        <div className="w-1/3 flex flex-col">
-            <span className="text-sm mb-1">{label}</span>
-            <Select
-                aria-label={label}
-                selectedKeys={[value]}
-                onSelectionChange={(keys) => onChange(Array.from(keys)[0] as string)}
-                className="h-10"
-            >
-                {options.map((unit) => (
-                    <SelectItem key={unit}>{unit}</SelectItem>
-                ))}
-            </Select>
-        </div>
+        <Select
+            label={label}                               // ✅ same as Input label
+            aria-label={label}
+            selectedKeys={[value]}
+            onSelectionChange={(keys) => onChange(Array.from(keys)[0] as string)}
+            className="w-1/3 h-[56px]"                 // ✅ same height as Input
+        >
+            {options.map((unit) => (
+                <SelectItem key={unit}>{unit}</SelectItem>
+            ))}
+        </Select>
     );
 }

@@ -7,9 +7,8 @@ import {
     CardBody,
     Input,
     Button,
-    Select,
-    SelectItem,
 } from "@heroui/react";
+import UnitSelect from "./UnitSelect";
 
 export default function ResistorLadderCalculator() {
     const [vin, setVin] = useState<number>(1);
@@ -82,7 +81,6 @@ export default function ResistorLadderCalculator() {
             return;
         }
 
-        // Sort ascending (0 → Vin)
         Voltages.sort((a, b) => a - b);
 
         const Rtot = Vin / Iin;
@@ -94,12 +92,10 @@ export default function ResistorLadderCalculator() {
 
         res.push(Rtot - res.reduce((a, b) => a + b, 0));
 
-        // Add 0 V (GND) and Vin to the voltage markers
         const voltagesWithEnds = [0, ...Voltages, Vin];
 
         setRtot(formatWithUnit(Rtot, "Ω"));
 
-        // Build rows
         let resultRows = res.map((r, i) => ({
             resistor: <span>R<sub>{i + 1}</sub></span>,
             value: formatWithUnit(r, "Ω"),
@@ -109,7 +105,6 @@ export default function ResistorLadderCalculator() {
                     : "",
         }));
 
-        // ✅ Reverse order so R1 is at Vin side, last resistor at GND
         resultRows = resultRows.reverse();
 
         setResults(resultRows);
@@ -125,79 +120,61 @@ export default function ResistorLadderCalculator() {
             <CardBody>
                 <div className="grid gap-4 mb-6">
                     {/* Vin */}
-                    <div className="flex gap-2 items-end">
+                    <div className="flex items-stretch gap-2 w-full">
                         <Input
                             label="Vin"
                             type="number"
                             placeholder="Input voltage"
                             value={vin.toString()}
                             onChange={(e) => setVin(parseFloat(e.target.value))}
-                            className="w-2/3"
+                            className="w-2/3 h-[56px]"
                         />
-                        <Select
-                            aria-label="Vin unit"
-                            selectedKeys={[vinUnit]}
-                            onSelectionChange={(keys) =>
-                                setVinUnit(Array.from(keys)[0] as string)
-                            }
-                            className="w-1/3"
-                        >
-                            {Object.keys(voltageUnits).map((unit) => (
-                                <SelectItem key={unit}>{unit}</SelectItem>
-                            ))}
-                        </Select>
+                        <UnitSelect
+                            label="Vin unit"
+                            value={vinUnit}
+                            options={Object.keys(voltageUnits)}
+                            onChange={setVinUnit}
+                        />
                     </div>
 
                     {/* Iin */}
-                    <div className="flex gap-2 items-end">
+                    <div className="flex items-stretch gap-2 w-full">
                         <Input
                             label="Iin"
                             type="number"
                             placeholder="Total current"
                             value={iin.toString()}
                             onChange={(e) => setIin(parseFloat(e.target.value))}
-                            className="w-2/3"
+                            className="w-2/3 h-[56px]"
                         />
-                        <Select
-                            aria-label="Iin unit"
-                            selectedKeys={[iinUnit]}
-                            onSelectionChange={(keys) =>
-                                setIinUnit(Array.from(keys)[0] as string)
-                            }
-                            className="w-1/3"
-                        >
-                            {Object.keys(currentUnits).map((unit) => (
-                                <SelectItem key={unit}>{unit}</SelectItem>
-                            ))}
-                        </Select>
+                        <UnitSelect
+                            label="Iin unit"
+                            value={iinUnit}
+                            options={Object.keys(currentUnits)}
+                            onChange={setIinUnit}
+                        />
                     </div>
 
                     {/* Vout */}
-                    <div className="flex gap-2 items-end">
+                    <div className="flex items-stretch gap-2 w-full">
                         <Input
                             label="Vout(s)"
                             placeholder="Comma-separated"
                             value={voltages}
                             onChange={(e) => setVoltages(e.target.value)}
-                            className="w-2/3"
+                            className="w-2/3 h-[56px]"
                         />
-                        <Select
-                            aria-label="Vout unit"
-                            selectedKeys={[voutUnit]}
-                            onSelectionChange={(keys) =>
-                                setVoutUnit(Array.from(keys)[0] as string)
-                            }
-                            className="w-1/3"
-                        >
-                            {Object.keys(voltageUnits).map((unit) => (
-                                <SelectItem key={unit}>{unit}</SelectItem>
-                            ))}
-                        </Select>
+                        <UnitSelect
+                            label="Vout unit"
+                            value={voutUnit}
+                            options={Object.keys(voltageUnits)}
+                            onChange={setVoutUnit}
+                        />
                     </div>
 
                     <Button
                         onPress={calculate}
-                        className="mb-6 w-full bg-orange-500 text-white hover:bg-orange-600"
+                        className="mb-6 w-full bg-primary text-white hover:bg-primary/80"
                     >
                         Calculate
                     </Button>
@@ -207,23 +184,23 @@ export default function ResistorLadderCalculator() {
                             <h3 className="font-semibold mb-2 text-center">
                                 Total Resistance: {rtot}
                             </h3>
-                            <table className="w-full border border-gray-300 dark:border-gray-700 rounded-md overflow-hidden">
-                                <thead className="bg-gray-100 dark:bg-gray-800">
-                                <tr>
-                                    <th className="p-2 text-left">Resistor</th>
-                                    <th className="p-2 text-left">Value</th>
-                                    <th className="p-2 text-left">Vout</th>
+                            <table className="w-full text-sm border-collapse text-center rounded-md overflow-hidden">
+                                <thead>
+                                <tr className="border-b border-secondary/30 bg-secondary/10">
+                                    <th className="p-2 text-secondary">Resistor</th>
+                                    <th className="p-2 text-secondary">Value</th>
+                                    <th className="p-2 text-secondary">Vout</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {results.map((r, idx) => (
                                     <tr
                                         key={idx}
-                                        className="border-t border-gray-300 dark:border-gray-700"
+                                        className="border-t border-secondary/30 hover:bg-primary/10 transition-colors"
                                     >
                                         <td className="p-2">{r.resistor}</td>
-                                        <td className="p-2">{r.value}</td>
-                                        <td className="p-2">{r.vout}</td>
+                                        <td className="p-2 text-primary font-medium">{r.value}</td>
+                                        <td className="p-2 text-primary font-medium">{r.vout}</td>
                                     </tr>
                                 ))}
                                 </tbody>
