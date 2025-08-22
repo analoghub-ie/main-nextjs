@@ -122,15 +122,16 @@ export default function ResistorLadderCalculator() {
                     {/* Vin */}
                     <div className="flex items-stretch gap-2 w-full">
                         <Input
-                            label="Vin"
+                            label="Input voltage"
                             type="number"
                             placeholder="Input voltage"
                             value={vin.toString()}
                             onChange={(e) => setVin(parseFloat(e.target.value))}
-                            className="w-2/3 h-[56px]"
+                            className="w-2/3"
+                            size={"lg"}
                         />
                         <UnitSelect
-                            label="Vin unit"
+                            label = "Units"
                             value={vinUnit}
                             options={Object.keys(voltageUnits)}
                             onChange={setVinUnit}
@@ -140,15 +141,16 @@ export default function ResistorLadderCalculator() {
                     {/* Iin */}
                     <div className="flex items-stretch gap-2 w-full">
                         <Input
-                            label="Iin"
+                            label="Total current"
                             type="number"
                             placeholder="Total current"
                             value={iin.toString()}
                             onChange={(e) => setIin(parseFloat(e.target.value))}
-                            className="w-2/3 h-[56px]"
+                            className="w-2/3"
+                            size={"lg"}
                         />
                         <UnitSelect
-                            label="Iin unit"
+                            label = "Units"
                             value={iinUnit}
                             options={Object.keys(currentUnits)}
                             onChange={setIinUnit}
@@ -158,14 +160,15 @@ export default function ResistorLadderCalculator() {
                     {/* Vout */}
                     <div className="flex items-stretch gap-2 w-full">
                         <Input
-                            label="Vout(s)"
+                            label="Output voltage(s)"
                             placeholder="Comma-separated"
                             value={voltages}
                             onChange={(e) => setVoltages(e.target.value)}
-                            className="w-2/3 h-[56px]"
+                            className="w-2/3"
+                            size={"lg"}
                         />
                         <UnitSelect
-                            label="Vout unit"
+                            label = "Units"
                             value={voutUnit}
                             options={Object.keys(voltageUnits)}
                             onChange={setVoutUnit}

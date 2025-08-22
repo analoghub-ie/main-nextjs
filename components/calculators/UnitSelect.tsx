@@ -4,7 +4,7 @@ import React from "react";
 import { Select, SelectItem } from "@heroui/react";
 
 interface UnitSelectProps {
-    label: string;
+    label?: string;
     value: string;
     options: string[];
     onChange: (value: string) => void;
@@ -17,7 +17,8 @@ export default function UnitSelect({ label, value, options, onChange }: UnitSele
             aria-label={label}
             selectedKeys={[value]}
             onSelectionChange={(keys) => onChange(Array.from(keys)[0] as string)}
-            className="w-1/3 h-[56px]"                 // ✅ same height as Input
+            className="w-1/3"
+            size={"lg"}
         >
             {options.map((unit) => (
                 <SelectItem key={unit}>{unit}</SelectItem>
