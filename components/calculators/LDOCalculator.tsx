@@ -1,102 +1,218 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Input, Card, CardHeader, CardBody, Select, SelectItem } from "@heroui/react";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    NumberInput,
+    Select,
+    SelectItem,
+} from "@heroui/react";
 
 export default function LDOCalculator() {
-    const [Vref, setVref] = useState(0.6);
-    const [Vout, setVout] = useState(1.2);
-    const [IqValue, setIqValue] = useState(1); // raw numeric input
-    const [IqUnit, setIqUnit] = useState("mA"); // mA, µA, nA, pA
+    const [Vref, setVref] = useState<number>(0.6);
+    const [VrefUnit, setVrefUnit] = useState("V");
+
+    const [Vout, setVout] = useState<number>(1.2);
+    const [VoutUnit, setVoutUnit] = useState("V");
+
+    const [IqValue, setIqValue] = useState<number>(1);
+    const [IqUnit, setIqUnit] = useState("mA");
 
     const [R1, setR1] = useState("");
     const [R2, setR2] = useState("");
     const [k, setK] = useState("");
+    const [errors, setErrors] = useState<string[]>([]);
 
-    // Convert Iq to amps
-    const getIqInAmps = () => {
-        switch (IqUnit) {
-            case "pA": return IqValue * 1e-12;
-            case "nA": return IqValue * 1e-9;
-            case "µA": return IqValue * 1e-6;
-            case "mA": return IqValue * 1e-3;
-            default: return IqValue;
-        }
+    const [showResults, setShowResults] = useState(true);
+
+    const currentUnits: Record<string, number> = {
+        A: 1,
+        mA: 1e-3,
+        µA: 1e-6,
+        nA: 1e-9,
+        pA: 1e-12,
     };
 
+    const voltageUnits: Record<string, number> = {
+        V: 1,
+        mV: 1e-3,
+    };
+
+    const formatWithUnit = (value: number, base: "Ω") => {
+        const prefixes = [
+            { limit: 1e9, factor: 1e9, symbol: "G" },
+            { limit: 1e6, factor: 1e6, symbol: "M" },
+            { limit: 1e3, factor: 1e3, symbol: "k" },
+            { limit: 1, factor: 1, symbol: "" },
+            { limit: 1e-3, factor: 1e-3, symbol: "m" },
+            { limit: 1e-6, factor: 1e-6, symbol: "µ" },
+            { limit: 1e-9, factor: 1e-9, symbol: "n" },
+        ];
+
+        for (let p of prefixes) {
+            if (Math.abs(value) >= p.limit) {
+                return `${parseFloat((value / p.factor).toPrecision(3))} ${p.symbol}${base}`;
+            }
+        }
+        return `${value} ${base}`;
+    };
+
+    const formatK = (val: number) => parseFloat(val.toPrecision(3)).toString();
+
     useEffect(() => {
-        const IqAmps = getIqInAmps();
+        const newErrors: string[] = [];
 
-        if (Vout > 0 && IqAmps > 0) {
-            const kVal = (Vref / Vout) / (1 - Vref / Vout);
-            const R1Val = Vout / (IqAmps * (1 + kVal));
-            const R2Val = kVal * R1Val;
+        const VrefNum = Vref * voltageUnits[VrefUnit];
+        const VoutNum = Vout * voltageUnits[VoutUnit];
+        const IqAmps = IqValue * currentUnits[IqUnit];
 
-            setK(kVal.toFixed(4));
-            setR1(formatResistance(R1Val));
-            setR2(formatResistance(R2Val));
-        } else {
+        if (isNaN(VrefNum) || VrefNum <= 0) newErrors.push("Reference voltage must be > 0.");
+        if (isNaN(VoutNum) || VoutNum <= 0) newErrors.push("Output voltage must be > 0.");
+        if (VoutNum <= VrefNum) newErrors.push("Output voltage must be greater than reference voltage.");
+        if (isNaN(IqAmps) || IqAmps <= 0) newErrors.push("Quiescent current must be > 0.");
+
+        if (newErrors.length > 0) {
+            setErrors(newErrors);
             setK("");
             setR1("");
             setR2("");
+            return;
         }
-    }, [Vref, Vout, IqValue, IqUnit]);
 
-    const formatResistance = (R: number) => {
-        if (Math.floor(R / 1e6) > 0) return (R / 1e6).toFixed(3) + " MΩ";
-        if (Math.floor(R / 1e3) > 0) return (R / 1e3).toFixed(3) + " kΩ";
-        return R.toFixed(3) + " Ω";
-    };
+        const kVal = VoutNum / VrefNum - 1;
+        const Rtot = VoutNum / IqAmps;
+
+        const R2Val = Rtot / (1 + kVal);
+        const R1Val = kVal * R2Val;
+
+        setErrors([]);
+        setK(formatK(kVal));
+        setR1(formatWithUnit(R1Val, "Ω"));
+        setR2(formatWithUnit(R2Val, "Ω"));
+    }, [Vref, VrefUnit, Vout, VoutUnit, IqValue, IqUnit]);
+
+    const InputRow = ({
+                          label,
+                          value,
+                          onChange,
+                          unit,
+                          onUnitChange,
+                          units,
+                      }: {
+        label: string;
+        value: number;
+        onChange: (val: number) => void;
+        unit: string;
+        onUnitChange: (unit: string) => void;
+        units: Record<string, number>;
+    }) => (
+        <div className="flex items-stretch gap-2 w-full">
+            <NumberInput
+                hideStepper
+                className="flex-1"
+                label={label}
+                value={value}
+                onValueChange={onChange}
+                size="lg"
+                min={0}
+            />
+            <Select
+                label="Units"
+                selectedKeys={new Set([unit])}
+                onSelectionChange={(keys) => onUnitChange(Array.from(keys)[0] as string)}
+                className="w-28"
+                size="lg"
+            >
+                {Object.keys(units).map((u) => (
+                    <SelectItem key={u}>{u}</SelectItem>
+                ))}
+            </Select>
+        </div>
+    );
 
     return (
-        // <div className="flex justify-center items-center min-h-screen p-4">
-            <Card className="w-full max-w-md">
-                <CardHeader>
-                    <h2 className="text-lg font-bold">LDO Feedback Resistance Calculator</h2>
-                </CardHeader>
-                <CardBody className="space-y-4">
-                    <Input
-                        label="Reference Voltage (Vref)"
-                        type="number"
-                        value={Vref.toString()}
-                        onChange={(e) => setVref(parseFloat(e.target.value) || 0)}
+        <Card className="w-full max-w-3xl mx-auto" shadow="none">
+            <CardHeader>
+                <p className="text-xl font-bold text-center w-full">
+                    LDO Feedback Resistance Calculator
+                </p>
+            </CardHeader>
+            <CardBody>
+                <div className="grid gap-4 mb-6">
+                    <InputRow
+                        label="Reference Voltage"
+                        value={Vref}
+                        onChange={setVref}
+                        unit={VrefUnit}
+                        onUnitChange={setVrefUnit}
+                        units={voltageUnits}
                     />
-                    <Input
-                        label="Output Voltage (Vout)"
-                        type="number"
-                        value={Vout.toString()}
-                        onChange={(e) => setVout(parseFloat(e.target.value) || 0)}
+                    <InputRow
+                        label="Output Voltage"
+                        value={Vout}
+                        onChange={setVout}
+                        unit={VoutUnit}
+                        onUnitChange={setVoutUnit}
+                        units={voltageUnits}
+                    />
+                    <InputRow
+                        label="Quiescent Current"
+                        value={IqValue}
+                        onChange={setIqValue}
+                        unit={IqUnit}
+                        onUnitChange={setIqUnit}
+                        units={currentUnits}
                     />
 
-                    <div className="flex gap-2">
-                        <Input
-                            label="Quiescent Current (Iq)"
-                            type="number"
-                            value={IqValue.toString()}
-                            onChange={(e) => setIqValue(parseFloat(e.target.value) || 0)}
-                            className="flex-1"
-                        />
-                        <Select
-                            label="Unit"
-                            selectedKeys={new Set([IqUnit])}
-                            onSelectionChange={(keys) => setIqUnit(Array.from(keys)[0] as string)}
-                            className="w-28"
-                        >
-                            <SelectItem key="pA">pA</SelectItem>
-                            <SelectItem key="nA">nA</SelectItem>
-                            <SelectItem key="µA">µA</SelectItem>
-                            <SelectItem key="mA">mA</SelectItem>
-                            <SelectItem key="A">A</SelectItem>
-                        </Select>
-                    </div>
+                    <button
+                        className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-dark transition-colors"
+                        onClick={() => setShowResults((prev) => !prev)}
+                    >
+                        {showResults ? "Hide Results" : "Show Results"}
+                    </button>
 
-                    <div className="border-t pt-4 space-y-2">
-                        <p><strong>R1:</strong> {R1 || "--"}</p>
-                        <p><strong>R2:</strong> {R2 || "--"}</p>
-                        <p><strong>Resistor ratio (k):</strong> {k || "--"}</p>
-                    </div>
-                </CardBody>
-            </Card>
-        //</div>
+                    {errors.length > 0 && (
+                        <div className="text-red-500 text-sm space-y-1">
+                            {errors.map((err, i) => (
+                                <p key={i}>{err}</p>
+                            ))}
+                        </div>
+                    )}
+
+                    {showResults && R1 && R2 && (
+                        <div className="w-full">
+                            <table className="w-full table-auto border-collapse text-center rounded-xl overflow-hidden shadow-sm">
+                                <thead>
+                                <tr className="border-b border-secondary/30 bg-secondary/10">
+                                    <th className="py-3 px-4 text-secondary text-base lg:text-lg font-medium">
+                                        Resistor
+                                    </th>
+                                    <th className="py-3 px-4 text-secondary text-base lg:text-lg font-medium">
+                                        Value
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody className="text-base lg:text-lg">
+                                <tr className="border-t border-secondary/30 hover:bg-primary/10 transition-colors">
+                                    <td className="py-3 px-4">R1</td>
+                                    <td className="py-3 px-4 text-primary font-semibold">{R1}</td>
+                                </tr>
+                                <tr className="border-t border-secondary/30 hover:bg-primary/10 transition-colors">
+                                    <td className="py-3 px-4">R2</td>
+                                    <td className="py-3 px-4 text-primary font-semibold">{R2}</td>
+                                </tr>
+                                <tr className="border-t border-secondary/30 hover:bg-primary/10 transition-colors">
+                                    <td className="py-3 px-4">k = R1 / R2</td>
+                                    <td className="py-3 px-4 text-primary font-semibold">{k}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    )}
+                </div>
+            </CardBody>
+        </Card>
     );
 }

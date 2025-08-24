@@ -3,6 +3,7 @@ import React from "react";
 import ResistorLadderCalculator from "@/components/calculators/ResistorLadderCalculator";
 import SeriesParallelCalculator from "@/components/calculators/SeriesParallelCalculator";
 import PCBCalculator from "@/components/calculators/PCBCalculator";
+import LDOCalculator from "@/components/calculators/LDOCalculator";
 
 export const metadata = {
     title: "Resistor Ladder Calculator",
@@ -20,6 +21,8 @@ export default function ResistorLadderCalculatorPage() {
 
 
             <PCBCalculator/>
+
+            <LDOCalculator/>
         </main>
     );
 }

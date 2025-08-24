@@ -5,8 +5,9 @@ import {
     Card,
     CardHeader,
     CardBody,
-    Input,
     Button,
+    Input,
+    NumberInput,
 } from "@heroui/react";
 import UnitSelect from "./UnitSelect";
 
@@ -113,7 +114,7 @@ export default function ResistorLadderCalculator() {
     return (
         <Card className="w-full max-w-3xl mx-auto" shadow="none">
             <CardHeader>
-                <p className="text-md font-bold text-center w-full">
+                <p className="text-xl font-bold text-center w-full">
                     Resistor Ladder Calculator
                 </p>
             </CardHeader>
@@ -121,38 +122,40 @@ export default function ResistorLadderCalculator() {
                 <div className="grid gap-4 mb-6">
                     {/* Vin */}
                     <div className="flex items-stretch gap-2 w-full">
-                        <Input
-                            label="Input voltage"
-                            type="number"
-                            placeholder="Input voltage"
-                            value={vin.toString()}
-                            onChange={(e) => setVin(parseFloat(e.target.value))}
+                        <NumberInput
+                            hideStepper    // 👈 added
                             className="w-2/3"
-                            size={"lg"}
+                            label="Input voltage"
+                            value={vin}
+                            onValueChange={setVin}
+                            size="lg"
+                            //step={0.1}
+                            min={0}
                         />
                         <UnitSelect
-                            label = "Units"
-                            value={vinUnit}
+                            label="Units"
                             options={Object.keys(voltageUnits)}
+                            value={vinUnit}
                             onChange={setVinUnit}
                         />
                     </div>
 
                     {/* Iin */}
                     <div className="flex items-stretch gap-2 w-full">
-                        <Input
-                            label="Total current"
-                            type="number"
-                            placeholder="Total current"
-                            value={iin.toString()}
-                            onChange={(e) => setIin(parseFloat(e.target.value))}
+                        <NumberInput
+                            hideStepper    // 👈 added
                             className="w-2/3"
-                            size={"lg"}
+                            label="Total current"
+                            value={iin}
+                            onValueChange={setIin}
+                            size="lg"
+                            //step={0.1}
+                            min={0}
                         />
                         <UnitSelect
-                            label = "Units"
-                            value={iinUnit}
+                            label="Units"
                             options={Object.keys(currentUnits)}
+                            value={iinUnit}
                             onChange={setIinUnit}
                         />
                     </div>
@@ -165,10 +168,10 @@ export default function ResistorLadderCalculator() {
                             value={voltages}
                             onChange={(e) => setVoltages(e.target.value)}
                             className="w-2/3"
-                            size={"lg"}
+                            size="lg"
                         />
                         <UnitSelect
-                            label = "Units"
+                            label="Units"
                             value={voutUnit}
                             options={Object.keys(voltageUnits)}
                             onChange={setVoutUnit}

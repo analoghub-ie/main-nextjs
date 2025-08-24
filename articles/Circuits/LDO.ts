@@ -1,5 +1,4 @@
 import {TArticle} from "../types";
-
 const article: TArticle = {
     id: 'circuitsLDO',
     title: 'LDO',
@@ -409,8 +408,6 @@ $$
 
 <br/> <img src="http://localhost:3000/images/circuits/ldoBufAdding.svg" alt="LDO parasitics model" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
 <p style="display: block; text-align: center">Adding buffer for compensation</p>
-
-
 
     `
 };
