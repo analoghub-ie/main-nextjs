@@ -1,4 +1,5 @@
 import {TArticle} from "../types";
+
 const article: TArticle = {
     id: 'circuitsLDO',
     title: 'LDO',
@@ -26,7 +27,9 @@ performance of the internal circuits irrespective of external conditions (supply
 It is usually used together with the bandgap reference to ensure constant output voltage. LDOs have a variety of topologies 
 and oriented for use with analog or digital circuits. There are two main LDO topologies: NMOS and PMOS-based.
 
-<br/> <img src="http://localhost:3000/images/circuits/ldo-topologies.svg" alt="LDO topologies" style="display: block; margin-inline: auto; width: min(80%, 80rem)" /> 
+<ldo-calculator></ldo-calculator>
+
+<br/> <img src="http://localhost:3000/images/circuits/ldo-topologies.svg" alt="LDO topologies" style="display: block; margin-inline: auto; width: min(80%, 90rem)" /> 
 <p style="display: block; text-align: center">LDO topologies</p>
 
 A bandgap voltage reference provides a stable reference signal for the regulator. An error amplifier (EA), typically 

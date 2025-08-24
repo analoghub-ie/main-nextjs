@@ -52,18 +52,42 @@ const tailwindConfig = {
       themes: {
         light: {
           colors: {
-            primary: "#FFA31A",
-            secondary: "#141414",
-            background: "#FFFFFF",
-            text: "#000000",
+            primary: {
+              DEFAULT: "#FFA31A",
+              foreground: "#141414",
+            },
+            secondary: {
+              DEFAULT: "#141414",
+              foreground: "#FFFFFF",
+            },
+            background: {
+              DEFAULT: "#FFFFFF",
+              foreground: "#000000",
+            },
+            text: {
+              DEFAULT: "#000000",
+              muted: "#4B4B4B",
+            },
           }
         },
         dark: {
           colors: {
-            primary: "#FFA31A",
-            secondary: "#FFFFFF",
-            background: "#141414",
-            text: "#FFFFFF",
+            primary: {
+              DEFAULT: "#FFA31A",
+              foreground: "#141414",
+            },
+            secondary: {
+              DEFAULT: "#FFFFFF",
+              foreground: "#141414",
+            },
+            background: {
+              DEFAULT: "#141414",
+              foreground: "#FFFFFF",
+            },
+            text: {
+              DEFAULT: "#FFFFFF",
+              muted: "#B3B3B3",
+            },
           }
         },
       }

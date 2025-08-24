@@ -167,11 +167,13 @@ export default function LDOCalculator() {
                     />
 
                     <button
-                        className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:bg-primary-dark transition-colors"
+                        className="w-full py-3 rounded-xl font-semibold transition-colors"
+                        color={"primary"}
                         onClick={() => setShowResults((prev) => !prev)}
                     >
                         {showResults ? "Hide Results" : "Show Results"}
                     </button>
+
 
                     {errors.length > 0 && (
                         <div className="text-red-500 text-sm space-y-1">
@@ -183,7 +185,8 @@ export default function LDOCalculator() {
 
                     {showResults && R1 && R2 && (
                         <div className="w-full">
-                            <table className="w-full table-auto border-collapse text-center rounded-xl overflow-hidden shadow-sm">
+                            <table
+                                className="w-full table-auto border-collapse text-center rounded-xl overflow-hidden shadow-sm">
                                 <thead>
                                 <tr className="border-b border-secondary/30 bg-secondary/10">
                                     <th className="py-3 px-4 text-secondary text-base lg:text-lg font-medium">
