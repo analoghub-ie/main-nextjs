@@ -81,10 +81,9 @@ export default function LDOCalculator() {
             return;
         }
 
+        // Updated calculations
         const kVal = VoutNum / VrefNum - 1;
-        const Rtot = VoutNum / IqAmps;
-
-        const R2Val = Rtot / (1 + kVal);
+        const R2Val = VoutNum / (IqAmps * (1 + kVal));
         const R1Val = kVal * R2Val;
 
         setErrors([]);
@@ -174,7 +173,6 @@ export default function LDOCalculator() {
                         {showResults ? "Hide Results" : "Show Results"}
                     </button>
 
-
                     {errors.length > 0 && (
                         <div className="text-red-500 text-sm space-y-1">
                             {errors.map((err, i) => (
@@ -190,7 +188,7 @@ export default function LDOCalculator() {
                                 <thead>
                                 <tr className="border-b border-secondary/30 bg-secondary/10">
                                     <th className="py-3 px-4 text-secondary text-base lg:text-lg font-medium">
-                                        Resistor
+                                        Parameter
                                     </th>
                                     <th className="py-3 px-4 text-secondary text-base lg:text-lg font-medium">
                                         Value
@@ -207,7 +205,7 @@ export default function LDOCalculator() {
                                     <td className="py-3 px-4 text-primary font-semibold">{R2}</td>
                                 </tr>
                                 <tr className="border-t border-secondary/30 hover:bg-primary/10 transition-colors">
-                                    <td className="py-3 px-4">k = R1 / R2</td>
+                                    <td className="py-3 px-4">k</td>
                                     <td className="py-3 px-4 text-primary font-semibold">{k}</td>
                                 </tr>
                                 </tbody>
