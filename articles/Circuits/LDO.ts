@@ -156,8 +156,8 @@ practical when the supply voltage is significantly higher than the regulated out
 transistor acts as a common drain (source follower) with positive gain, whereas the PMOS operates as a common source 
 with negative feedback. This difference requires the op-amp polarity to be adapted accordingly.
 
-The primary advantage of PMOS LDOs is their lower dropout voltage. The error amplifier output (EA_out) in a PMOS 
-design can swing between GND and Vin-Vth, with dropout voltage primarily dependent on Vds (around 50mV for saturated 
+The primary advantage of PMOS LDOs is their lower dropout voltage. The error amplifier output ($EA_{out}$) in a PMOS 
+design can swing between **GND** and $V_{in}-V_{th}$, with dropout voltage primarily dependent on $V_{ds}$(around 50mV for saturated 
 devices). In contrast, NMOS LDOs require the output of the error amplifier to be at least $V_{th}$ above the output 
 voltage to turn on the pass transistor. This means the output voltage is inherently limited to at least Vth below the 
 input voltage, with additional margin for loop regulation. Furthermore, NMOS pass devices are typically high-power or 
@@ -241,7 +241,7 @@ R_1 = k R_2 \\\\
 \\end{cases}
 $$
 
-For $V_{out} >= V_{ref}$
+For $V_{out} \\geq V_{ref}$
 
 Just knowing $V_{out}$, $V_{ref}$ and $I_q$ will give us the exact values of $R_1$ and $R_2$
 <!---You can use the calculator below or a [Matlab Script]() !LINK -->
@@ -426,7 +426,7 @@ $$
 \\beta = \\frac{R_2}{R_1 + R_2}
 $$
 
-<br/> <img src="http://localhost:3000/images/circuits/ldoLoadVariation.svg" alt="Load variation impact on LDO poles location" style="display: block; margin-inline: auto; width: min(80%, 70rem)" /> 
+<br/> <img src="http://localhost:3000/images/circuits/ldoLoadVariation.svg" alt="Load variation impact on LDO poles location" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">Load variation impact on LDO poles location</p>
 
 #### 6.2 Transfer function of the LDO
@@ -454,6 +454,7 @@ this effect:
 - $C_{gs}$ shielding through buffer
 
 <br/>
+
 ##### 6.3.1 Using a ESR zero
 
 One of the ways to compensate our LDO with external capacitor is to utilize the capacitor's equivalent series resistance 
@@ -490,8 +491,6 @@ $$
 
 ##### 6.3.2 Using a buffer
 
-<br/>
-
 Another way to compensate an LDO is to add a buffer between the output of the amplifier and the pass device. Effectively, 
 adding a buffer will shield the output of the error amplifier from the large $C_{gs}$ of the pass device.
 
@@ -523,10 +522,36 @@ phase margin.
 
 ### 7. LDO Parasitics 
 
+In the design of LDO with an off-chip capacitor, it's very important to take into account parasitics, associated 
+with the output node. The main contributors are I/O pads, bondwires, packaging and PCB trace:
+
+<br/> <img src="http://localhost:3000/images/circuits/ldoParasiticsDie.svg" alt="Abstract view of LDO parasitics" style="display: block; margin-inline: auto; width: min(80%, 40rem)" /> 
+<p style="display: block; text-align: center">Abstract view of LDO parasitics</p>
+
+Let's now have a detailed look into these contributors. The I/O pad is a large piece of metal so its contribution is 
+mostly capacitive. The typical capacitance for the analog I/O pad is around *1-2pF* and usually mentioned in the process 
+documentation.
+
+The next piece is the bondwire - metal interconnect between the chip and package. Bondwires are typically made of gold 
+to achieve low resistance ($\\approx 50m\\Omega /mm$). However,  due to relatively big length, the bondwire brings a 
+significant inductance to the picture ($\\approx 1nH /mm$) and it has to be taken into account.
+
+<br/> <img src="http://localhost:3000/images/circuits/ldoParasiticsFull.svg" alt="LDO parasitics" style="display: block; margin-inline: auto; width: min(80%, 80rem)" /> 
+<p style="display: block; text-align: center">LDO parasitics</p>
+
+The package itself also introduces parasitic capacitance, inductance and resistance, which is usually specified in 
+the package manufacturer's documentation. Since inductance and resistance are primarily coming from the leads of the 
+package, choosing a lead-free package (such as QFN) will be very beneficial.
+
+The last, but not the least contributor is the PCB trace that connects the package and the output load. This trace can be 
+represented as a distributed RLC-network. Since every extra inch of the trace contributes to increased parastics, it's 
+essential to keep the output capacitor as close as possible to the chip.
+
+Typical values for the parasitics are given in the table below:
 
 |Parasitics|R| L| C|
 |:-------:|:-------:|:-------:|:-------:|
-|Bondwire* | $\\approx 50m\\Omega /mm$| $\\approx 5nH /mm$  | -\t|
+|Bondwire* | $\\approx 50m\\Omega /mm$| $\\approx 1nH /mm$  | -\t|
 |Package** |$50m\\Omega$\t|$1.119 nH$\t  |$352 fF$\t|
 |PCB trace***|$4.93\\Omega$\t|$2.1 nH$\t  |\t$1.47pF$|
 
