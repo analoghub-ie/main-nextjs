@@ -2,7 +2,7 @@ import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import {dracula} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import {Code, Divider, Image, Link} from "@heroui/react";
 import {Table, TableBody, TableCell, TableColumn, TableHeader, TableRow} from "@/components/table";
-
+import LDOCalculator from "@/components/calculators/LDOCalculator";
 
 export const components = {
     // Headings
@@ -102,4 +102,10 @@ export const components = {
 
         return <iframe {...props} />
     },
+    // calculators
+    "ldo-calculator": () => (
+        <div className="my-2"> {/* Tailwind: 1rem top/bottom margin */}
+            <LDOCalculator />
+        </div>
+    ),
 };

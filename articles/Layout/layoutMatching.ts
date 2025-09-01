@@ -3,7 +3,7 @@ import {TArticle} from "../types";
 const article: TArticle = {
     id: 'layoutMatching',
     title: 'Matching in layout',
-    description: 'This article describes matching techniques in layout, matching patterns and design impact',
+    description: 'Matching techniques in layout and main principles',
     lastUpdate: new Date('2025-01-04'),
     content: `
 
@@ -54,7 +54,7 @@ a look on the placement without matching and apply a linear gradient to it:
 <br/> <img src="http://localhost:3000/images/layout/gradient-no-matching.svg" alt="Gradient impact on unmatched devices" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">Gradient impact on unmatched devices</p>    
 
-Now we can summarize the total impact on the each devices:  
+Now we can summarize the total impact on each device:  
 $$A = 1 + 2 = 3$$
 
 
@@ -88,7 +88,7 @@ We can clearly see, that the impact of the linear gradient on both devices is eq
 the circuit. Now, let's take a 2-dimensional example and see, how dummies together with matching help us to achieve the 
 best performance. 
 
-Let's say we have the same circuit - a simple current mirror (1:2) that is using a ***Common centroid** technique and 
+Let's say we have the same circuit - a simple current mirror (1:2) that is using a **common centroid** technique and 
 surrounded by dummies. If we apply a linear gradient to this structure, devices will stay matched, as in the previous 
 example (red gradient):  
 
@@ -131,16 +131,16 @@ The third example shows two devices with a different lengths. Those devices will
 affecting the performance in the same way as in a previous example.   
 
 We should also be aware of not only the shape and orientation of the matched devices themselves, but also about the 
-surrondings. ASIC are usually contain sensitive analog blocks, such as amplifiers, bandgaps and comparators together with a noisy 
+surroundings. ASIC are usually contain sensitive analog blocks, such as amplifiers, bandgaps and comparators together with a noisy 
 or high-current blocks, such as LDOs, drivers and digital logic. Those blocks may create a lot of substrate noise and 
 temperature gradients, that may impact the performance of the sensitive devices.
 
 <br/> <img src="http://localhost:3000/images/layout/wrong-placement-example-2.svg" alt="Examples of the wrong placement in respect of the agressor" style="display: block; margin-inline: auto; width: min(80%, 30rem)" /> 
 <p style="display: block; text-align: center">Examples of the wrong placement in respect of the agressor</p>  
 
-As shown in the example above, in the first case, the location of the matched devices with respect to the agressor 
-is incorrect, because the gradient, caused by the agressor is affecting both devices unequally. In the second case, both 
-devices are located symmetrically to the agressor, hereby reducing and equalising the stress on the sensitive devices.
+As shown in the example above, in the first case, the location of the matched devices with respect to the aggressor 
+is incorrect, because the gradient, caused by the aggressor is affecting both devices unequally. In the second case, both 
+devices are located symmetrically to the aggressor, hereby reducing and equalising the stress on the sensitive devices.
 
 
 <div id="dummies"></div>
@@ -164,19 +164,19 @@ shorted, we don't have any extra parasitics.
 <br/> <img src="http://localhost:3000/images/layout/dummy-abutted-parasitics.svg" alt="Abutted dummy placement" style="display: block; margin-inline: auto; width: min(80%, 50rem)" /> 
 <p style="display: block; text-align: center">Abutted dummy placement</p>  
 
-If we want to abut our core devices together, we have to abut them with ddummy devices to achieve equal edge effects 
+If we want to abut our core devices together, we have to abut them with dummy devices to achieve equal edge effects 
 for core devices. In this example, devices A & B are sharing source terminals connected to the ground while abutting. 
-SO, after abutting of the core devices, the only possible connection for the dummies is $I_{out}$ termanal. In this 
+SO, after abutting of the core devices, the only possible connection for the dummies is $I_{out}$ terminal. In this 
 case, drain, source and gate of the dummy will be connected to the $I_{out}$ whereas the bulk terminal will remain 
 connected to the ground. This will create a MOS capacitor structure, where one terminal is connected to the ground 
 and the other is connected to $I_{out}$, utilizing the $C_{SB}$ of the dummy device. This parasitic capacitance is 
 connected to the drain terminal of the device B, which will cause extra loading and reduction in speed. Such connection 
-of the dummy devices will be even more critial for the structures like differential pair, where parasitic capacitance 
+of the dummy devices will be even more critical for the structures like differential pair, where parasitic capacitance 
 will not ony cause the loading and bandwidth reduction, but can even unbalance the circuit and lead to an increased 
 offset.
 
 > Dummy key points:
-> - Dummy placement style follows the core device placement (sapced or abutted);
+> - Dummy placement style follows the core device placement (spaced or abutted);
 > - Spaced placement doesn't add parasitics but lacks the benefit of the parasitics reduction;
 > - Abutted placement reduces core devices resistance and capacitance, but suffers from the dummy $C_{SB}$ parasitics;
 
