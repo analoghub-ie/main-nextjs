@@ -686,6 +686,8 @@ $$
 $$
 \\Delta V_{out}  = V_{ref} - \\left(\\frac{A_{EA}}{1+A_{EA}} \\right) (1-\\Delta V_{ref})V_{ref}
 $$
+
+bla
 -->
 
 

@@ -100,6 +100,7 @@ const articles: TCategory[] = [
     {
         id: 'cadenceAnalysis',
         title: 'Cadence analysis',
+        hideInProd: false,
         articles: [
             cadenceAnalysisEMIR, cadenceAnalysisDC, analysisPAC, analysisCorner, analysisMonteCarlo, analysisExtracted,
         ],
