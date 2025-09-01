@@ -5,7 +5,6 @@ const article: TArticle = {
     title: 'LDO',
     description: 'LDO topologies and design explained',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
     content: `
 
 

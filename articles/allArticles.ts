@@ -77,7 +77,6 @@ const articles: TCategory[] = [
     {
         id: 'Circuits',
         title: 'Circuits',
-        hideInProd: true,
         articles: [
             LDO, sarADC,
         ],
