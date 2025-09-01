@@ -5,7 +5,6 @@ const article: TArticle = {
     title: 'LDO',
     description: 'LDO topologies and design explained',
     lastUpdate: new Date('2022-01-01'),
-    hideInProd: true,
     content: `
 
 
@@ -687,6 +686,8 @@ $$
 $$
 \\Delta V_{out}  = V_{ref} - \\left(\\frac{A_{EA}}{1+A_{EA}} \\right) (1-\\Delta V_{ref})V_{ref}
 $$
+
+bla
 -->
 
 

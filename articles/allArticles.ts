@@ -77,7 +77,6 @@ const articles: TCategory[] = [
     {
         id: 'Circuits',
         title: 'Circuits',
-        hideInProd: true,
         articles: [
             LDO, sarADC,
         ],
@@ -101,6 +100,7 @@ const articles: TCategory[] = [
     {
         id: 'cadenceAnalysis',
         title: 'Cadence analysis',
+        hideInProd: false,
         articles: [
             cadenceAnalysisEMIR, cadenceAnalysisDC, analysisPAC, analysisCorner, analysisMonteCarlo, analysisExtracted,
         ],
